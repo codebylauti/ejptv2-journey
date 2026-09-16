@@ -1,0 +1,107 @@
+# Roadmap
+
+eJPTv2 learning path. Track your progress here — update checkboxes as you complete machines.
+
+## Current state
+
+See [[overview]] for the detailed snapshot. Bottom line: **22 boxes done**, solid fundamentals in enumeration, brute-force, and privilege escalation; light on Active Directory, network attacks, and deep web pentesting.
+
+---
+
+## Completed boxes (checklist)
+
+### DockerLabs — super-easy
+
+- [x] [[breakmyssh]] — SSH brute-force
+- [x] [[first-hacking]] — vsftpd backdoor (CVE-2011-2523)
+- [x] [[hedgehog]] — source leak → brute-force → chained sudo
+- [x] [[trust]] — fuzzing → brute-force → sudo vim
+- [x] [[tproot]] — vsftpd backdoor
+- [x] [[obsession]] — anonymous FTP → sudo vim
+- [x] [[vacaciones]] — comment usernames → sudo ruby
+- [x] [[borazuwara]] — image metadata → sudo group
+
+### DockerLabs — easy
+
+- [x] [[los-3-hackers]] — SQLi → session → cron → capabilities
+- [x] [[hannah-coffee]] — LFI + log poisoning → debugfs → capabilities
+- [x] [[balufood]] — leaked creds → secret_key reuse → .bashrc alias
+- [x] [[balulero]] — .env leak → sudo php → group-owned script
+- [x] [[nodeclimb]] — anon FTP → zip crack → sudo node
+- [x] [[psycho]] — LFI → SSH key → chained sudo
+- [x] [[autoescuela]] — Node.js Inspector RCE → React2Shell (CVE-2025-55182)
+- [x] [[wargames]] — prompt injection → hash crack → SUID binary
+
+### DockerLabs — intermediate
+
+- [x] [[adopting]] — cache deception → writable /etc/passwd
+
+### DockerLabs — hard
+
+- [x] [[baluhome]] — XSS → cookie theft → reverse shell → cron
+
+### TryHackMe
+
+- [x] [[basic-pentesting]] — SMB enum → brute-force → key cracking
+- [x] [[simple-ctf]] — CMS SQLi → sudo vim
+- [x] [[ignite]] — Fuel CMS SQLi + RCE
+- [x] [[guided-pentest]] — UnrealIRCd via Metasploit
+
+---
+
+## eJPTv2 domains — coverage & next steps
+
+### 1. Assessment Methodologies (`ejpt:assessment`)
+
+**Covered:** [[information-gathering]], [[directory-fuzzing]], [[parameter-fuzzing]], [[smb-enumeration]], [[source-code-disclosure]], [[ftp-anonymous-login]], [[hardcoded-credentials]].
+
+**Gaps & next steps**
+- [ ] Practice full enumeration toolchain: `nmap` script engine, `nikto`, `dirb`, SNMP/WinRM enumeration.
+- [ ] Web + OSINT: `whatweb`, `wpscan`, DNS enumeration.
+- [ ] Do more DockerLabs **easy** boxes to build enumeration fluency.
+
+### 2. Host & Network Auditing (`ejpt:auditing`)
+
+**Covered:** [[smb-enumeration]] (light).
+
+**Gaps & next steps**
+- [ ] Study auditing fundamentals: `netstat`, `tcpdump`, `wireshark`, `nmap` NSE.
+- [ ] Practice Linux/Windows service and network auditing labs.
+
+### 3. Host & Network Penetration Testing (`ejpt:host-net-pentest`)
+
+**Covered:** [[ssh-bruteforce]], [[sudo-abuse]], [[suid-enumeration]], [[cron-job-abuse]], [[linux-capabilities]], [[writable-etc-passwd]], [[reverse-shells]], [[node-inspector-rce]], [[vsftpd-backdoor]], [[ssh-key-cracking]], [[zip-cracking]], [[hash-cracking]], [[hardcoded-credentials]], [[group-ownership-enumeration]], [[python-library-hijacking]], [[ftp-anonymous-login]].
+
+**Gaps & next steps**
+- [ ] **Metasploit** depth — only [[guided-pentest]] touched it. Do THM "Metasploit" module.
+- [ ] **Password cracking** — raw-hash cracking now covered via [[hash-cracking]] ([[wargames]]); `NTLM`/`/etc/shadow` OS hashes still untried.
+- [ ] **Pivoting & lateral movement** — `chisel`/`proxychains`, SSH tunneling (almost untouched; localhost-only service discovery seen in [[autoescuela]]).
+- [ ] **Active Directory** — SMB relays, Kerberoasting, LLMNR poisoning.
+- [ ] Complete more DockerLabs **intermediate/hard** boxes.
+
+### 4. Web Application Penetration Testing (`ejpt:web-pentest`)
+
+**Covered:** [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[local-file-inclusion]], [[log-poisoning]], [[parameter-fuzzing]], [[directory-fuzzing]], [[source-code-disclosure]], [[prototype-pollution]], [[prompt-injection]].
+
+**Gaps & next steps**
+- [ ] **Command injection**, **LFI/RFI** beyond the basics ([[local-file-inclusion]] done; extend to RFI and `/proc` tricks).
+- [ ] **SSRF**, **IDOR**, **CSRF** — not yet seen.
+- [ ] THM "Web Fundamentals" + "OWASP Top 10" paths.
+- [ ] More DockerLabs web-focused boxes.
+
+---
+
+## Suggested next machines
+
+1. **DockerLabs easy/intermediate** — build enumeration + web depth (e.g. boxes involving LFI/command injection).
+2. **TryHackMe — Jr Penetration Tester path** — the canonical eJPTv2 prep.
+3. **TryHackMe — Metasploit, Wireshark, Burp Suite rooms** — tool depth.
+4. **A full eJPT-style engagement** — a multi-host network to practice pivoting end-to-end.
+
+---
+
+## Study flow
+
+1. Pick a machine, add it to the "In progress" list here.
+2. After root, ingest its writeup: I'll create the machine page, update techniques/tools/CVEs, and tick it off.
+3. Every ~10 boxes, run a **lint** pass to spot gaps and contradictions.
