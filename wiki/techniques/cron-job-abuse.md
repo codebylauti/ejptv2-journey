@@ -21,6 +21,7 @@ Exploiting cron jobs or automated scripts that run with elevated privileges and 
 - [[los-3-hackers]] — writable `/opt/maintenance/m.sh` run as `blackhacker`.
 - [[baluhome]] — group-writable `/opt/balutube-backup/backup.sh` run as root.
 - [[balulero]] — group-owned `/opt/script.php` run as root; discovered via `ps aux`.
+- [[grooti]] — writable `/tmp/malicious.sh` run as root by `/opt/cleanup.sh`.
 
 ## See also
 

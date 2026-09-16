@@ -4,7 +4,7 @@ eJPTv2 learning path. Track your progress here — update checkboxes as you comp
 
 ## Current state
 
-See [[overview]] for the detailed snapshot. Bottom line: **22 boxes done**, solid fundamentals in enumeration, brute-force, and privilege escalation; light on Active Directory, network attacks, and deep web pentesting.
+See [[overview]] for the detailed snapshot. Bottom line: **23 boxes done**, solid fundamentals in enumeration, brute-force, and privilege escalation; light on Active Directory, network attacks, and deep web pentesting.
 
 ---
 
@@ -31,6 +31,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **22 boxes done**, soli
 - [x] [[psycho]] — LFI → SSH key → chained sudo
 - [x] [[autoescuela]] — Node.js Inspector RCE → React2Shell (CVE-2025-55182)
 - [x] [[wargames]] — prompt injection → hash crack → SUID binary
+- [x] [[grooti]] — MySQL leak → value brute-force → SSH brute-force → cron
 
 ### DockerLabs — intermediate
 

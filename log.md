@@ -69,3 +69,7 @@ Created tool pages [[telnet]] and [[searchsploit]] (previously flagged missing) 
 ## [2026-09-16] update | Link machine pages to raw writeups
 
 Added a `**Writeup:** [raw writeup](<relative path>)` link to all 22 machine pages, pointing each to its corresponding raw writeup in `writeups/`. Documented the convention in `AGENTS.md` (wiki↔wiki links use wikilinks; links to raw sources use relative Markdown paths).
+
+## [2026-09-16] ingest | DockerLabs easy — Grooti
+
+Ingested [[grooti]] (easy). Added technique pages [[mysql-enumeration]] and [[value-brute-force]], and tool page [[mysql]]. Updated [[source-code-disclosure]], [[hardcoded-credentials]], [[directory-fuzzing]], [[ssh-bruteforce]], [[cron-job-abuse]], [[reverse-shells]], [[gobuster]], [[curl]], [[hydra]], [[netcat]], [[dockerlabs]], `index.md`, `roadmap.md`, and [[overview]].

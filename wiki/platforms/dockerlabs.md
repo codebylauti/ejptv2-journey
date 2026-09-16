@@ -31,6 +31,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[psycho]] — LFI → SSH key → chained sudo (perl → python3)
 - [[autoescuela]] — Node.js Inspector RCE → React2Shell (CVE-2025-55182)
 - [[wargames]] — prompt injection → hash crack → SUID binary
+- [[grooti]] — MySQL leak → value brute-force → SSH brute-force → cron
 
 ### intermediate
 

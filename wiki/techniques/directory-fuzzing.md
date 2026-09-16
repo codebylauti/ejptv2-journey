@@ -23,8 +23,8 @@ dirb http://TARGET /usr/share/wordlists/dirb/common.txt
 
 ## Key finds
 
-- `secret.php` in [[trust]], `backup/` and `important/` in [[obsession]], `dashboard`/`login`/`wow.zip` in [[los-3-hackers]], `uploads`/`upload` in [[baluhome]], `index.php` + listable `/pages/` in [[hannah-coffee]], `/admin`/`/console`/`/login`/`/logout` in [[balufood]], listable `/assets/` + `index.php` in [[psycho]].
+- `secret.php` in [[trust]], `backup/` and `important/` in [[obsession]], `dashboard`/`login`/`wow.zip` in [[los-3-hackers]], `uploads`/`upload` in [[baluhome]], `index.php` + listable `/pages/` in [[hannah-coffee]], `/admin`/`/console`/`/login`/`/logout` in [[balufood]], listable `/assets/` + `index.php` in [[psycho]], `secret`/`imagenes`/`archives` in [[grooti]].
 
 ## Seen in
 
-[[hedgehog]], [[trust]], [[tproot]], [[obsession]], [[vacaciones]], [[borazuwara]], [[los-3-hackers]], [[adopting]], [[baluhome]], [[simple-ctf]], [[ignite]], [[hannah-coffee]], [[balufood]], [[psycho]]
+[[hedgehog]], [[trust]], [[tproot]], [[obsession]], [[vacaciones]], [[borazuwara]], [[los-3-hackers]], [[adopting]], [[baluhome]], [[simple-ctf]], [[ignite]], [[hannah-coffee]], [[balufood]], [[psycho]], [[grooti]]

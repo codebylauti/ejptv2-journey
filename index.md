@@ -34,6 +34,7 @@ Content catalog. Read this first on any query.
 - [[psycho]] — LFI → SSH key → chained sudo (perl → python3)
 - [[autoescuela]] — Node.js Inspector RCE → React2Shell (CVE-2025-55182)
 - [[wargames]] — prompt injection → hash crack → SUID binary
+- [[grooti]] — MySQL leak → value brute-force → SSH brute-force → cron
 
 ### DockerLabs — intermediate
 
@@ -55,6 +56,7 @@ Content catalog. Read this first on any query.
 - [[information-gathering]] — ping + nmap recon
 - [[directory-fuzzing]] — gobuster/dirb web path enumeration
 - [[parameter-fuzzing]] — ffuf hidden parameter discovery
+- [[value-brute-force]] — brute-force a param value, spot the odd response by length
 - [[local-file-inclusion]] — LFI path traversal
 - [[log-poisoning]] — inject code into logs → RCE via LFI
 - [[ssh-bruteforce]] — hydra dictionary attack on SSH
@@ -73,6 +75,7 @@ Content catalog. Read this first on any query.
 - [[reverse-shells]] — bash/Node reverse shells
 - [[node-inspector-rce]] — RCE via Node.js Inspector (CDP, port 9229)
 - [[smb-enumeration]] — enum4linux user/share discovery
+- [[mysql-enumeration]] — MySQL/MariaDB enumeration (SHOW/DESCRIBE/SELECT)
 - [[ssh-key-cracking]] — john on SSH key passphrases
 - [[zip-cracking]] — zip2john + john on encrypted ZIPs
 - [[hash-cracking]] — raw hash → plaintext (john/hashcat + online lookup)
@@ -97,6 +100,7 @@ Content catalog. Read this first on any query.
 - [[enum4linux]] — SMB enumerator
 - [[netcat]] — reverse-shell listener / network utility
 - [[telnet]] — TCP client / manual banner grab
+- [[mysql]] — MySQL/MariaDB client
 - [[gtfobins]] — sudo/SUID payload reference
 
 ## CVEs
