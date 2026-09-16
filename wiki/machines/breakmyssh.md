@@ -12,6 +12,8 @@ related: [[hedgehog]], [[trust]]
 
 # BreakMySSH
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/super-easy/break-my-ssh.md)
+
 Straightforward SSH [[ssh-bruteforce|brute-force]] box. Only port 22 (OpenSSH 7.7) is open.
 
 ## Path

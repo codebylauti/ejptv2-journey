@@ -12,6 +12,8 @@ related: [[baluhome]]
 
 # Adopting
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/intermediate/adopting.md)
+
 Intermediate box demonstrating [[web-cache-deception]] and a [[writable-etc-passwd]] privilege escalation.
 
 ## Path

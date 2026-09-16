@@ -12,6 +12,8 @@ related: [[vacaciones]], [[obsession]]
 
 # HegdgeHog
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/super-easy/hegdgehog.md)
+
 Multi-user SSH box that chains [[directory-fuzzing]], [[ssh-bruteforce]], and a two-stage [[sudo-abuse|sudo escalation]].
 
 ## Path

@@ -12,6 +12,8 @@ related: [[tproot]]
 
 # First Hacking
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/super-easy/first-hacking.md)
+
 Intro box demonstrating the [[vsftpd-backdoor|vsftpd 2.3.4 backdoor]] ([[cve-2011-2523]]).
 
 ## Path

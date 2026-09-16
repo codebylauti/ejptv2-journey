@@ -12,6 +12,8 @@ related: [[los-3-hackers]], [[adopting]]
 
 # Hannah Coffee
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/easy/hannah-coffee.md)
+
 Easy box that chains [[local-file-inclusion|LFI]] + [[log-poisoning]] for RCE, then a `debugfs` [[sudo-abuse]] and a `cap_setuid` [[linux-capabilities]] escalation.
 
 ## Path

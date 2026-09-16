@@ -12,6 +12,8 @@ related: [[basic-pentesting]], [[ignite]]
 
 # Simple CTF
 
+**Writeup:** [raw writeup](../../writeups/tryhackme/simple-ctf.md)
+
 Web box where a [[sql-injection|CMS Made Simple SQLi]] ([[cve-2019-9053]]) leaks credentials, leading to a [[sudo-abuse|sudo vim]] escalation.
 
 ## Path

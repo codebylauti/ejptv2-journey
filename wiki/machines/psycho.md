@@ -12,6 +12,8 @@ related: [[hannah-coffee]], [[nodeclimb]]
 
 # Psycho
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/easy/psycho.md)
+
 Easy box that chains a hidden-parameter LFI → SSH key theft → two chained `sudo` escapes.
 
 ## Path

@@ -12,6 +12,8 @@ related: [[baluhome]], [[ignite]]
 
 # Los 3 Hackers
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/easy/los-3-hackers.md)
+
 Three-user machine themed around three hacker mentalities, chaining [[sql-injection|SQLi]], a session cookie, a writable cron script, and [[linux-capabilities|Linux capabilities]].
 
 ## Path

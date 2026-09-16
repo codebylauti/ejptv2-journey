@@ -12,6 +12,8 @@ related: [[obsession]], [[simple-ctf]]
 
 # Trust
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/super-easy/trust.md)
+
 Web + SSH box ending in a [[sudo-abuse|sudo vim]] privilege escalation.
 
 ## Path

@@ -12,6 +12,8 @@ related: [[balufood]], [[hannah-coffee]]
 
 # Balulero
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/easy/balulero.md)
+
 Easy box that chains an exposed `.env` file, a `sudo php` escape, and a group-owned script that runs as root.
 
 ## Path

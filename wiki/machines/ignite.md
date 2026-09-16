@@ -12,6 +12,8 @@ related: [[simple-ctf]], [[los-3-hackers]]
 
 # Ignite
 
+**Writeup:** [raw writeup](../../writeups/tryhackme/ignite.md)
+
 TryHackMe box exploiting Fuel CMS 1.4 ([[sql-injection|SQLi]] + RCE) and a hardcoded database credential.
 
 ## Path

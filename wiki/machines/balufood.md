@@ -12,6 +12,8 @@ related: [[hannah-coffee]], [[los-3-hackers]]
 
 # Balufood
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/easy/balufood.md)
+
 Easy box where the whole chain is **leaked credentials + reuse**: an HTML comment leaks the SSH user, the Flask `secret_key` is reused as another user's password, and a `.bashrc` alias stores the root password.
 
 ## Path

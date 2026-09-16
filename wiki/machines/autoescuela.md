@@ -12,6 +12,8 @@ related: [[nodeclimb]], [[baluhome]]
 
 # Autoescuela
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/easy/autoescuela.md)
+
 Easy box that chains an exposed Node.js Inspector (V8 debugger) for the foothold, then React2Shell ([[cve-2025-55182]]) against a root-owned Next.js app for the escalation.
 
 ## Path

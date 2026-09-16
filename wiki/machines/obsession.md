@@ -12,6 +12,8 @@ related: [[vacaciones]], [[hedgehog]]
 
 # Obsession
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/super-easy/obsession.md)
+
 Chains anonymous FTP, web source hints, SSH brute-force, and a [[sudo-abuse|sudo vim]] escalation.
 
 ## Path

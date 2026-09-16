@@ -12,6 +12,8 @@ related: [[balulero]], [[obsession]]
 
 # Nodeclimb
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/easy/nodeclimb.md)
+
 Easy box that chains anonymous FTP → a password-protected ZIP → SSH creds, then a `sudo node` writable-script escape.
 
 ## Path

@@ -147,7 +147,7 @@ www-data@d9f83c1b64d5:/home$ export TERM=xterm
 Found out there's an user: *balutin*
 
 Brute force su balutin
-[[https://github.com/Maalfer/Sudo_BruteForce/tree/83b51341975edef4c1851d583472ed252810a648]]
+https://github.com/Maalfer/Sudo_BruteForce/tree/83b51341975edef4c1851d583472ed252810a648
 
 ```sh
 python3 brute.py balutin rockyou.txt

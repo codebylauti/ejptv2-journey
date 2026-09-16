@@ -171,7 +171,7 @@ SSH PASSWORD: 60a3f3cb2811ddcea679773863baabd1c78420a13b197b16725905230589bbdb
 ```
 
 # Decrypt hash
-[[https://hashes.com/en/decrypt/hash]]
+https://hashes.com/en/decrypt/hash
 60a3f3cb2811ddcea679773863baabd1c78420a13b197b16725905230589bbdb:1983@1983
 # SSH login
 ```sh

@@ -12,6 +12,8 @@ related: [[nodeclimb]], [[ignite]]
 
 # Wargames
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/easy/wargames.md)
+
 Easy *WarGames*-themed box: an interactive "WOPR" text game leaks SSH credentials via [[prompt-injection]], and a custom SUID binary (`godmode`) is the root route.
 
 ## Path

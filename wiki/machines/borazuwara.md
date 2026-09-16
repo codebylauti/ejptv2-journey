@@ -12,6 +12,8 @@ related: [[vacaciones]], [[hedgehog]]
 
 # Borazuwara CTF
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/super-easy/borazuwara-ctf.md)
+
 Web box where the SSH username is hidden in an image file.
 
 ## Path

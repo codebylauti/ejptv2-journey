@@ -12,6 +12,8 @@ related: [[obsession]], [[hedgehog]]
 
 # Vacaciones
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/super-easy/vacaciones.md)
+
 Two-user SSH chain with an email-based password handoff and a [[sudo-abuse|sudo ruby]] escalation.
 
 ## Path

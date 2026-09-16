@@ -65,3 +65,7 @@ No broken wikilinks or orphan pages among `wiki/` pages (all 29 techniques, 12 t
 ## [2026-09-16] update | Lint fixes
 
 Created tool pages [[telnet]] and [[searchsploit]] (previously flagged missing) and added them to `index.md`. Adopted the convention that `tools:` frontmatter only lists entries with a `wiki/tools/` page: removed the abused interpreters/utilities (`ftp`, `php`, `node`, `perl`, `python3`, `strings`, `objdump`, `ltrace`) from the `tools:` field of [[tproot]], [[obsession]], [[balulero]], [[nodeclimb]], [[psycho]], [[autoescuela]], [[wargames]], [[ftp-anonymous-login]], [[log-poisoning]], [[node-inspector-rce]], and [[suid-enumeration]] (their usage remains documented in the technique bodies). Reconciled [[source-code-disclosure]] cross-references: added it to the `techniques:` of [[los-3-hackers]] and [[simple-ctf]], and added [[guided-pentest]] to its "Seen in" list. Backfilled incomplete "Seen in" lists on the [[gobuster]], [[ffuf]], [[dirb]], and [[curl]] tool pages.
+
+## [2026-09-16] update | Link machine pages to raw writeups
+
+Added a `**Writeup:** [raw writeup](<relative path>)` link to all 22 machine pages, pointing each to its corresponding raw writeup in `writeups/`. Documented the convention in `AGENTS.md` (wiki↔wiki links use wikilinks; links to raw sources use relative Markdown paths).

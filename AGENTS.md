@@ -31,7 +31,7 @@ wiki/
 ## Page conventions
 
 - **Filenames**: lowercase kebab-case (`los-3-hackers.md`, `cve-2011-2523.md`).
-- **Links**: use Obsidian wikilinks `[[page-name]]` (no extension, no path).
+- **Links**: use Obsidian wikilinks `[[page-name]]` (no extension, no path) for wiki↔wiki links. Link to raw sources (`writeups/`, `assets/`) with a relative Markdown path, e.g. `[raw writeup](../../writeups/...)`.
 - **Frontmatter** (YAML) on every page. Use the `type` to select the right schema:
 
 ```yaml
@@ -98,7 +98,7 @@ Every concept maps to one or more eJPTv2 domains. Use exactly these tags:
 
 1. Read the raw source in `writeups/` (and view any referenced images in `assets/` separately if needed).
 2. Discuss key takeaways with the user; confirm what to emphasize.
-3. Write/update a `wiki/machines/<name>.md` page with frontmatter + concise walkthrough.
+3. Write/update a `wiki/machines/<name>.md` page with frontmatter + concise walkthrough, including a link back to the raw writeup directly under the title: `**Writeup:** [raw writeup](<relative path>)`.
 4. Update relevant `wiki/techniques/`, `wiki/tools/`, and `wiki/cves/` pages (add the machine to their "Seen in" lists).
 5. Update `wiki/platforms/<platform>.md` (append the box to its list).
 6. Update `index.md` (add/refresh entries) and append an entry to `log.md`.

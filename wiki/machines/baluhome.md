@@ -12,6 +12,8 @@ related: [[adopting]], [[los-3-hackers]]
 
 # BaluHome
 
+**Writeup:** [raw writeup](../../writeups/dockerlabs/hard/balu-home.md)
+
 Hard Node.js (Express) box chaining stored [[xss-and-cookie-theft|XSS → cookie theft]], an uploaded [[reverse-shells|Node reverse shell]], `su` brute-force, and a [[cron-job-abuse|writable backup script]].
 
 ## Path
