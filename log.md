@@ -77,3 +77,11 @@ Ingested [[grooti]] (easy). Added technique pages [[mysql-enumeration]] and [[va
 ## [2026-09-16] ingest | DockerLabs easy — Winfake
 
 Ingested [[winfake]] (easy). Added technique page [[acrostic-decoding]]. Updated [[source-code-disclosure]] (CSS-property/hidden-attribute vector), [[hardcoded-credentials]] (weak root password), [[ssh-bruteforce]], [[information-gathering]] (banner-spoofing correlation note), and tool pages [[hydra]], [[curl]], [[gobuster]]. Updated [[dockerlabs]], `index.md`, `roadmap.md`, and [[overview]].
+
+## [2026-09-16] lint | Vault lint pass
+
+Cross-reference scan (mechanical + semantic) after [[winfake]]: 903 `[[...]]` occurrences across 80 distinct targets → **0 broken wikilinks, 0 orphan pages** (all 79 wiki pages indexed + inbound-linked). Frontmatter: all `tools:`/`techniques:` values map to a real page, all `type:` values valid. All 24 machine `**Writeup:**` links resolve (typo'd raw filenames `hegdgehog`, `break-my-ssh`, `borazuwara-ctf`, `balu-home`, `guided-pentest-infraestructure` are correctly mirrored). Fixed two stale `roadmap.md` "Covered" lists — added [[mysql-enumeration]] (Assessment) and [[value-brute-force]] (Web Pentest) to match [[overview]]. Noted, no fix (immutable/raw): 1 malformed `[[#IP]]` link in `writeups/tryhackme/basic-pentesting.md`; 2 unreferenced images in `assets/` (`…231453.png`, `…231520.png`).
+
+## [2026-09-16] update | Ignore .obsidian
+
+Expanded `.gitignore` to ignore `.obsidian/` wholesale and untracked its 7 files (`app.json`, `appearance.json`, `core-plugins.json`, plus Catppuccin & Omarchy `manifest.json`/`theme.css`) so per-machine Obsidian state stops polluting commits.

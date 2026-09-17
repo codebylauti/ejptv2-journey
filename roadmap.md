@@ -55,7 +55,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **24 boxes done**, soli
 
 ### 1. Assessment Methodologies (`ejpt:assessment`)
 
-**Covered:** [[information-gathering]], [[directory-fuzzing]], [[parameter-fuzzing]], [[smb-enumeration]], [[source-code-disclosure]], [[acrostic-decoding]], [[ftp-anonymous-login]], [[hardcoded-credentials]].
+**Covered:** [[information-gathering]], [[directory-fuzzing]], [[parameter-fuzzing]], [[smb-enumeration]], [[mysql-enumeration]], [[source-code-disclosure]], [[acrostic-decoding]], [[ftp-anonymous-login]], [[hardcoded-credentials]].
 
 **Gaps & next steps**
 - [ ] Practice full enumeration toolchain: `nmap` script engine, `nikto`, `dirb`, SNMP/WinRM enumeration.
@@ -83,7 +83,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **24 boxes done**, soli
 
 ### 4. Web Application Penetration Testing (`ejpt:web-pentest`)
 
-**Covered:** [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[local-file-inclusion]], [[log-poisoning]], [[parameter-fuzzing]], [[directory-fuzzing]], [[source-code-disclosure]], [[acrostic-decoding]], [[prototype-pollution]], [[prompt-injection]].
+**Covered:** [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[local-file-inclusion]], [[log-poisoning]], [[parameter-fuzzing]], [[value-brute-force]], [[directory-fuzzing]], [[source-code-disclosure]], [[acrostic-decoding]], [[prototype-pollution]], [[prompt-injection]].
 
 **Gaps & next steps**
 - [ ] **Command injection**, **LFI/RFI** beyond the basics ([[local-file-inclusion]] done; extend to RFI and `/proc` tricks).

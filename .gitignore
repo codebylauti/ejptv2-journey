@@ -1,7 +1,5 @@
-# Obsidian runtime state (regenerated on every session)
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
-.obsidian/graph.json
+# Obsidian vault config & runtime state (regenerated per session/machine)
+.obsidian/
 
 # OS noise
 .DS_Store
