@@ -32,6 +32,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[autoescuela]] — Node.js Inspector RCE → React2Shell (CVE-2025-55182)
 - [[wargames]] — prompt injection → hash crack → SUID binary
 - [[grooti]] — MySQL leak → value brute-force → SSH brute-force → cron
+- [[winfake]] — CSS username leak → SSH brute-force → acrostic root password
 
 ### intermediate
 

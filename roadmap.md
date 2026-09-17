@@ -4,7 +4,7 @@ eJPTv2 learning path. Track your progress here — update checkboxes as you comp
 
 ## Current state
 
-See [[overview]] for the detailed snapshot. Bottom line: **23 boxes done**, solid fundamentals in enumeration, brute-force, and privilege escalation; light on Active Directory, network attacks, and deep web pentesting.
+See [[overview]] for the detailed snapshot. Bottom line: **24 boxes done**, solid fundamentals in enumeration, brute-force, and privilege escalation; light on Active Directory, network attacks, and deep web pentesting.
 
 ---
 
@@ -32,6 +32,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **23 boxes done**, soli
 - [x] [[autoescuela]] — Node.js Inspector RCE → React2Shell (CVE-2025-55182)
 - [x] [[wargames]] — prompt injection → hash crack → SUID binary
 - [x] [[grooti]] — MySQL leak → value brute-force → SSH brute-force → cron
+- [x] [[winfake]] — CSS username leak → SSH brute-force → acrostic root password
 
 ### DockerLabs — intermediate
 
@@ -54,7 +55,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **23 boxes done**, soli
 
 ### 1. Assessment Methodologies (`ejpt:assessment`)
 
-**Covered:** [[information-gathering]], [[directory-fuzzing]], [[parameter-fuzzing]], [[smb-enumeration]], [[source-code-disclosure]], [[ftp-anonymous-login]], [[hardcoded-credentials]].
+**Covered:** [[information-gathering]], [[directory-fuzzing]], [[parameter-fuzzing]], [[smb-enumeration]], [[source-code-disclosure]], [[acrostic-decoding]], [[ftp-anonymous-login]], [[hardcoded-credentials]].
 
 **Gaps & next steps**
 - [ ] Practice full enumeration toolchain: `nmap` script engine, `nikto`, `dirb`, SNMP/WinRM enumeration.
@@ -82,7 +83,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **23 boxes done**, soli
 
 ### 4. Web Application Penetration Testing (`ejpt:web-pentest`)
 
-**Covered:** [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[local-file-inclusion]], [[log-poisoning]], [[parameter-fuzzing]], [[directory-fuzzing]], [[source-code-disclosure]], [[prototype-pollution]], [[prompt-injection]].
+**Covered:** [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[local-file-inclusion]], [[log-poisoning]], [[parameter-fuzzing]], [[directory-fuzzing]], [[source-code-disclosure]], [[acrostic-decoding]], [[prototype-pollution]], [[prompt-injection]].
 
 **Gaps & next steps**
 - [ ] **Command injection**, **LFI/RFI** beyond the basics ([[local-file-inclusion]] done; extend to RFI and `/proc` tricks).

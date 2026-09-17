@@ -73,3 +73,7 @@ Added a `**Writeup:** [raw writeup](<relative path>)` link to all 22 machine pag
 ## [2026-09-16] ingest | DockerLabs easy — Grooti
 
 Ingested [[grooti]] (easy). Added technique pages [[mysql-enumeration]] and [[value-brute-force]], and tool page [[mysql]]. Updated [[source-code-disclosure]], [[hardcoded-credentials]], [[directory-fuzzing]], [[ssh-bruteforce]], [[cron-job-abuse]], [[reverse-shells]], [[gobuster]], [[curl]], [[hydra]], [[netcat]], [[dockerlabs]], `index.md`, `roadmap.md`, and [[overview]].
+
+## [2026-09-16] ingest | DockerLabs easy — Winfake
+
+Ingested [[winfake]] (easy). Added technique page [[acrostic-decoding]]. Updated [[source-code-disclosure]] (CSS-property/hidden-attribute vector), [[hardcoded-credentials]] (weak root password), [[ssh-bruteforce]], [[information-gathering]] (banner-spoofing correlation note), and tool pages [[hydra]], [[curl]], [[gobuster]]. Updated [[dockerlabs]], `index.md`, `roadmap.md`, and [[overview]].

@@ -35,6 +35,7 @@ Content catalog. Read this first on any query.
 - [[autoescuela]] — Node.js Inspector RCE → React2Shell (CVE-2025-55182)
 - [[wargames]] — prompt injection → hash crack → SUID binary
 - [[grooti]] — MySQL leak → value brute-force → SSH brute-force → cron
+- [[winfake]] — CSS username leak → SSH brute-force → acrostic root password
 
 ### DockerLabs — intermediate
 
@@ -82,6 +83,7 @@ Content catalog. Read this first on any query.
 - [[source-code-disclosure]] — comments, backups, configs, metadata
 - [[hardcoded-credentials]] — hardcoded/reused credentials, shell history & aliases
 - [[session-and-cookie-abuse]] — stolen/forged session tokens
+- [[acrostic-decoding]] — first letters of headings spell a hidden password
 - [[prototype-pollution]] — React2Shell: RSC Flight deserialization → Function() RCE
 - [[prompt-injection]] — AI/chatbot instruction override → data leak
 
