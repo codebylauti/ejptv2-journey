@@ -36,6 +36,10 @@ Content catalog. Read this first on any query.
 - [[wargames]] — prompt injection → hash crack → SUID binary
 - [[grooti]] — MySQL leak → value brute-force → SSH brute-force → cron
 - [[winfake]] — CSS username leak → SSH brute-force → acrostic root password
+- [[duque]] — SQLi bypass → sqlmap file-read → SSH → env SUID
+- [[injection]] — error-based SQLi → SSH → ⚠️ incomplete (privesc pending)
+- [[walkingcms]] — WordPress → wpscan brute-force → theme-editor shell → env SUID
+- [[anonymous-pingu]] — anon FTP upload → PHP shell → chained sudo (man → nmap → chown)
 
 ### DockerLabs — intermediate
 
@@ -74,6 +78,7 @@ Content catalog. Read this first on any query.
 - [[linux-capabilities]] — getcap + cap_setuid abuse
 - [[writable-etc-passwd]] — password-less root entry
 - [[reverse-shells]] — bash/Node reverse shells
+- [[web-shell-upload]] — write a shell to the webroot → RCE
 - [[node-inspector-rce]] — RCE via Node.js Inspector (CDP, port 9229)
 - [[smb-enumeration]] — enum4linux user/share discovery
 - [[mysql-enumeration]] — MySQL/MariaDB enumeration (SHOW/DESCRIBE/SELECT)
@@ -81,6 +86,7 @@ Content catalog. Read this first on any query.
 - [[zip-cracking]] — zip2john + john on encrypted ZIPs
 - [[hash-cracking]] — raw hash → plaintext (john/hashcat + online lookup)
 - [[source-code-disclosure]] — comments, backups, configs, metadata
+- [[wordpress-enumeration]] — WP user/plugin enum + wp-login brute-force + theme-editor RCE
 - [[hardcoded-credentials]] — hardcoded/reused credentials, shell history & aliases
 - [[session-and-cookie-abuse]] — stolen/forged session tokens
 - [[acrostic-decoding]] — first letters of headings spell a hidden password
@@ -103,6 +109,8 @@ Content catalog. Read this first on any query.
 - [[netcat]] — reverse-shell listener / network utility
 - [[telnet]] — TCP client / manual banner grab
 - [[mysql]] — MySQL/MariaDB client
+- [[sqlmap]] — automated SQL injection detection & extraction
+- [[wpscan]] — WordPress scanner + login brute-forcer
 - [[gtfobins]] — sudo/SUID payload reference
 
 ## CVEs

@@ -85,3 +85,23 @@ Cross-reference scan (mechanical + semantic) after [[winfake]]: 903 `[[...]]` oc
 ## [2026-09-16] update | Ignore .obsidian
 
 Expanded `.gitignore` to ignore `.obsidian/` wholesale and untracked its 7 files (`app.json`, `appearance.json`, `core-plugins.json`, plus Catppuccin & Omarchy `manifest.json`/`theme.css`) so per-machine Obsidian state stops polluting commits.
+
+## [2026-09-18] ingest | DockerLabs easy — Duque
+
+Ingested [[duque]] (easy). Added tool page [[sqlmap]]. Updated [[sql-injection]] (time-based blind + file-read variants), [[source-code-disclosure]] (SQLi file-read vector), [[suid-enumeration]] + [[gtfobins]] (`env /bin/sh -p`), [[hardcoded-credentials]] (source-embedded creds), [[directory-fuzzing]], and tool pages [[gobuster]], [[curl]]. Updated [[dockerlabs]], `index.md`, `roadmap.md`, and [[overview]].
+
+## [2026-09-18] ingest | DockerLabs easy — Injection (INCOMPLETE)
+
+Ingested [[injection]] (easy) as **incomplete** — foothold reached (SSH as `dylan`) but privesc not solved. Marked the machine page, [[dockerlabs]], and `index.md` entries as ⚠️ incomplete. Updated [[sql-injection]] (error-based + verbose `SQLSTATE` variant), [[directory-fuzzing]] (`config.php` size-0 find), [[source-code-disclosure]] + [[hardcoded-credentials]] (MySQL `root:paso` in `config.php`), and tool pages [[sqlmap]], [[gobuster]], [[curl]]. Not counted toward the completed-box total in [[overview]].
+
+## [2026-09-18] ingest | DockerLabs easy — WalkingCMS
+
+Ingested [[walkingcms]] (easy). Added technique page [[wordpress-enumeration]] and tool page [[wpscan]]. Updated [[directory-fuzzing]] (`wordpress/` behind default page), [[reverse-shells]] (theme-editor PHP shell), [[suid-enumeration]] + [[gtfobins]] (`env /bin/sh -p`), and tool pages [[ffuf]] (directory fuzz usage), [[gobuster]]. Updated [[dockerlabs]], `index.md`, `roadmap.md`, and [[overview]].
+
+## [2026-09-18] lint | Vault lint pass
+
+Cross-reference scan after [[walkingcms]]: **0 broken wikilinks, 0 orphan pages** — all new pages ([[walkingcms]], [[wpscan]], [[wordpress-enumeration]]) are inbound-linked from `index.md`, [[dockerlabs]], and their parent pages. Frontmatter valid: `tools:`/`techniques:` values all map to real pages, `type:` values valid. Noted, no fix (immutable/raw): `writeups/dockerlabs/easy/walkingcms.md` references `![[Pasted image 20260918145030.png]]` (the "user mario" screenshot) which is **not** in `assets/` — same class of unreferenced-image issue as the Duque writeup.
+
+## [2026-09-20] ingest | DockerLabs easy — Anonymous Pingu
+
+Ingested [[anonymous-pingu]] (easy). Added technique page [[web-shell-upload]]. Updated [[sudo-abuse]] (man/nmap/chown payloads), [[writable-etc-passwd]] (`sudo chown` vector + blank-root method), [[ftp-anonymous-login]] (write/upload), [[reverse-shells]], [[directory-fuzzing]] (`upload/` find), and tool pages [[nmap]] (NSE `--script` escape), [[gobuster]], [[netcat]], [[gtfobins]] (man/nmap/chown payloads). Updated [[dockerlabs]], `index.md`, `roadmap.md`, and [[overview]].

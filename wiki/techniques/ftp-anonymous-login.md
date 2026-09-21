@@ -22,7 +22,8 @@ Password: (blank)
 
 - Text files containing usernames, passwords, or hints (e.g. `chat-gonza.txt`, `pendientes.txt` in [[obsession]]).
 - Password-protected archives (e.g. `secretitopicaron.zip` in [[nodeclimb]]) → crack with [[zip-cracking]].
+- **Write access** — if the anonymous user can `put` files, upload a web shell into the webroot and trigger it over HTTP ([[anonymous-pingu]], see [[web-shell-upload]]).
 
 ## Seen in
 
-[[obsession]], [[nodeclimb]]
+[[obsession]], [[nodeclimb]], [[anonymous-pingu]]

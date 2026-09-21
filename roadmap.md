@@ -4,7 +4,7 @@ eJPTv2 learning path. Track your progress here — update checkboxes as you comp
 
 ## Current state
 
-See [[overview]] for the detailed snapshot. Bottom line: **24 boxes done**, solid fundamentals in enumeration, brute-force, and privilege escalation; light on Active Directory, network attacks, and deep web pentesting.
+See [[overview]] for the detailed snapshot. Bottom line: **27 boxes done**, solid fundamentals in enumeration, brute-force, and privilege escalation; light on Active Directory, network attacks, and deep web pentesting.
 
 ---
 
@@ -33,6 +33,10 @@ See [[overview]] for the detailed snapshot. Bottom line: **24 boxes done**, soli
 - [x] [[wargames]] — prompt injection → hash crack → SUID binary
 - [x] [[grooti]] — MySQL leak → value brute-force → SSH brute-force → cron
 - [x] [[winfake]] — CSS username leak → SSH brute-force → acrostic root password
+- [x] [[duque]] — SQLi bypass → sqlmap file-read → SSH → env SUID
+- [ ] [[injection]] — error-based SQLi → SSH → ⚠️ incomplete (privesc pending)
+- [x] [[walkingcms]] — WordPress → wpscan brute-force → theme-editor shell → env SUID
+- [x] [[anonymous-pingu]] — anon FTP upload → PHP shell → chained sudo (man → nmap → chown)
 
 ### DockerLabs — intermediate
 
@@ -83,7 +87,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **24 boxes done**, soli
 
 ### 4. Web Application Penetration Testing (`ejpt:web-pentest`)
 
-**Covered:** [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[local-file-inclusion]], [[log-poisoning]], [[parameter-fuzzing]], [[value-brute-force]], [[directory-fuzzing]], [[source-code-disclosure]], [[acrostic-decoding]], [[prototype-pollution]], [[prompt-injection]].
+**Covered:** [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[local-file-inclusion]], [[log-poisoning]], [[parameter-fuzzing]], [[value-brute-force]], [[directory-fuzzing]], [[source-code-disclosure]], [[acrostic-decoding]], [[prototype-pollution]], [[prompt-injection]], [[wordpress-enumeration]], [[web-shell-upload]].
 
 **Gaps & next steps**
 - [ ] **Command injection**, **LFI/RFI** beyond the basics ([[local-file-inclusion]] done; extend to RFI and `/proc` tricks).

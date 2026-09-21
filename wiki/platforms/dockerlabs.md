@@ -33,6 +33,10 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[wargames]] — prompt injection → hash crack → SUID binary
 - [[grooti]] — MySQL leak → value brute-force → SSH brute-force → cron
 - [[winfake]] — CSS username leak → SSH brute-force → acrostic root password
+- [[duque]] — SQLi bypass → sqlmap file-read → SSH → env SUID
+- [[injection]] — error-based SQLi → SSH → ⚠️ *incomplete* (MySQL `root:paso` found, privesc pending)
+- [[walkingcms]] — WordPress → wpscan brute-force → theme-editor shell → env SUID
+- [[anonymous-pingu]] — anon FTP upload → PHP shell → chained sudo (man → nmap → chown)
 
 ### intermediate
 

