@@ -17,6 +17,7 @@ find / -user root -perm -4000 -print 2>/dev/null
 ```
 
 - `-perm -4000` matches the setuid bit.
+- `-perm -2000` matches the **setgid** bit instead — useful for spotting group-writable directories used by privileged services (e.g. a CI runner's `builds_dir` in [[pipepwned]]).
 - Cross-reference unusual *known* binaries (`vim`, `ruby`, `pkexec`, `env`, …) against [[gtfobins]].
 
 ## Custom SUID binaries — reverse-engineer the trigger

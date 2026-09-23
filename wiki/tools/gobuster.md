@@ -18,4 +18,4 @@ gobuster dir -u http://TARGET -w /usr/share/wordlists/dirb/common.txt -x php,htm
 
 ## Seen in
 
-[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[los-3-hackers]], [[adopting]], [[baluhome]], [[simple-ctf]], [[ignite]], [[tproot]], [[wargames]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[walkingcms]], [[anonymous-pingu]]
+[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[los-3-hackers]], [[adopting]], [[baluhome]], [[simple-ctf]], [[ignite]], [[tproot]], [[wargames]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[walkingcms]], [[anonymous-pingu]], [[pipepwned]]

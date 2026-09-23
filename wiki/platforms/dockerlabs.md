@@ -41,6 +41,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 ### intermediate
 
 - [[adopting]] — web cache deception → writable /etc/passwd
+- [[pipepwned]] — SSTI → `.env` creds → root gitlab-runner abuse
 
 ### hard
 

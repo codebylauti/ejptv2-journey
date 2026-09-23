@@ -19,6 +19,7 @@ Finding credentials that were left hardcoded or reused across accounts — in so
 - **Weak/derived root password** — `su root` succeeds with a guessable password derived from a clue (`WinServerRootFakeNews` from an [[acrostic-decoding|acrostic]]) ([[winfake]]).
 - **Source-embedded credentials** — a PHP `$database` array hardcoded with IDs, one commented `// ID vulnerable`, that a `panel.php?id=` lookup turns into working SSH creds ([[duque]]); plaintext creds dumped from a DB (`register.users`) that don't escalate ([[duque]]).
 - **DB config credentials** — `config.php` holding MySQL `root`/`paso` ([[injection]]).
+- **CI trace / env-file leak** — a debug `env` dump in a pipeline trace leaks `CI_RUNNER_TOKEN=glrt-…`, and a runner `environment_file` (`/opt/ci/.env`) leaks an SSH password for `devops` ([[pipepwned]]).
 
 ## Commands
 
@@ -30,4 +31,4 @@ grep -RniE 'pass(word)?|secret|token|key|pwd' /home /opt /var/www 2>/dev/null
 
 ## Seen in
 
-[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]]
+[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]]

@@ -105,3 +105,7 @@ Cross-reference scan after [[walkingcms]]: **0 broken wikilinks, 0 orphan pages*
 ## [2026-09-20] ingest | DockerLabs easy — Anonymous Pingu
 
 Ingested [[anonymous-pingu]] (easy). Added technique page [[web-shell-upload]]. Updated [[sudo-abuse]] (man/nmap/chown payloads), [[writable-etc-passwd]] (`sudo chown` vector + blank-root method), [[ftp-anonymous-login]] (write/upload), [[reverse-shells]], [[directory-fuzzing]] (`upload/` find), and tool pages [[nmap]] (NSE `--script` escape), [[gobuster]], [[netcat]], [[gtfobins]] (man/nmap/chown payloads). Updated [[dockerlabs]], `index.md`, `roadmap.md`, and [[overview]].
+
+## [2026-09-22] ingest | DockerLabs intermediate — PipePwned
+
+Ingested [[pipepwned]] (intermediate). Added technique pages [[server-side-template-injection]] and [[ci-cd-pipeline-abuse]]. Updated [[source-code-disclosure]] (SSTI file-read vector), [[hardcoded-credentials]] (CI trace + `.env` leak), [[directory-fuzzing]] (`/api/jobs/{id}/trace` + `/api/pipelines`), [[suid-enumeration]] (setgid `-2000` note), and tool pages [[curl]], [[ffuf]], [[gobuster]], [[dirb]]. Updated [[dockerlabs]], `index.md`, `roadmap.md`, and [[overview]].

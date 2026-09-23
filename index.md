@@ -44,6 +44,7 @@ Content catalog. Read this first on any query.
 ### DockerLabs — intermediate
 
 - [[adopting]] — web cache deception → writable /etc/passwd
+- [[pipepwned]] — SSTI → `.env` creds → root gitlab-runner abuse
 
 ### DockerLabs — hard
 
@@ -71,9 +72,11 @@ Content catalog. Read this first on any query.
 - [[suid-enumeration]] — setuid binary hunting
 - [[vsftpd-backdoor]] — CVE-2011-2523 trigger
 - [[sql-injection]] — auth bypass + CMS SQLi
+- [[server-side-template-injection]] — Jinja2 SSTI → RCE
 - [[xss-and-cookie-theft]] — stored XSS → session theft
 - [[web-cache-deception]] — cache poisoning for sensitive pages
 - [[cron-job-abuse]] — writable cron scripts
+- [[ci-cd-pipeline-abuse]] — root CI runner / writable builds_dir
 - [[group-ownership-enumeration]] — find group-writable files (find -group)
 - [[linux-capabilities]] — getcap + cap_setuid abuse
 - [[writable-etc-passwd]] — password-less root entry

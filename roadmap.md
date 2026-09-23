@@ -4,7 +4,7 @@ eJPTv2 learning path. Track your progress here — update checkboxes as you comp
 
 ## Current state
 
-See [[overview]] for the detailed snapshot. Bottom line: **27 boxes done**, solid fundamentals in enumeration, brute-force, and privilege escalation; light on Active Directory, network attacks, and deep web pentesting.
+See [[overview]] for the detailed snapshot. Bottom line: **28 boxes done**, solid fundamentals in enumeration, brute-force, and privilege escalation; light on Active Directory, network attacks, and deep web pentesting.
 
 ---
 
@@ -41,6 +41,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **27 boxes done**, soli
 ### DockerLabs — intermediate
 
 - [x] [[adopting]] — cache deception → writable /etc/passwd
+- [x] [[pipepwned]] — SSTI → `.env` creds → root gitlab-runner abuse
 
 ### DockerLabs — hard
 
@@ -76,7 +77,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **27 boxes done**, soli
 
 ### 3. Host & Network Penetration Testing (`ejpt:host-net-pentest`)
 
-**Covered:** [[ssh-bruteforce]], [[sudo-abuse]], [[suid-enumeration]], [[cron-job-abuse]], [[linux-capabilities]], [[writable-etc-passwd]], [[reverse-shells]], [[node-inspector-rce]], [[vsftpd-backdoor]], [[ssh-key-cracking]], [[zip-cracking]], [[hash-cracking]], [[hardcoded-credentials]], [[group-ownership-enumeration]], [[python-library-hijacking]], [[ftp-anonymous-login]].
+**Covered:** [[ssh-bruteforce]], [[sudo-abuse]], [[suid-enumeration]], [[cron-job-abuse]], [[linux-capabilities]], [[writable-etc-passwd]], [[reverse-shells]], [[node-inspector-rce]], [[vsftpd-backdoor]], [[ssh-key-cracking]], [[zip-cracking]], [[hash-cracking]], [[hardcoded-credentials]], [[group-ownership-enumeration]], [[python-library-hijacking]], [[ftp-anonymous-login]], [[ci-cd-pipeline-abuse]].
 
 **Gaps & next steps**
 - [ ] **Metasploit** depth — only [[guided-pentest]] touched it. Do THM "Metasploit" module.
@@ -87,10 +88,10 @@ See [[overview]] for the detailed snapshot. Bottom line: **27 boxes done**, soli
 
 ### 4. Web Application Penetration Testing (`ejpt:web-pentest`)
 
-**Covered:** [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[local-file-inclusion]], [[log-poisoning]], [[parameter-fuzzing]], [[value-brute-force]], [[directory-fuzzing]], [[source-code-disclosure]], [[acrostic-decoding]], [[prototype-pollution]], [[prompt-injection]], [[wordpress-enumeration]], [[web-shell-upload]].
+**Covered:** [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[local-file-inclusion]], [[log-poisoning]], [[parameter-fuzzing]], [[value-brute-force]], [[directory-fuzzing]], [[source-code-disclosure]], [[acrostic-decoding]], [[prototype-pollution]], [[prompt-injection]], [[wordpress-enumeration]], [[web-shell-upload]], [[server-side-template-injection]].
 
 **Gaps & next steps**
-- [ ] **Command injection**, **LFI/RFI** beyond the basics ([[local-file-inclusion]] done; extend to RFI and `/proc` tricks).
+- [ ] **Command injection**, **LFI/RFI** beyond the basics ([[local-file-inclusion]] done; extend to RFI and `/proc` tricks). SSTI is now covered via [[server-side-template-injection]].
 - [ ] **SSRF**, **IDOR**, **CSRF** — not yet seen.
 - [ ] THM "Web Fundamentals" + "OWASP Top 10" paths.
 - [ ] More DockerLabs web-focused boxes.
