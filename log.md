@@ -109,3 +109,11 @@ Ingested [[anonymous-pingu]] (easy). Added technique page [[web-shell-upload]]. 
 ## [2026-09-22] ingest | DockerLabs intermediate — PipePwned
 
 Ingested [[pipepwned]] (intermediate). Added technique pages [[server-side-template-injection]] and [[ci-cd-pipeline-abuse]]. Updated [[source-code-disclosure]] (SSTI file-read vector), [[hardcoded-credentials]] (CI trace + `.env` leak), [[directory-fuzzing]] (`/api/jobs/{id}/trace` + `/api/pipelines`), [[suid-enumeration]] (setgid `-2000` note), and tool pages [[curl]], [[ffuf]], [[gobuster]], [[dirb]]. Updated [[dockerlabs]], `index.md`, `roadmap.md`, and [[overview]].
+
+## [2026-09-23] ingest | DockerLabs intermediate — TrailPack
+
+Ingested [[trailpack]] (intermediate). Added technique pages [[mfa-bruteforce]], [[broken-access-control]], and [[command-injection]]. Updated [[session-and-cookie-abuse]] (base64 role-cookie vector), [[source-code-disclosure]] (post-exploit `main.py` read), [[hardcoded-credentials]] (in-memory `USERS` table), [[reverse-shells]] (base64 `sh -i` via command injection), [[suid-enumeration]] + [[gtfobins]] (`env /bin/sh -p`), and tool pages [[burp-suite]], [[curl]], [[gobuster]], [[netcat]]. Updated [[dockerlabs]], `index.md`, `roadmap.md`, and [[overview]].
+
+## [2026-09-23] ingest | DockerLabs intermediate — BruteShock
+
+Ingested [[bruteshock]] (intermediate). Added technique pages [[shellshock]], [[http-login-bruteforce]], [[arithmetic-injection]], and [[exim-lpe]], plus CVE page [[cve-2014-6271]]. Updated [[hash-cracking]] (crypt(3) yescrypt `$y$` + `--format=crypt`), [[writable-etc-passwd]] (sudo `dos2unix -f -n` overwrite), [[sudo-abuse]] (arithmetic-injection/exim/dos2unix payloads), [[reverse-shells]] (`nohup` detach note), [[hardcoded-credentials]] (backup shadow-hash leak), and tool pages [[john-the-ripper]], [[hydra]], [[gtfobins]], [[curl]], [[gobuster]], [[netcat]]. Updated [[dockerlabs]], `index.md`, `roadmap.md`, and [[overview]].

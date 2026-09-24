@@ -42,6 +42,8 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 
 - [[adopting]] — web cache deception → writable /etc/passwd
 - [[pipepwned]] — SSTI → `.env` creds → root gitlab-runner abuse
+- [[trailpack]] — MFA brute-force → cookie role tampering → command injection → SUID env
+- [[bruteshock]] — Shellshock → 5-hop sudo chain (arithmetic injection → exim → dos2unix)
 
 ### hard
 

@@ -23,4 +23,4 @@ curl -X POST http://TARGET/ \
 
 ## Seen in
 
-[[autoescuela]] (Node inspector `/json` + React2Shell exploit), [[los-3-hackers]], [[psycho]], [[balufood]], [[balulero]], [[hannah-coffee]], [[wargames]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]] (SSTI payloads via `-d name=`/`-d ref=` POST)
+[[autoescuela]] (Node inspector `/json` + React2Shell exploit), [[los-3-hackers]], [[psycho]], [[balufood]], [[balulero]], [[hannah-coffee]], [[wargames]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]] (SSTI payloads via `-d name=`/`-d ref=` POST), [[trailpack]] (crafted `user_info` cookie against `/api/me` + `/accounting`), [[bruteshock]] (Shellshock `User-Agent` payload)

@@ -20,6 +20,8 @@ Finding credentials that were left hardcoded or reused across accounts — in so
 - **Source-embedded credentials** — a PHP `$database` array hardcoded with IDs, one commented `// ID vulnerable`, that a `panel.php?id=` lookup turns into working SSH creds ([[duque]]); plaintext creds dumped from a DB (`register.users`) that don't escalate ([[duque]]).
 - **DB config credentials** — `config.php` holding MySQL `root`/`paso` ([[injection]]).
 - **CI trace / env-file leak** — a debug `env` dump in a pipeline trace leaks `CI_RUNNER_TOKEN=glrt-…`, and a runner `environment_file` (`/opt/ci/.env`) leaks an SSH password for `devops` ([[pipepwned]]).
+- **In-memory user table** — `main.py` holds a `USERS` dict with plaintext passwords written beside `hash_pw(...)` calls ([[trailpack]]).
+- **Backup files leaking password hashes** — `/var/backups/darksblack/.darksblack.txt` holds a `/etc/shadow`-format yescrypt hash, cracked to a password ([[bruteshock]]).
 
 ## Commands
 
@@ -31,4 +33,4 @@ grep -RniE 'pass(word)?|secret|token|key|pwd' /home /opt /var/www 2>/dev/null
 
 ## Seen in
 
-[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]]
+[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]]

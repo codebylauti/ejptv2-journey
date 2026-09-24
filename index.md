@@ -45,6 +45,8 @@ Content catalog. Read this first on any query.
 
 - [[adopting]] — web cache deception → writable /etc/passwd
 - [[pipepwned]] — SSTI → `.env` creds → root gitlab-runner abuse
+- [[trailpack]] — MFA brute-force → cookie role tampering → command injection → SUID env
+- [[bruteshock]] — Shellshock → 5-hop sudo chain (arithmetic injection → exim → dos2unix)
 
 ### DockerLabs — hard
 
@@ -63,16 +65,22 @@ Content catalog. Read this first on any query.
 - [[directory-fuzzing]] — gobuster/dirb web path enumeration
 - [[parameter-fuzzing]] — ffuf hidden parameter discovery
 - [[value-brute-force]] — brute-force a param value, spot the odd response by length
+- [[mfa-bruteforce]] — brute-force an OTP/MFA code, bypass the rate limiter via X-Forwarded-For
 - [[local-file-inclusion]] — LFI path traversal
 - [[log-poisoning]] — inject code into logs → RCE via LFI
 - [[ssh-bruteforce]] — hydra dictionary attack on SSH
+- [[http-login-bruteforce]] — hydra http-post-form on a web login form
 - [[ftp-anonymous-login]] — anonymous FTP file access
 - [[sudo-abuse]] — sudo -l + GTFOBins escalation
+- [[exim-lpe]] — exim `${run{}}` expansion via sudo
 - [[python-library-hijacking]] — shadow Python imports via writable path
 - [[suid-enumeration]] — setuid binary hunting
 - [[vsftpd-backdoor]] — CVE-2011-2523 trigger
 - [[sql-injection]] — auth bypass + CMS SQLi
 - [[server-side-template-injection]] — Jinja2 SSTI → RCE
+- [[command-injection]] — shell metacharacter injection → RCE
+- [[arithmetic-injection]] — bash `-eq` arithmetic eval → command substitution
+- [[shellshock]] — CVE-2014-6271 env-var function definition → RCE
 - [[xss-and-cookie-theft]] — stored XSS → session theft
 - [[web-cache-deception]] — cache poisoning for sensitive pages
 - [[cron-job-abuse]] — writable cron scripts
@@ -92,6 +100,7 @@ Content catalog. Read this first on any query.
 - [[wordpress-enumeration]] — WP user/plugin enum + wp-login brute-force + theme-editor RCE
 - [[hardcoded-credentials]] — hardcoded/reused credentials, shell history & aliases
 - [[session-and-cookie-abuse]] — stolen/forged session tokens
+- [[broken-access-control]] — client-side role/authorization tampering → privilege escalation
 - [[acrostic-decoding]] — first letters of headings spell a hidden password
 - [[prototype-pollution]] — React2Shell: RSC Flight deserialization → Function() RCE
 - [[prompt-injection]] — AI/chatbot instruction override → data leak
@@ -119,6 +128,7 @@ Content catalog. Read this first on any query.
 ## CVEs
 
 - [[cve-2011-2523]] — vsftpd 2.3.4 backdoor
+- [[cve-2014-6271]] — Shellshock (bash env-var function RCE)
 - [[cve-2019-9053]] — CMS Made Simple SQLi
 - [[cve-2018-16763]] — Fuel CMS RCE
 - [[cve-2021-47980]] — Fuel CMS SQLi

