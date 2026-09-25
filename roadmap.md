@@ -4,7 +4,7 @@ eJPTv2 learning path. Track your progress here — update checkboxes as you comp
 
 ## Current state
 
-See [[overview]] for the detailed snapshot. Bottom line: **30 boxes done**, solid fundamentals in enumeration, brute-force, and privilege escalation; light on Active Directory, network attacks, and deep web pentesting.
+See [[overview]] for the detailed snapshot. Bottom line: **31 boxes done**, solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered ([[littlepivoting]]), still light on Active Directory and deep web pentesting.
 
 ---
 
@@ -44,6 +44,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **30 boxes done**, soli
 - [x] [[pipepwned]] — SSTI → `.env` creds → root gitlab-runner abuse
 - [x] [[trailpack]] — MFA brute-force → cookie role tampering → command injection → SUID env
 - [x] [[bruteshock]] — Shellshock → 5-hop sudo chain (arithmetic injection → exim → dos2unix)
+- [x] [[littlepivoting]] — 3-host pivoting chain (LFI → SSH brute-force → su → sudo ×3 → Metasploit routing)
 
 ### DockerLabs — hard
 
@@ -79,12 +80,12 @@ See [[overview]] for the detailed snapshot. Bottom line: **30 boxes done**, soli
 
 ### 3. Host & Network Penetration Testing (`ejpt:host-net-pentest`)
 
-**Covered:** [[ssh-bruteforce]], [[sudo-abuse]], [[arithmetic-injection]], [[exim-lpe]], [[suid-enumeration]], [[cron-job-abuse]], [[linux-capabilities]], [[writable-etc-passwd]], [[reverse-shells]], [[node-inspector-rce]], [[vsftpd-backdoor]], [[ssh-key-cracking]], [[zip-cracking]], [[hash-cracking]], [[hardcoded-credentials]], [[group-ownership-enumeration]], [[python-library-hijacking]], [[ftp-anonymous-login]], [[ci-cd-pipeline-abuse]].
+**Covered:** [[ssh-bruteforce]], [[sudo-abuse]], [[arithmetic-injection]], [[exim-lpe]], [[suid-enumeration]], [[cron-job-abuse]], [[linux-capabilities]], [[writable-etc-passwd]], [[reverse-shells]], [[node-inspector-rce]], [[vsftpd-backdoor]], [[ssh-key-cracking]], [[zip-cracking]], [[hash-cracking]], [[hardcoded-credentials]], [[group-ownership-enumeration]], [[python-library-hijacking]], [[ftp-anonymous-login]], [[ci-cd-pipeline-abuse]], [[pivoting]], [[port-forwarding]], [[metasploit-pivoting]], [[su-brute-force]].
 
 **Gaps & next steps**
-- [ ] **Metasploit** depth — only [[guided-pentest]] touched it. Do THM "Metasploit" module.
+- [ ] **Metasploit** — depth growing: [[littlepivoting]] exercised `route`/`portfwd`/`shell_to_meterpreter` ([[metasploit-pivoting]]). Still do THM "Metasploit" module.
 - [ ] **Password cracking** — raw-hash cracking now covered via [[hash-cracking]] ([[wargames]]); `NTLM`/`/etc/shadow` OS hashes still untried.
-- [ ] **Pivoting & lateral movement** — `chisel`/`proxychains`, SSH tunneling (almost untouched; localhost-only service discovery seen in [[autoescuela]]).
+- [ ] **Pivoting & lateral movement** — Metasploit routing covered ([[littlepivoting]]). **Next: manual chisel/proxychains + SSH tunneling** ([[pivoting]], [[port-forwarding]], [[chisel]], [[proxychains]] — documented, not yet exercised end-to-end).
 - [ ] **Active Directory** — SMB relays, Kerberoasting, LLMNR poisoning.
 - [ ] Complete more DockerLabs **intermediate/hard** boxes.
 

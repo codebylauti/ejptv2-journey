@@ -47,6 +47,7 @@ Content catalog. Read this first on any query.
 - [[pipepwned]] — SSTI → `.env` creds → root gitlab-runner abuse
 - [[trailpack]] — MFA brute-force → cookie role tampering → command injection → SUID env
 - [[bruteshock]] — Shellshock → 5-hop sudo chain (arithmetic injection → exim → dos2unix)
+- [[littlepivoting]] — 3-host pivoting chain (LFI → SSH brute-force → su → sudo ×3 → Metasploit routing)
 
 ### DockerLabs — hard
 
@@ -104,6 +105,10 @@ Content catalog. Read this first on any query.
 - [[acrostic-decoding]] — first letters of headings spell a hidden password
 - [[prototype-pollution]] — React2Shell: RSC Flight deserialization → Function() RCE
 - [[prompt-injection]] — AI/chatbot instruction override → data leak
+- [[pivoting]] — multi-hop lateral movement via dual-homed hosts
+- [[port-forwarding]] — SSH `-L`/`-R`/`-D` + Metasploit `portfwd` + chisel tunneling
+- [[su-brute-force]] — brute-force a local user's password via `su` (Linux-Su-Force.sh)
+- [[metasploit-pivoting]] — Metasploit `route`/`autoroute` + `portfwd` multi-hop routing
 
 ## Tools
 
@@ -124,6 +129,9 @@ Content catalog. Read this first on any query.
 - [[sqlmap]] — automated SQL injection detection & extraction
 - [[wpscan]] — WordPress scanner + login brute-forcer
 - [[gtfobins]] — sudo/SUID payload reference
+- [[chisel]] — TCP/UDP tunnel over HTTP (pivoting without SSH)
+- [[proxychains]] — route arbitrary tools through a SOCKS proxy
+- [[ssh]] — remote login + port forwarding (`-L`/`-R`/`-D`)
 
 ## CVEs
 

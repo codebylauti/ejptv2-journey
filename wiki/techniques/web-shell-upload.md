@@ -26,4 +26,4 @@ Gaining RCE by writing a malicious script into a web-accessible directory, then 
 
 ## Seen in
 
-[[anonymous-pingu]]
+[[anonymous-pingu]], [[littlepivoting]] (PHP reverse shell uploaded to `/uploads/payload.php` on `upload`)

@@ -13,6 +13,7 @@ Network mapper for host discovery, port scanning, and service/version detection.
 ```sh
 nmap -sV -sC -p- TARGET      # version + default scripts, all ports
 nmap -sS -sV TARGET          # SYN scan + version
+nmap -sn 10.10.10.0/24       # host discovery / ping sweep (who's alive)
 nmap -Pn -n -vv -p- TARGET   # no ping, no DNS, verbose, all ports
 ```
 

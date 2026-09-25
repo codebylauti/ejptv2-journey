@@ -28,4 +28,4 @@ hydra -l admin -P rockyou.txt TARGET http-post-form \
 
 ## Seen in
 
-[[breakmyssh]], [[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[basic-pentesting]], [[simple-ctf]], [[grooti]], [[winfake]], [[bruteshock]]
+[[breakmyssh]], [[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[basic-pentesting]], [[simple-ctf]], [[grooti]], [[winfake]], [[bruteshock]], [[littlepivoting]] (SSH `manchi`/`mario`, second host via `portfwd`'d `127.0.0.1:2200`)

