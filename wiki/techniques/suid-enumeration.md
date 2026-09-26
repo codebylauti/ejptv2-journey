@@ -40,4 +40,4 @@ if (strcmp(argv[1], "KEY") == 0) system("/bin/bash");
 
 ## Seen in
 
-[[trust]] (`sudo vim`), [[ignite]] (SUID scan), [[wargames]] (`godmode --wopr` → root shell), [[duque]] (`env /bin/sh -p` → root shell), [[walkingcms]] (`env /bin/sh -p` → root shell), [[trailpack]] (`env /bin/sh -p` → root shell)
+[[trust]] (`sudo vim`), [[ignite]] (SUID scan), [[wargames]] (`godmode --wopr` → root shell), [[duque]] (`env /bin/sh -p` → root shell), [[walkingcms]] (`env /bin/sh -p` → root shell), [[trailpack]] (`env /bin/sh -p` → root shell), [[madeyes-castle]] (`/srv/time-turner/swagger` → `system("uname -p")` → [[path-hijacking]])

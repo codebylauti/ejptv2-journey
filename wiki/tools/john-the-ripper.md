@@ -22,8 +22,11 @@ john hash.txt
 echo 'user:$y$j9T$salt$hash:...' > hash.txt
 john --format=crypt --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 john --show hash.txt
+
+# mangling rules (best64) — catch word123 / Word! derived from a base word
+john --format=raw-sha512 --wordlist=rockyou.txt --rules=best64 hash.txt
 ```
 
 ## Seen in
 
-[[basic-pentesting]], [[nodeclimb]], [[bruteshock]] (yescrypt shadow hash, `--format=crypt`)
+[[basic-pentesting]], [[nodeclimb]], [[bruteshock]] (yescrypt shadow hash, `--format=crypt`), [[madeyes-castle]] (SHA-512 + `--rules=best64` → `wingardiumleviosa123`)

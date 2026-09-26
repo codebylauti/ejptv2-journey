@@ -32,13 +32,15 @@ sqlmap -u "http://TARGET/login" --data="user=a&pass=b" -p user --file-read "/pat
 - `--time-sec=N` sleep seconds for time-based (integer only; `1` is the floor).
 - `--file-read` read a file, `--file-write`/`--os-shell` escalate to write/shell.
 - `--batch` non-interactive (auto-answer prompts).
+- `--union-cols=N` / `--union-char="zzz"` — hand sqlmap the column count and a *string* probe when a target rejects `NULL` in a reflected `text` column.
 
 ## Notes
 
 - **Time-based blind is the slowest technique.** Every character costs a `SLEEP` round-trip; lower `--time-sec` to speed up, and **do not** add `--threads` (it breaks the timing oracle).
 - Always run manual detection first (e.g. `1=1` vs `1=2`) to *understand* the bug; let sqlmap do the grunt extraction.
 - `--file-read` needs the DB user to have `FILE` privilege; if it works, `--os-shell` (write + exec) may too.
+- **When sqlmap says "not injectable" but manual injection works**, it's usually one of: (a) the app reflects data in a custom JSON error that sqlmap's UNION detector can't map, (b) the reflected column is `text not null` and sqlmap's `NULL` probing fails, or (c) a resumed session mis-pins the DBMS (testing MySQL templates on a SQLite backend). Fix with `--dbms`, `--union-cols`, `--union-char`, `--no-cast` — or just do it by hand ([[madeyes-castle]]).
 
 ## Seen in
 
-[[duque]] (time-based blind + `--file-read` on `panel.php`), [[injection]] (error-based dump of `register.users`)
+[[duque]] (time-based blind + `--file-read` on `panel.php`), [[injection]] (error-based dump of `register.users`), [[madeyes-castle]] (SQLite UNION — sqlmap failed on NULL/JSON reflection; manual `sqlite_master` + `group_concat` won)

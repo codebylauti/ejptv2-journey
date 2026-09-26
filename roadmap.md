@@ -4,7 +4,7 @@ eJPTv2 learning path. Track your progress here — update checkboxes as you comp
 
 ## Current state
 
-See [[overview]] for the detailed snapshot. Bottom line: **31 boxes done**, solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered ([[littlepivoting]]), still light on Active Directory and deep web pentesting.
+See [[overview]] for the detailed snapshot. Bottom line: **32 boxes done**, solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered ([[littlepivoting]]), SQLi/SUID/vhost depth growing, still light on Active Directory and deep web pentesting.
 
 ---
 
@@ -56,6 +56,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **31 boxes done**, soli
 - [x] [[simple-ctf]] — CMS SQLi → sudo vim
 - [x] [[ignite]] — Fuel CMS SQLi + RCE
 - [x] [[guided-pentest]] — UnrealIRCd via Metasploit
+- [x] [[madeyes-castle]] — vhost → SQLite UNION SQLi → SHA-512 crack → pico sudo → SUID PATH-hijack
 
 ---
 
@@ -80,18 +81,18 @@ See [[overview]] for the detailed snapshot. Bottom line: **31 boxes done**, soli
 
 ### 3. Host & Network Penetration Testing (`ejpt:host-net-pentest`)
 
-**Covered:** [[ssh-bruteforce]], [[sudo-abuse]], [[arithmetic-injection]], [[exim-lpe]], [[suid-enumeration]], [[cron-job-abuse]], [[linux-capabilities]], [[writable-etc-passwd]], [[reverse-shells]], [[node-inspector-rce]], [[vsftpd-backdoor]], [[ssh-key-cracking]], [[zip-cracking]], [[hash-cracking]], [[hardcoded-credentials]], [[group-ownership-enumeration]], [[python-library-hijacking]], [[ftp-anonymous-login]], [[ci-cd-pipeline-abuse]], [[pivoting]], [[port-forwarding]], [[metasploit-pivoting]], [[su-brute-force]].
+**Covered:** [[ssh-bruteforce]], [[sudo-abuse]], [[arithmetic-injection]], [[exim-lpe]], [[suid-enumeration]], [[cron-job-abuse]], [[linux-capabilities]], [[writable-etc-passwd]], [[reverse-shells]], [[node-inspector-rce]], [[vsftpd-backdoor]], [[ssh-key-cracking]], [[zip-cracking]], [[hash-cracking]], [[hardcoded-credentials]], [[group-ownership-enumeration]], [[python-library-hijacking]], [[ftp-anonymous-login]], [[ci-cd-pipeline-abuse]], [[pivoting]], [[port-forwarding]], [[metasploit-pivoting]], [[su-brute-force]], [[path-hijacking]].
 
 **Gaps & next steps**
 - [ ] **Metasploit** — depth growing: [[littlepivoting]] exercised `route`/`portfwd`/`shell_to_meterpreter` ([[metasploit-pivoting]]). Still do THM "Metasploit" module.
-- [ ] **Password cracking** — raw-hash cracking now covered via [[hash-cracking]] ([[wargames]]); `NTLM`/`/etc/shadow` OS hashes still untried.
+- [ ] **Password cracking** — raw-hash cracking covered via [[hash-cracking]] ([[wargames]], [[madeyes-castle]] with `--rules=best64`); `NTLM`/`/etc/shadow` OS hashes still untried.
 - [ ] **Pivoting & lateral movement** — Metasploit routing covered ([[littlepivoting]]). **Next: manual chisel/proxychains + SSH tunneling** ([[pivoting]], [[port-forwarding]], [[chisel]], [[proxychains]] — documented, not yet exercised end-to-end).
 - [ ] **Active Directory** — SMB relays, Kerberoasting, LLMNR poisoning.
 - [ ] Complete more DockerLabs **intermediate/hard** boxes.
 
 ### 4. Web Application Penetration Testing (`ejpt:web-pentest`)
 
-**Covered:** [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[broken-access-control]], [[local-file-inclusion]], [[log-poisoning]], [[parameter-fuzzing]], [[value-brute-force]], [[mfa-bruteforce]], [[directory-fuzzing]], [[source-code-disclosure]], [[acrostic-decoding]], [[prototype-pollution]], [[prompt-injection]], [[wordpress-enumeration]], [[web-shell-upload]], [[server-side-template-injection]], [[command-injection]], [[shellshock]], [[http-login-bruteforce]].
+**Covered:** [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[broken-access-control]], [[local-file-inclusion]], [[log-poisoning]], [[parameter-fuzzing]], [[value-brute-force]], [[mfa-bruteforce]], [[directory-fuzzing]], [[source-code-disclosure]], [[acrostic-decoding]], [[prototype-pollution]], [[prompt-injection]], [[wordpress-enumeration]], [[web-shell-upload]], [[server-side-template-injection]], [[command-injection]], [[shellshock]], [[http-login-bruteforce]], [[virtual-hosting]].
 
 **Gaps & next steps**
 - [ ] **LFI/RFI** beyond the basics ([[local-file-inclusion]] done; extend to RFI and `/proc` tricks). SSTI covered via [[server-side-template-injection]]; command injection covered via [[command-injection]].

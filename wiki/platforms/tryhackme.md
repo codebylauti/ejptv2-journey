@@ -14,3 +14,4 @@ Guided rooms and CTFs covering a wide range of topics.
 - [[simple-ctf]] — CMS Made Simple SQLi → sudo vim
 - [[ignite]] — Fuel CMS SQLi + RCE → config credential
 - [[guided-pentest]] — UnrealIRCd via Metasploit
+- [[madeyes-castle]] — vhost → SQLite UNION SQLi → SHA-512 crack → pico sudo → SUID PATH-hijack

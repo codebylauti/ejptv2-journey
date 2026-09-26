@@ -23,6 +23,17 @@ Recovering the plaintext behind a raw password hash (MD5, SHA-1, SHA-256, …).
 printf '%s' "candidate" | sha256sum   # compare against the target hash
 ```
 
+## Mangling rules (best64)
+
+When the plaintext isn't a raw dictionary word, apply John's built-in `best64` rule — ~64 common mutations (capitalize, append `123`/`!`, etc.):
+
+```sh
+john --format=raw-sha512 --wordlist=rockyou.txt --rules=best64 hash.txt
+```
+
+- `--rules=best64` catches `Password1`, `word123`, … derived from a base word + a common twist.
+- A target's own note may literally hint it: *"password uses best64"* ([[madeyes-castle]] → `wingardiumleviosa123`).
+
 ## OS password hashes (`/etc/shadow`)
 
 Shadow entries use `crypt(3)` formats, identified by their `$id$` prefix:
@@ -44,4 +55,4 @@ yescrypt is memory-hard → wordlist (+ rules), not brute force.
 
 ## Seen in
 
-[[wargames]], [[bruteshock]]
+[[wargames]], [[bruteshock]], [[madeyes-castle]] (SHA-512 + `--rules=best64`)

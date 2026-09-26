@@ -59,6 +59,7 @@ Content catalog. Read this first on any query.
 - [[simple-ctf]] — CMS Made Simple SQLi → sudo vim
 - [[ignite]] — Fuel CMS SQLi + RCE → config credential
 - [[guided-pentest]] — UnrealIRCd via Metasploit
+- [[madeyes-castle]] — vhost → SQLite UNION SQLi → SHA-512 crack → pico sudo → SUID PATH-hijack
 
 ## Techniques
 
@@ -109,6 +110,8 @@ Content catalog. Read this first on any query.
 - [[port-forwarding]] — SSH `-L`/`-R`/`-D` + Metasploit `portfwd` + chisel tunneling
 - [[su-brute-force]] — brute-force a local user's password via `su` (Linux-Su-Force.sh)
 - [[metasploit-pivoting]] — Metasploit `route`/`autoroute` + `portfwd` multi-hop routing
+- [[virtual-hosting]] — vhost discovery behind a default page
+- [[path-hijacking]] — hijack a relative command via `PATH` (SUID/sudo/cron)
 
 ## Tools
 

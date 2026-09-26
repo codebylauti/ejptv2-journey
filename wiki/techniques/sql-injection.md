@@ -18,6 +18,7 @@ Injecting SQL into input fields or query parameters to bypass auth or extract da
 - **Time-based / param SQLi** — Fuel CMS `col=` parameter ([[cve-2021-47980]]) ([[ignite]]).
 - **Time-based blind** — the server returns no error and no data; a `SLEEP(n)` payload makes TRUE/FALSE observable via response *timing* ([[duque]]).
 - **File read via SQLi** — `sqlmap --file-read` (or `LOAD_FILE`) reads server files through the injection point, turning a blind SQLi into [[source-code-disclosure]] ([[duque]]).
+- **UNION-based (SQLite)** — a login reflects the matched row into a JSON error, so `' UNION SELECT …` echoes your data. SQLite metadata lives in `sqlite_master` (`name`, `sql` for schema), and `group_concat()` dumps every row at once ([[madeyes-castle]]).
 
 ## Notes
 
@@ -29,4 +30,4 @@ Injecting SQL into input fields or query parameters to bypass auth or extract da
 
 ## Seen in
 
-[[los-3-hackers]], [[simple-ctf]], [[ignite]], [[duque]], [[injection]]
+[[los-3-hackers]], [[simple-ctf]], [[ignite]], [[duque]], [[injection]], [[madeyes-castle]]
