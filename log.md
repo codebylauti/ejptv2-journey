@@ -137,3 +137,15 @@ Cross-reference scan after the [[littlepivoting]] manual re-run (code-stripped, 
 ## [2026-09-28] update | Add arp-scan tool page; fix raw writeup typos
 
 Created [[arp-scan]] tool page (L2 same-subnet sweep vs `nmap -sn` comparison) and indexed it; linked it from [[information-gathering]] and added it to the `tools:` frontmatter of [[littlepivoting]] — closes the flag raised in the previous lint pass. Also fixed two typos in the raw source `writeups/dockerlabs/intermediate/little-pivoting-manual.md` (`sockat` → `socat`, `Porsts` → `Ports`): first deliberate edit to an immutable source, made on request — the two `![[Pasted image …]]`/image gap remains untouched.
+
+## [2026-09-28] lint | Correction — false-positive image gap
+
+Retracting the "missing image" flag from the [[littlepivoting]] manual-run ingest and lint entries: `![[Pasted image 20260925151635.png]]` **does** exist in `assets/` — the check grepped file *contents* instead of filenames, so the binary PNG never matched. Verified properly: 27 unique image references across `writeups/` ↔ 27 files in `assets/`, **0 missing**. Real (minor) finding instead: 3 **unreferenced** assets — `Pasted image 20260910231453.png`, `Pasted image 20260910231520.png`, `Pasted image 20260922171335.png`. Takes the place of the earlier "2 unreferenced images" note from 2026-09-16.
+
+## [2026-09-28] ingest | TryHackMe — Madeye's Castle (root flag confirmed)
+
+Re-ingested `writeups/tryhackme/madeyes-castle.md` after the raw source's `Root.txt` objective was ticked `[x]` — the wiki already documented the full path to root ([[madeyes-castle]] step 8), so this reconciles source and wiki rather than adding a new stage. Incremental captures missed on 2026-09-26: [[sqlmap]] `--code=403` (custom "injection worked" status) + `--technique=B`; a dead-end **login-form user enumeration** oracle (script waiting for 403, every username returned 200) noted on [[sql-injection]] and as a machine takeaway; `authorized_keys` persistence noted via [[ssh]].
+
+## [2026-09-28] lint | Vault lint pass
+
+After the [[madeyes-castle]] re-ingest: **0 broken wikilinks, 0 orphan pages, 0 frontmatter issues, 0 broken writeup links**, all 113 wiki pages indexed. Image audit re-run by filename (not contents): 27 refs ↔ 27 assets, 0 missing, 3 unreferenced (see correction entry above).

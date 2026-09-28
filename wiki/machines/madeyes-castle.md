@@ -20,7 +20,7 @@ Harry Potter–themed box: vhost discovery → SQLi on a SQLite login → crack 
 
 1. **Recon** — `nmap`: `22` SSH, `80` Apache, `139`/`445` SMB.
 2. **Vhost** — source comment hints *"virtual hosting"* + `hogwartz-castle.thm` → add to `/etc/hosts` ([[virtual-hosting]]).
-3. **SQLi** — login leaks data in a JSON error; `' OR '1'='1` reveals user "Lucas Washington" + *"keep digging"*. UNION-based on SQLite: `sqlite_master` → `users` table (`name, password, admin, notes`), `group_concat` dumps all 40 users ([[sql-injection]]).
+3. **SQLi** — login leaks data in a JSON error; `' OR '1'='1` reveals user "Lucas Washington" + *"keep digging"*. `sqlmap --technique=B --code=403 --level 3 --risk 3` fingerprints SQLite; UNION-based then leaks `sqlite_master` → `users` table (`name, password, admin, notes`), `group_concat` dumps all 40 users ([[sql-injection]], [[sqlmap]]).
 4. **Crack** — Harry Turner's note: *"password uses best64"* → `john --rules=best64` → `wingardiumleviosa123` ([[hash-cracking]]).
 5. **SMB** — `smbmap`/`smbclient` on `sambashare` → `spellnames.txt` + `.notes.txt` hints ([[smb-enumeration]]); hydra SMB finds `avadakedavra:123456`.
 6. **Foothold** — SSH as `harry` → User1.
@@ -42,3 +42,5 @@ Harry Potter–themed box: vhost discovery → SQLi on a SQLite login → crack 
 - "password uses best64" = John `--rules=best64` ([[hash-cracking]]).
 - `pico` is the "historical text editor" → GTFOBins escape ([[sudo-abuse]]).
 - SUID binary calling `system("uname -p")` (relative) = [[path-hijacking]]; `srand(time(NULL))` = reveal + re-run in the same second.
+- **Check your oracles before scripting them**: a written `users-enumeration-login.py` waiting for a 403 "valid user" code was useless here — every username returned 200. The SQLi itself dumped the user table, which was the better enumerator all along.
+- Persistent access: drop an `ssh-keygen`'d `authorized_keys` entry instead of re-typing the cracked password ([[ssh]]).

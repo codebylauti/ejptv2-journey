@@ -27,6 +27,7 @@ Injecting SQL into input fields or query parameters to bypass auth or extract da
 - A **verbose DB error** is a gift — it confirms SQLi *and* leaks the query structure in one request. Grep for `SQLSTATE`/`1064`.
 - When a bare `'` does *not* 500 the page, don't rule out SQLi — it may be **blind**. Test TRUE vs FALSE (`1=1` vs `1=2`) or timing (`SLEEP`).
 - The four detection channels: error-based, UNION-based, boolean-blind, time-blind — time is the slowest, so prefer it last.
+- **User enumeration via the login form** (differing status/body per username, e.g. 403 = valid) is a tempting side-channel — but only if the app actually *behaves* differently. On [[madeyes-castle]] every username returned 200, so the oracle was dead; the UNION dump of `users` was the real enumerator.
 
 ## Seen in
 

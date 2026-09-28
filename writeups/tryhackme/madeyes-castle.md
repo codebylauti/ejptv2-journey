@@ -1,7 +1,7 @@
 # Objectives
 * [x] User1.txt
 * [x] User2.txt
-* [ ] Root.txt
+* [x] Root.txt
 # IP
 10.64.128.29
 # Reconnaissance

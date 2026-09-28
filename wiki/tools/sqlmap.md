@@ -33,6 +33,7 @@ sqlmap -u "http://TARGET/login" --data="user=a&pass=b" -p user --file-read "/pat
 - `--file-read` read a file, `--file-write`/`--os-shell` escalate to write/shell.
 - `--batch` non-interactive (auto-answer prompts).
 - `--union-cols=N` / `--union-char="zzz"` — hand sqlmap the column count and a *string* probe when a target rejects `NULL` in a reflected `text` column.
+- `--code=N` — the HTTP status that means *"injection worked"* (sqlmap baselines normal responses otherwise). Set it when success looks different, e.g. `--code=403` on a login that errors with 403 ([[madeyes-castle]]).
 
 ## Notes
 
