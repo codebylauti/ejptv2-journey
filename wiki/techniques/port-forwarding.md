@@ -1,7 +1,7 @@
 ---
 type: technique
 tags: [ejpt:host-net-pentest]
-tools: [metasploit, ssh, chisel]
+tools: [metasploit, ssh, chisel, socat]
 cves: []
 related: [[pivoting]], [[metasploit-pivoting]]
 ---
@@ -35,6 +35,10 @@ Key insight: through a `-D` tunnel, **`127.0.0.1` is resolved from the SSH serve
 
 Reverse SOCKS/port forwarding over HTTP/WebSocket — see [[chisel]].
 
+## Socat relays
+
+`socat tcp-l:PORT,fork,reuseaddr tcp:NEXT-HOP:PORT` is the manual "static pipe" — chain one per hop to carry a listener (or a reverse shell path) back through the network. See [[socat]].
+
 ## Debugging a tunnel chain
 
 - **"Connection refused"** = host reachable, but the port is closed (nothing listening).
@@ -43,4 +47,4 @@ Reverse SOCKS/port forwarding over HTTP/WebSocket — see [[chisel]].
 
 ## Seen in
 
-[[littlepivoting]] (Metasploit `portfwd`, plus SSH `-D`/`-L`/`-R` discussion)
+[[littlepivoting]] — Metasploit `portfwd` in the first run; chisel reverse SOCKS + [[socat]] relays in the manual re-run. SSH `-D`/`-L`/`-R` discussed but not yet used on a box.

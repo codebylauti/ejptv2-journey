@@ -16,6 +16,7 @@ hydra -l <user> -P /usr/share/wordlists/rockyou.txt ssh://TARGET -t 4
 
 - `-l` single login, `-L` list; `-P` password list.
 - `-t` tasks; keep low (e.g. 4) for SSH to avoid throttling.
+- **Through a SOCKS tunnel:** wrap the whole command — `proxychains hydra -l <user> -P rockyou.txt TARGET ssh` ([[proxychains]]).
 
 ## HTTP form brute force (`http-post-form`)
 
@@ -28,4 +29,4 @@ hydra -l admin -P rockyou.txt TARGET http-post-form \
 
 ## Seen in
 
-[[breakmyssh]], [[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[basic-pentesting]], [[simple-ctf]], [[grooti]], [[winfake]], [[bruteshock]], [[littlepivoting]] (SSH `manchi`/`mario`, second host via `portfwd`'d `127.0.0.1:2200`), [[madeyes-castle]] (`smb2` brute-force → `avadakedavra:123456`)
+[[breakmyssh]], [[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[basic-pentesting]], [[simple-ctf]], [[grooti]], [[winfake]], [[bruteshock]], [[littlepivoting]] (SSH `manchi`/`mario`, second host via `portfwd`'d `127.0.0.1:2200`; manual re-run via `proxychains`), [[madeyes-castle]] (`smb2` brute-force → `avadakedavra:123456`)

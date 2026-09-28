@@ -15,6 +15,7 @@ gobuster dir -u http://TARGET -w /usr/share/wordlists/dirb/common.txt -x php,htm
 ```
 
 - `dir` mode enumerates paths; `-x` appends extensions; `--exclude-length` filters noise.
+- **Through a SOCKS tunnel:** add `--proxy socks5://127.0.0.1:1080` (gobuster speaks SOCKS natively — no [[proxychains]] needed).
 
 ## Seen in
 

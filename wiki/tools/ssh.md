@@ -29,4 +29,4 @@ No route-back needed — the SSH pipe is two-way.
 
 ## Seen in
 
-[[littlepivoting]] (SSH login to `inclusion`/`trust`; `-D`/`-L`/`-R` discussion)
+[[littlepivoting]] (SSH login to `inclusion`/`trust`; `-D`/`-L`/`-R` discussion; manual re-run logged into `trust` with `proxychains ssh`)

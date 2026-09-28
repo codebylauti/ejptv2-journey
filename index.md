@@ -47,7 +47,7 @@ Content catalog. Read this first on any query.
 - [[pipepwned]] — SSTI → `.env` creds → root gitlab-runner abuse
 - [[trailpack]] — MFA brute-force → cookie role tampering → command injection → SUID env
 - [[bruteshock]] — Shellshock → 5-hop sudo chain (arithmetic injection → exim → dos2unix)
-- [[littlepivoting]] — 3-host pivoting chain (LFI → SSH brute-force → su → sudo ×3 → Metasploit routing)
+- [[littlepivoting]] — 3-host pivoting chain, done twice (Metasploit routing + manual chisel/socat/proxychains)
 
 ### DockerLabs — hard
 
@@ -133,6 +133,7 @@ Content catalog. Read this first on any query.
 - [[wpscan]] — WordPress scanner + login brute-forcer
 - [[gtfobins]] — sudo/SUID payload reference
 - [[chisel]] — TCP/UDP tunnel over HTTP (pivoting without SSH)
+- [[socat]] — bidirectional TCP relay (listener/`reverse-shell` chains through hops)
 - [[proxychains]] — route arbitrary tools through a SOCKS proxy
 - [[ssh]] — remote login + port forwarding (`-L`/`-R`/`-D`)
 

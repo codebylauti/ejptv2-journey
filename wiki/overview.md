@@ -23,7 +23,7 @@ Current state of the cybersecurity learning vault.
 
 ## Notable gaps (see [[roadmap]])
 
-- **Pivoting** now covered via [[littlepivoting]] (Metasploit `route`/`portfwd` — [[metasploit-pivoting]], [[pivoting]], [[port-forwarding]]). **Remaining:** manual chisel/proxychains + SSH tunneling (documented, not yet exercised).
+- **Pivoting** covered twice via [[littlepivoting]]: Metasploit `route`/`portfwd` ([[metasploit-pivoting]]) and a fully manual re-run with [[chisel]] + [[proxychains]] + [[socat]]. **Remaining:** SSH tunneling (`-D`/`-L`/`-R`, documented not yet exercised).
 - **Active Directory / network-level attacks** still minimal.
 - Metasploit now used beyond [[guided-pentest]] (full pivoting in [[littlepivoting]]).
 - No hands-on **password cracking of OS hashes** (`/etc/shadow`, NTLM) — raw-hash cracking is now covered via [[hash-cracking]] ([[wargames]]), but OS credential-store hashes remain untried.

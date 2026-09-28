@@ -44,7 +44,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[pipepwned]] — SSTI → `.env` creds → root gitlab-runner abuse
 - [[trailpack]] — MFA brute-force → cookie role tampering → command injection → SUID env
 - [[bruteshock]] — Shellshock → 5-hop sudo chain (arithmetic injection → exim → dos2unix)
-- [[littlepivoting]] — 3-host pivoting chain (LFI → SSH brute-force → su → sudo ×3 → Metasploit routing)
+- [[littlepivoting]] — 3-host pivoting chain (LFI → SSH brute-force → su → sudo ×3 → Metasploit routing), re-run manual with chisel/socat/proxychains
 
 ### hard
 

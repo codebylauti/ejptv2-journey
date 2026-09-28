@@ -44,7 +44,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **32 boxes done**, soli
 - [x] [[pipepwned]] — SSTI → `.env` creds → root gitlab-runner abuse
 - [x] [[trailpack]] — MFA brute-force → cookie role tampering → command injection → SUID env
 - [x] [[bruteshock]] — Shellshock → 5-hop sudo chain (arithmetic injection → exim → dos2unix)
-- [x] [[littlepivoting]] — 3-host pivoting chain (LFI → SSH brute-force → su → sudo ×3 → Metasploit routing)
+- [x] [[littlepivoting]] — 3-host pivoting chain (LFI → SSH brute-force → su → sudo ×3 → Metasploit routing), re-run manual (chisel/socat/proxychains)
 
 ### DockerLabs — hard
 
@@ -86,7 +86,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **32 boxes done**, soli
 **Gaps & next steps**
 - [ ] **Metasploit** — depth growing: [[littlepivoting]] exercised `route`/`portfwd`/`shell_to_meterpreter` ([[metasploit-pivoting]]). Still do THM "Metasploit" module.
 - [ ] **Password cracking** — raw-hash cracking covered via [[hash-cracking]] ([[wargames]], [[madeyes-castle]] with `--rules=best64`); `NTLM`/`/etc/shadow` OS hashes still untried.
-- [ ] **Pivoting & lateral movement** — Metasploit routing covered ([[littlepivoting]]). **Next: manual chisel/proxychains + SSH tunneling** ([[pivoting]], [[port-forwarding]], [[chisel]], [[proxychains]] — documented, not yet exercised end-to-end).
+- [ ] **Pivoting & lateral movement** — Metasploit routing covered ([[littlepivoting]]), and the manual re-run now exercises [[chisel]] + [[proxychains]] + [[socat]] end-to-end ([[pivoting]], [[port-forwarding]]). **Next: SSH tunneling** (`-D`/`-L`/`-R` — documented, not yet exercised on a box).
 - [ ] **Active Directory** — SMB relays, Kerberoasting, LLMNR poisoning.
 - [ ] Complete more DockerLabs **intermediate/hard** boxes.
 
