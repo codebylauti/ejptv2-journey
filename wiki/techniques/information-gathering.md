@@ -23,7 +23,7 @@ On a lab with several subnets, map the topology before scanning blindly:
 - `ip a` / `hostname -I` — your own interfaces and IPs (find the subnet you're on).
 - `ip route` — which networks you can reach (and the gateway).
 - `nmap -sn <net>` — ping sweep to find live hosts on that subnet.
-- `arp-scan -I <iface> --localnet` — layer-2 sweep of the *directly connected* subnet (shows MACs; no route needed).
+- [[arp-scan]] `--localnet` — layer-2 sweep of the *directly connected* subnet (shows MACs; no route needed).
 
 Or, from a shell, the classic one-liner: `for i in $(seq 254); do ping -c1 -W1 <net>.$i & done | grep from`.
 

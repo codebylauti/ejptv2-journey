@@ -116,6 +116,7 @@ Content catalog. Read this first on any query.
 ## Tools
 
 - [[nmap]] — scanner
+- [[arp-scan]] — layer-2 host discovery (same-subnet ARP sweep)
 - [[curl]] — HTTP client
 - [[gobuster]] — directory brute-forcer
 - [[dirb]] — directory brute-forcer

