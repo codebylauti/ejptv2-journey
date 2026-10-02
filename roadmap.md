@@ -4,7 +4,7 @@ eJPTv2 learning path. Track your progress here — update checkboxes as you comp
 
 ## Current state
 
-See [[overview]] for the detailed snapshot. Bottom line: **35 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered ([[littlepivoting]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), still light on Active Directory and deep web pentesting.
+See [[overview]] for the detailed snapshot. Bottom line: **37 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered ([[littlepivoting]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), pcap traffic analysis now a documented technique ([[pcap-analysis]], via [[analyst]]), still light on Active Directory and deep web pentesting.
 
 ---
 
@@ -39,6 +39,8 @@ See [[overview]] for the detailed snapshot. Bottom line: **35 boxes done** acros
 - [x] [[walkingcms]] — WordPress → wpscan brute-force → theme-editor shell → env SUID
 - [x] [[anonymous-pingu]] — anon FTP upload → PHP shell → chained sudo (man → nmap → chown)
 - [x] [[internal]] — 303 vhost leak → WAF blacklist bypass → reverse shell → leaked wordlist → vaultctl
+- [x] [[flynn]] — default SSH creds → sudo `env`
+- [x] [[analyst]] — pcap triage → captured SSH creds → sudo ALL
 
 ### DockerLabs — intermediate
 
@@ -70,7 +72,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **35 boxes done** acros
 
 ### 1. Assessment Methodologies (`ejpt:assessment`)
 
-**Covered:** [[information-gathering]], [[directory-fuzzing]], [[parameter-fuzzing]], [[smb-enumeration]], [[mysql-enumeration]], [[source-code-disclosure]], [[acrostic-decoding]], [[ftp-anonymous-login]], [[hardcoded-credentials]].
+**Covered:** [[information-gathering]], [[directory-fuzzing]], [[parameter-fuzzing]], [[smb-enumeration]], [[mysql-enumeration]], [[source-code-disclosure]], [[pcap-analysis]], [[acrostic-decoding]], [[ftp-anonymous-login]], [[hardcoded-credentials]].
 
 **Gaps & next steps**
 - [ ] Practice full enumeration toolchain: `nmap` script engine, `nikto`, `dirb`, SNMP/WinRM enumeration.
@@ -82,7 +84,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **35 boxes done** acros
 **Covered:** [[smb-enumeration]] (light).
 
 **Gaps & next steps**
-- [ ] Study auditing fundamentals: `netstat`, `tcpdump`, `wireshark`, `nmap` NSE.
+- [ ] Study auditing fundamentals: `netstat`, `tcpdump`, `wireshark`, `nmap` NSE. (Partial: CLI capture analysis now covered via [[tshark]]/[[pcap-analysis]] on [[analyst]] — still no live sniffing with `tcpdump` or the Wireshark GUI.)
 - [ ] Practice Linux/Windows service and network auditing labs.
 
 ### 3. Host & Network Penetration Testing (`ejpt:host-net-pentest`)

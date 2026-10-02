@@ -43,6 +43,8 @@ Content catalog. Read this first on any query.
 - [[walkingcms]] — WordPress → wpscan brute-force → theme-editor shell → env SUID
 - [[anonymous-pingu]] — anon FTP upload → PHP shell → chained sudo (man → nmap → chown)
 - [[internal]] — 303 vhost leak → WAF blacklist bypass → reverse shell → leaked wordlist → vaultctl
+- [[flynn]] — default SSH creds → sudo `env`
+- [[analyst]] — pcap triage (tshark) → captured SSH creds → sudo ALL
 
 ### DockerLabs — intermediate
 
@@ -107,6 +109,7 @@ Content catalog. Read this first on any query.
 - [[zip-cracking]] — zip2john + john on encrypted ZIPs
 - [[hash-cracking]] — raw hash → plaintext (john/hashcat + online lookup)
 - [[source-code-disclosure]] — comments, backups, configs, metadata
+- [[pcap-analysis]] — reconstruct an attack from a capture (tshark filters, follow streams)
 - [[wordpress-enumeration]] — WP user/plugin enum + wp-login brute-force + theme-editor RCE
 - [[hardcoded-credentials]] — hardcoded/reused credentials, shell history & aliases
 - [[session-and-cookie-abuse]] — stolen/forged session tokens
@@ -132,6 +135,7 @@ Content catalog. Read this first on any query.
 - [[hydra]] — login brute-forcer
 - [[john-the-ripper]] — hash/key cracker
 - [[burp-suite]] — intercepting proxy
+- [[tshark]] — CLI packet capture analyzer (pcap triage)
 - [[metasploit]] — exploitation framework
 - [[searchsploit]] — Exploit-DB search
 - [[enum4linux]] — SMB enumerator

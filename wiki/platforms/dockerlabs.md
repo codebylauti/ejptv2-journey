@@ -39,6 +39,8 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[walkingcms]] — WordPress → wpscan brute-force → theme-editor shell → env SUID
 - [[anonymous-pingu]] — anon FTP upload → PHP shell → chained sudo (man → nmap → chown)
 - [[internal]] — 303 vhost leak → WAF blacklist bypass → reverse shell → leaked wordlist → vaultctl
+- [[flynn]] — default SSH creds (`flynn:flynn`) → sudo `env`
+- [[analyst]] — pcap triage (tshark) → captured SSH password → sudo ALL
 
 ### intermediate
 
