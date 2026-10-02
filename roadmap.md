@@ -4,7 +4,7 @@ eJPTv2 learning path. Track your progress here — update checkboxes as you comp
 
 ## Current state
 
-See [[overview]] for the detailed snapshot. Bottom line: **32 boxes done**, solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered ([[littlepivoting]]), SQLi/SUID/vhost depth growing, still light on Active Directory and deep web pentesting.
+See [[overview]] for the detailed snapshot. Bottom line: **35 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered ([[littlepivoting]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), still light on Active Directory and deep web pentesting.
 
 ---
 
@@ -20,6 +20,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **32 boxes done**, soli
 - [x] [[obsession]] — anonymous FTP → sudo vim
 - [x] [[vacaciones]] — comment usernames → sudo ruby
 - [x] [[borazuwara]] — image metadata → sudo group
+- [x] [[acme]] — SSH banner creds → SUID bash
 
 ### DockerLabs — easy
 
@@ -37,6 +38,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **32 boxes done**, soli
 - [ ] [[injection]] — error-based SQLi → SSH → ⚠️ incomplete (privesc pending)
 - [x] [[walkingcms]] — WordPress → wpscan brute-force → theme-editor shell → env SUID
 - [x] [[anonymous-pingu]] — anon FTP upload → PHP shell → chained sudo (man → nmap → chown)
+- [x] [[internal]] — 303 vhost leak → WAF blacklist bypass → reverse shell → leaked wordlist → vaultctl
 
 ### DockerLabs — intermediate
 
@@ -58,6 +60,10 @@ See [[overview]] for the detailed snapshot. Bottom line: **32 boxes done**, soli
 - [x] [[guided-pentest]] — UnrealIRCd via Metasploit
 - [x] [[madeyes-castle]] — vhost → SQLite UNION SQLi → SHA-512 crack → pico sudo → SUID PATH-hijack
 
+### Hack The Box
+
+- [x] [[cap]] — IDOR → pcap credential leak → FTP/SSH → python `cap_setuid`
+
 ---
 
 ## eJPTv2 domains — coverage & next steps
@@ -68,7 +74,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **32 boxes done**, soli
 
 **Gaps & next steps**
 - [ ] Practice full enumeration toolchain: `nmap` script engine, `nikto`, `dirb`, SNMP/WinRM enumeration.
-- [ ] Web + OSINT: `whatweb`, `wpscan`, DNS enumeration.
+- [ ] Web + OSINT: `whatweb` (first use on [[cap]]), `wpscan`, DNS enumeration.
 - [ ] Do more DockerLabs **easy** boxes to build enumeration fluency.
 
 ### 2. Host & Network Auditing (`ejpt:auditing`)

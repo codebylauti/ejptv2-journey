@@ -22,6 +22,9 @@ Finding credentials that were left hardcoded or reused across accounts — in so
 - **CI trace / env-file leak** — a debug `env` dump in a pipeline trace leaks `CI_RUNNER_TOKEN=glrt-…`, and a runner `environment_file` (`/opt/ci/.env`) leaks an SSH password for `devops` ([[pipepwned]]).
 - **In-memory user table** — `main.py` holds a `USERS` dict with plaintext passwords written beside `hash_pw(...)` calls ([[trailpack]]).
 - **Backup files leaking password hashes** — `/var/backups/darksblack/.darksblack.txt` holds a `/etc/shadow`-format yescrypt hash, cracked to a password ([[bruteshock]]).
+- **Service banner / MOTD leak** — connecting to SSH with *any* username prints a pre-auth maintenance banner containing a working user/password pair ([[acme]]). Telnet/FTP banners are the same class of target — always open a connection and read the full banner before brute-forcing.
+- **Password file left on disk** — a dedicated wordlist of 20 candidate passwords (`/opt/.vault_pass.txt`) ready to feed `hydra -P`. Found wordlists beat rockyou: the box curated them for you ([[internal]]).
+- **Cleartext protocol capture (pcap)** — a downloadable network capture containing FTP/HTTP-auth traffic in plain text: `strings <pcap> | grep -E 'USER|PASS'` → `USER nathan` / `PASS Buck3tH4TF0RM3!`. Any file the app lets you download may be someone's session ([[cap]]).
 
 ## Commands
 
@@ -33,4 +36,4 @@ grep -RniE 'pass(word)?|secret|token|key|pwd' /home /opt /var/www 2>/dev/null
 
 ## Seen in
 
-[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]]
+[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]]

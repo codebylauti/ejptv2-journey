@@ -21,4 +21,4 @@ ffuf -u "http://TARGET/FUZZ" -w /usr/share/seclists/Discovery/Web-Content/direct
 
 ## Seen in
 
-[[hannah-coffee]] (hidden `studio` parameter discovery), [[psycho]] (hidden `secret` parameter), [[walkingcms]] (root directory fuzz → `wordpress/`), [[pipepwned]] (numeric job-ID fuzz `/api/jobs/FUZZ/trace` + endpoint fuzz `/api/FUZZ`), [[littlepivoting]] ([[local-file-inclusion]] fuzz with `LFI-Jhaddix.txt`, filtered by `-fs`/`-fw`)
+[[hannah-coffee]] (hidden `studio` parameter discovery), [[psycho]] (hidden `secret` parameter), [[walkingcms]] (root directory fuzz → `wordpress/`), [[pipepwned]] (numeric job-ID fuzz `/api/jobs/FUZZ/trace` + endpoint fuzz `/api/FUZZ`), [[littlepivoting]] ([[local-file-inclusion]] fuzz with `LFI-Jhaddix.txt`, filtered by `-fs`/`-fw`), [[cap]] (IDOR ID-space sweep `/data/FUZZ` with `3-digits-000-999.txt`, `-fc 302`)

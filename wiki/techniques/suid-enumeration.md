@@ -40,4 +40,4 @@ if (strcmp(argv[1], "KEY") == 0) system("/bin/bash");
 
 ## Seen in
 
-[[trust]] (`sudo vim`), [[ignite]] (SUID scan), [[wargames]] (`godmode --wopr` → root shell), [[duque]] (`env /bin/sh -p` → root shell), [[walkingcms]] (`env /bin/sh -p` → root shell), [[trailpack]] (`env /bin/sh -p` → root shell), [[madeyes-castle]] (`/srv/time-turner/swagger` → `system("uname -p")` → [[path-hijacking]])
+[[trust]] (`sudo vim`), [[ignite]] (SUID scan), [[wargames]] (`godmode --wopr` → root shell), [[duque]] (`env /bin/sh -p` → root shell), [[walkingcms]] (`env /bin/sh -p` → root shell), [[trailpack]] (`env /bin/sh -p` → root shell), [[madeyes-castle]] (`/srv/time-turner/swagger` → `system("uname -p")` → [[path-hijacking]]), [[acme]] (`/usr/bin/bash -p` — a SUID *shell* itself, the fastest possible find), [[internal]] (`/usr/local/bin/vaultctl` — custom SUID that drops straight to root when the *right user* runs it, so pair the find with a credential hunt)

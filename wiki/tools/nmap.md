@@ -21,6 +21,7 @@ nmap -Pn -n -vv -p- TARGET   # no ping, no DNS, verbose, all ports
 - `-p-` scans all 65535 ports. The *default* scan only covers the top ~1000, so uncommon services (e.g. the Node.js Inspector on 9229 in [[autoescuela]]) are invisible without it.
 - Services bound to `127.0.0.1` (loopback) never show up in *any* external scan — they're only discoverable from a foothold inside the host.
 - `--script` (NSE) isn't only for scanning — a custom `.nse` running `os.execute` can double as a `sudo` escape to drop a shell ([[anonymous-pingu]]).
+- `-sC` includes `http-robots.txt`, which prints disallowed paths from `robots.txt` directly in the scan output — e.g. `/migration_notes.txt` on [[acme]]. Always curl what it reports.
 - **Through a SOCKS tunnel:** `proxychains nmap -sT -Pn -n TARGET` — SYN scans and ICMP don't proxy, so force TCP connect and skip ping ([[proxychains]]).
 
 ## Seen in

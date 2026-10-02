@@ -23,7 +23,8 @@ hydra -l <user> -P /usr/share/wordlists/rockyou.txt ssh://TARGET -t 4
 
 - Root with a weak password ([[breakmyssh]] → `estrella`).
 - A username leaked from web source or SMB, paired with `rockyou.txt`.
+- A username found on the box paired with a **password file found next to it** — always grep the filesystem for wordlists before reaching for rockyou (`/opt/.vault_pass.txt` cracked `vault` on the first hit in [[internal]]).
 
 ## Seen in
 
-[[breakmyssh]], [[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[basic-pentesting]], [[simple-ctf]], [[grooti]], [[winfake]], [[littlepivoting]] (`manchi:lovely`, `mario:chocolate`)
+[[breakmyssh]], [[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[basic-pentesting]], [[simple-ctf]], [[grooti]], [[winfake]], [[littlepivoting]] (`manchi:lovely`, `mario:chocolate`), [[internal]] (`vault:Yk8$pZ5@cN4!` via a leaked password file)
