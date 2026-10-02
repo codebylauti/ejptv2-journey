@@ -3,3 +3,7 @@
 
 # OS noise
 .DS_Store
+
+# Tooling caches & scratch artifacts (not vault content)
+.atl/
+hint.json
