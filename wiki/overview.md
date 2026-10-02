@@ -9,7 +9,7 @@ Current state of the cybersecurity learning vault.
 
 ## Progress snapshot
 
-- **37 boxes** completed across three platforms: [[dockerlabs]] (31), [[tryhackme]] (5), and [[hack-the-box]] (1).
+- **38 boxes** completed across three platforms: [[dockerlabs]] (32), [[tryhackme]] (5), and [[hack-the-box]] (1).
 - Difficulty spread is bottom-heavy: mostly **super-easy/easy**, with five intermediate ([[adopting]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[littlepivoting]]) and one hard ([[baluhome]]).
 - **1 box in progress** (not counted above): [[injection]] — foothold reached, privesc pending.
 

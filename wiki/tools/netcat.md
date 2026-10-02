@@ -24,7 +24,8 @@ nc TARGET 443 < in.bin    # sender
 ```
 
 - `-l` listen · `-v` verbose · `-n` no DNS lookup · `-p` local port.
+- Listening on a **port below 1024** needs root — hence `sudo nc -lvnp 433` on [[domain]]. Pick an unprivileged port to avoid it.
 
 ## Seen in
 
-Listener for reverse shells in [[hannah-coffee]], [[baluhome]], [[ignite]], [[balulero]], [[autoescuela]], [[grooti]], [[anonymous-pingu]], [[trailpack]], [[bruteshock]]; used to trigger [[vsftpd-backdoor]] in [[first-hacking]] and [[tproot]]; raw TCP client for the [[wargames]] WOPR text game.
+Listener for reverse shells in [[hannah-coffee]], [[baluhome]], [[ignite]], [[balulero]], [[autoescuela]], [[grooti]], [[anonymous-pingu]], [[trailpack]], [[bruteshock]], [[domain]] (privileged port `433`, run with `sudo`); used to trigger [[vsftpd-backdoor]] in [[first-hacking]] and [[tproot]]; raw TCP client for the [[wargames]] WOPR text game.

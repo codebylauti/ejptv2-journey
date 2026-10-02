@@ -41,6 +41,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[internal]] — 303 vhost leak → WAF blacklist bypass → reverse shell → leaked wordlist → vaultctl
 - [[flynn]] — default SSH creds (`flynn:flynn`) → sudo `env`
 - [[analyst]] — pcap triage (tshark) → captured SSH password → sudo ALL
+- [[domain]] — SMB null-session users → hydra false positives → nxc spray → writable share → SUID nano
 
 ### intermediate
 

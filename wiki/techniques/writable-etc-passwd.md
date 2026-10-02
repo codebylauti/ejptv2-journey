@@ -57,6 +57,17 @@ su -
 
 This is the [[bruteshock]] route — `dos2unix` is a GTFOBins "file overwrite" primitive ([[gtfobins]]).
 
+## Editing directly via a SUID editor
+
+If `find / -perm -4000` turns up an editor (`nano`, `vim`), it *is* the write primitive — open the file and blank the field yourself:
+
+```sh
+/usr/bin/nano /etc/passwd    # root:x: → root::
+su -
+```
+
+This is the [[domain]] route ([[suid-enumeration]]). No `sed`, no `chmod` — the SUID bit already gives you root's write access.
+
 ## Notes
 
 - Modern systems store hashes in `/etc/shadow`, but an empty password field still bypasses auth on many setups. The same empty-field trick works in `/etc/shadow` (blank the second field).
@@ -64,4 +75,4 @@ This is the [[bruteshock]] route — `dos2unix` is a GTFOBins "file overwrite" p
 
 ## Seen in
 
-[[adopting]], [[anonymous-pingu]], [[bruteshock]]
+[[adopting]], [[anonymous-pingu]], [[bruteshock]], [[domain]]

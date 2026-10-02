@@ -45,6 +45,7 @@ Content catalog. Read this first on any query.
 - [[internal]] — 303 vhost leak → WAF blacklist bypass → reverse shell → leaked wordlist → vaultctl
 - [[flynn]] — default SSH creds → sudo `env`
 - [[analyst]] — pcap triage (tshark) → captured SSH creds → sudo ALL
+- [[domain]] — SMB enum → nxc spray → writable share → SUID nano
 
 ### DockerLabs — intermediate
 
@@ -139,6 +140,7 @@ Content catalog. Read this first on any query.
 - [[metasploit]] — exploitation framework
 - [[searchsploit]] — Exploit-DB search
 - [[enum4linux]] — SMB enumerator
+- [[nxc]] — NetExec: SMB user enum + login spray (successor to CrackMapExec)
 - [[netcat]] — reverse-shell listener / network utility
 - [[telnet]] — TCP client / manual banner grab
 - [[mysql]] — MySQL/MariaDB client

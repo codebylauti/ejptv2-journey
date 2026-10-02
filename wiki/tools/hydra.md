@@ -27,6 +27,14 @@ hydra -l admin -P rockyou.txt TARGET http-post-form \
 
 - `F=` = failure text; `H=` = a header (session cookie) injected per attempt.
 
+## SMB gotcha (`smb2://`)
+
+```sh
+hydra -L users.txt -P rockyou.txt smb2://TARGET
+```
+
+The `smb2` module can report **false positives** — on [[domain]] it flagged 4+ bogus passwords (`123456`, `12345`…) while warning `might accept any credential`. Confirm every hit with an authenticated `nxc smb` command before trusting it ([[nxc]], [[smb-enumeration]]).
+
 ## Seen in
 
-[[breakmyssh]], [[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[basic-pentesting]], [[simple-ctf]], [[grooti]], [[winfake]], [[bruteshock]], [[littlepivoting]] (SSH `manchi`/`mario`, second host via `portfwd`'d `127.0.0.1:2200`; manual re-run via `proxychains`), [[madeyes-castle]] (`smb2` brute-force → `avadakedavra:123456`), [[internal]] (`vault` via a leaked on-box password file)
+[[breakmyssh]], [[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[basic-pentesting]], [[simple-ctf]], [[grooti]], [[winfake]], [[bruteshock]], [[littlepivoting]] (SSH `manchi`/`mario`, second host via `portfwd`'d `127.0.0.1:2200`; manual re-run via `proxychains`), [[madeyes-castle]] (`smb2` brute-force → `avadakedavra:123456`), [[internal]] (`vault` via a leaked on-box password file), [[domain]] (`smb2` → **false positives**, switched to [[nxc]] → `bob:star`)

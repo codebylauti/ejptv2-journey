@@ -4,7 +4,7 @@ eJPTv2 learning path. Track your progress here — update checkboxes as you comp
 
 ## Current state
 
-See [[overview]] for the detailed snapshot. Bottom line: **37 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered ([[littlepivoting]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), pcap traffic analysis now a documented technique ([[pcap-analysis]], via [[analyst]]), still light on Active Directory and deep web pentesting.
+See [[overview]] for the detailed snapshot. Bottom line: **38 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered ([[littlepivoting]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), pcap traffic analysis now a documented technique ([[pcap-analysis]], via [[analyst]]), SMB workflow hardened by a real false-positive incident ([[smb-enumeration]] via [[domain]]), still light on Active Directory and deep web pentesting.
 
 ---
 
@@ -41,6 +41,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **37 boxes done** acros
 - [x] [[internal]] — 303 vhost leak → WAF blacklist bypass → reverse shell → leaked wordlist → vaultctl
 - [x] [[flynn]] — default SSH creds → sudo `env`
 - [x] [[analyst]] — pcap triage → captured SSH creds → sudo ALL
+- [x] [[domain]] — SMB enum → nxc spray → writable share → SUID nano
 
 ### DockerLabs — intermediate
 
@@ -81,7 +82,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **37 boxes done** acros
 
 ### 2. Host & Network Auditing (`ejpt:auditing`)
 
-**Covered:** [[smb-enumeration]] (light).
+**Covered:** [[smb-enumeration]] (null-session users, share perms, login spray — standalone Samba only, no AD/DC).
 
 **Gaps & next steps**
 - [ ] Study auditing fundamentals: `netstat`, `tcpdump`, `wireshark`, `nmap` NSE. (Partial: CLI capture analysis now covered via [[tshark]]/[[pcap-analysis]] on [[analyst]] — still no live sniffing with `tcpdump` or the Wireshark GUI.)
