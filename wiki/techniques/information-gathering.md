@@ -12,7 +12,7 @@ The first phase of any engagement: confirm reachability and discover open ports/
 
 ## Workflow
 
-1. **ICMP** — `ping -c 2 <target>` confirms the host is up and shows TTL (a hint at the OS: ~64 Linux, ~128 Windows).
+1. **ICMP** — [[ping]] `-c 2 <target>` confirms the host is up and shows TTL (a hint at the OS: ~64 Linux, ~128 Windows).
 2. **Port scan** — `nmap -sV -sC -p-` (or `-sS` for SYN scan) enumerates ports, service versions, and runs default scripts.
 3. **Fingerprint** — `whatweb http://TARGET` one-shots the web stack (framework, JS libs, server header, title) so you know what you're facing before fuzzing.
 4. **Analyze** — service/version banners (e.g. `vsftpd 2.3.4`) frequently map straight to a known CVE.

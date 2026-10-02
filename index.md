@@ -45,7 +45,6 @@ Content catalog. Read this first on any query.
 - [[internal]] — 303 vhost leak → WAF blacklist bypass → reverse shell → leaked wordlist → vaultctl
 - [[flynn]] — default SSH creds → sudo `env`
 - [[analyst]] — pcap triage (tshark) → captured SSH creds → sudo ALL
-- [[domain]] — SMB enum → nxc spray → writable share → SUID nano
 
 ### DockerLabs — intermediate
 
@@ -54,6 +53,8 @@ Content catalog. Read this first on any query.
 - [[trailpack]] — MFA brute-force → cookie role tampering → command injection → SUID env
 - [[bruteshock]] — Shellshock → 5-hop sudo chain (arithmetic injection → exim → dos2unix)
 - [[littlepivoting]] — 3-host pivoting chain, done twice (Metasploit routing + manual chisel/socat/proxychains)
+- [[domain]] — SMB enum → nxc spray → writable share → SUID nano (reclassified from easy)
+- [[chmod-4755]] — SMB hints → rbash escape → SUID curl overwrites /etc/passwd
 
 ### DockerLabs — hard
 
@@ -124,6 +125,7 @@ Content catalog. Read this first on any query.
 - [[metasploit-pivoting]] — Metasploit `route`/`autoroute` + `portfwd` multi-hop routing
 - [[virtual-hosting]] — vhost discovery behind a default page
 - [[path-hijacking]] — hijack a relative command via `PATH` (SUID/sudo/cron)
+- [[restricted-shell-escape]] — break out of `rbash` (python3 `pty.spawn` + PATH rebuild)
 
 ## Tools
 
@@ -151,6 +153,13 @@ Content catalog. Read this first on any query.
 - [[socat]] — bidirectional TCP relay (listener/`reverse-shell` chains through hops)
 - [[proxychains]] — route arbitrary tools through a SOCKS proxy
 - [[ssh]] — remote login + port forwarding (`-L`/`-R`/`-D`)
+- [[ping]] — ICMP reachability + TTL/OS hint
+- [[smbmap]] — SMB share enum (null vs authenticated permission delta)
+- [[smbclient]] — interactive SMB client (get/put, FTP-style)
+- [[ftp]] — interactive FTP client (banner + anonymous login)
+- [[wget]] — non-interactive file download (staging tools onto a target)
+- [[getcap]] — filesystem capability sweep (`getcap -r /`)
+- [[whatweb]] — one-shot web fingerprinting
 
 ## CVEs
 

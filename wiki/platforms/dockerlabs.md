@@ -41,7 +41,6 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[internal]] — 303 vhost leak → WAF blacklist bypass → reverse shell → leaked wordlist → vaultctl
 - [[flynn]] — default SSH creds (`flynn:flynn`) → sudo `env`
 - [[analyst]] — pcap triage (tshark) → captured SSH password → sudo ALL
-- [[domain]] — SMB null-session users → hydra false positives → nxc spray → writable share → SUID nano
 
 ### intermediate
 
@@ -50,6 +49,8 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[trailpack]] — MFA brute-force → cookie role tampering → command injection → SUID env
 - [[bruteshock]] — Shellshock → 5-hop sudo chain (arithmetic injection → exim → dos2unix)
 - [[littlepivoting]] — 3-host pivoting chain (LFI → SSH brute-force → su → sudo ×3 → Metasploit routing), re-run manual with chisel/socat/proxychains
+- [[domain]] — SMB null-session users → hydra false positives → nxc spray → writable share → SUID nano (reclassified from easy)
+- [[chmod-4755]] — SMB hints → rbash escape → SUID curl overwrites /etc/passwd
 
 ### hard
 

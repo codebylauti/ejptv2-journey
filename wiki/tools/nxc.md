@@ -25,3 +25,4 @@ nxc smb TARGET -u users.txt -p /usr/share/wordlists/rockyou.txt --ignore-pw-deco
 ## Seen in
 
 - [[domain]] — null-session user enum (`james`, `bob`) and the rockyou spray that found `bob:star` after hydra's false positives.
+- [[chmod-4755]] — sprayed `smbuser:fuckit`, then `fuckit:123456`; the second hit was **guest-mapped over SMB** (no SSH access) and `--users` *under-reported* the local users vs [[enum4linux]] — valid ≠ useful, and one enum tool is never enough.

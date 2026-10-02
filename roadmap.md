@@ -4,7 +4,7 @@ eJPTv2 learning path. Track your progress here — update checkboxes as you comp
 
 ## Current state
 
-See [[overview]] for the detailed snapshot. Bottom line: **38 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered ([[littlepivoting]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), pcap traffic analysis now a documented technique ([[pcap-analysis]], via [[analyst]]), SMB workflow hardened by a real false-positive incident ([[smb-enumeration]] via [[domain]]), still light on Active Directory and deep web pentesting.
+See [[overview]] for the detailed snapshot. Bottom line: **39 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered ([[littlepivoting]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), pcap traffic analysis now a documented technique ([[pcap-analysis]], via [[analyst]]), SMB workflow hardened twice by real incidents ([[smb-enumeration]] via [[domain]] and [[chmod-4755]]), still light on Active Directory and deep web pentesting.
 
 ---
 
@@ -41,7 +41,6 @@ See [[overview]] for the detailed snapshot. Bottom line: **38 boxes done** acros
 - [x] [[internal]] — 303 vhost leak → WAF blacklist bypass → reverse shell → leaked wordlist → vaultctl
 - [x] [[flynn]] — default SSH creds → sudo `env`
 - [x] [[analyst]] — pcap triage → captured SSH creds → sudo ALL
-- [x] [[domain]] — SMB enum → nxc spray → writable share → SUID nano
 
 ### DockerLabs — intermediate
 
@@ -50,6 +49,8 @@ See [[overview]] for the detailed snapshot. Bottom line: **38 boxes done** acros
 - [x] [[trailpack]] — MFA brute-force → cookie role tampering → command injection → SUID env
 - [x] [[bruteshock]] — Shellshock → 5-hop sudo chain (arithmetic injection → exim → dos2unix)
 - [x] [[littlepivoting]] — 3-host pivoting chain (LFI → SSH brute-force → su → sudo ×3 → Metasploit routing), re-run manual (chisel/socat/proxychains)
+- [x] [[domain]] — SMB enum → nxc spray → writable share → SUID nano (reclassified from easy)
+- [x] [[chmod-4755]] — SMB hints → rbash escape → SUID curl overwrites /etc/passwd
 
 ### DockerLabs — hard
 
@@ -90,7 +91,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **38 boxes done** acros
 
 ### 3. Host & Network Penetration Testing (`ejpt:host-net-pentest`)
 
-**Covered:** [[ssh-bruteforce]], [[sudo-abuse]], [[arithmetic-injection]], [[exim-lpe]], [[suid-enumeration]], [[cron-job-abuse]], [[linux-capabilities]], [[writable-etc-passwd]], [[reverse-shells]], [[node-inspector-rce]], [[vsftpd-backdoor]], [[ssh-key-cracking]], [[zip-cracking]], [[hash-cracking]], [[hardcoded-credentials]], [[group-ownership-enumeration]], [[python-library-hijacking]], [[ftp-anonymous-login]], [[ci-cd-pipeline-abuse]], [[pivoting]], [[port-forwarding]], [[metasploit-pivoting]], [[su-brute-force]], [[path-hijacking]].
+**Covered:** [[ssh-bruteforce]], [[sudo-abuse]], [[arithmetic-injection]], [[exim-lpe]], [[suid-enumeration]], [[cron-job-abuse]], [[linux-capabilities]], [[writable-etc-passwd]], [[reverse-shells]], [[restricted-shell-escape]], [[node-inspector-rce]], [[vsftpd-backdoor]], [[ssh-key-cracking]], [[zip-cracking]], [[hash-cracking]], [[hardcoded-credentials]], [[group-ownership-enumeration]], [[python-library-hijacking]], [[ftp-anonymous-login]], [[ci-cd-pipeline-abuse]], [[pivoting]], [[port-forwarding]], [[metasploit-pivoting]], [[su-brute-force]], [[path-hijacking]].
 
 **Gaps & next steps**
 - [ ] **Metasploit** — depth growing: [[littlepivoting]] exercised `route`/`portfwd`/`shell_to_meterpreter` ([[metasploit-pivoting]]). Still do THM "Metasploit" module.

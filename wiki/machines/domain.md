@@ -1,7 +1,7 @@
 ---
 type: machine
 platform: dockerlabs
-difficulty: easy
+difficulty: intermediate
 ip: 172.17.0.2
 cves: []
 tools: [nmap, nxc, netcat]
@@ -12,9 +12,9 @@ related: [[basic-pentesting]], [[madeyes-castle]]
 
 # Domain
 
-**Writeup:** [raw writeup](../../writeups/dockerlabs/easy/domain.md)
+**Writeup:** [raw writeup](../../writeups/dockerlabs/intermediate/domain.md)
 
-Easy, SMB-focused box: null-session user enum → share brute-force (with a **hydra false-positive detour**) → writable web share → PHP shell → SUID `nano` blanking root's password.
+Intermediate, SMB-focused box (reclassified from easy alongside [[chmod-4755]]): null-session user enum → share brute-force (with a **hydra false-positive detour**) → writable web share → PHP shell → SUID `nano` blanking root's password.
 
 ## Path
 

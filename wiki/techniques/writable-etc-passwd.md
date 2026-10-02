@@ -1,9 +1,9 @@
 ---
 type: technique
 tags: [ejpt:host-net-pentest]
-tools: []
+tools: [curl]
 cves: []
-related: [[sudo-abuse]]
+related: [[sudo-abuse]], [[suid-enumeration]]
 ---
 
 # Writable /etc/passwd
@@ -68,6 +68,18 @@ su -
 
 This is the [[domain]] route ([[suid-enumeration]]). No `sed`, no `chmod` — the SUID bit already gives you root's write access.
 
+## Overwriting via a SUID file-writer (`curl`)
+
+If the SUID find turns up a binary that writes files *as root at a path you control*, it's the same primitive. SUID `/usr/bin/curl` with mode `4755` reads one file and writes another:
+
+```sh
+sed 's/root:x:/root::/g' /etc/passwd > /tmp/passwd
+curl file:///tmp/passwd -o /etc/passwd     # writes as root
+su -
+```
+
+The `file://` handler is the read, `-o` is the write — check both against [[gtfobins]] whenever a *known* binary shows up SUID. This is the [[chmod-4755]] route — the box name *was* the hint ([[suid-enumeration]]).
+
 ## Notes
 
 - Modern systems store hashes in `/etc/shadow`, but an empty password field still bypasses auth on many setups. The same empty-field trick works in `/etc/shadow` (blank the second field).
@@ -75,4 +87,4 @@ This is the [[domain]] route ([[suid-enumeration]]). No `sed`, no `chmod` — th
 
 ## Seen in
 
-[[adopting]], [[anonymous-pingu]], [[bruteshock]], [[domain]]
+[[adopting]], [[anonymous-pingu]], [[bruteshock]], [[domain]], [[chmod-4755]]

@@ -21,6 +21,16 @@ curl -X POST http://TARGET/ \
 
 - `-s` silent · `-i` include headers · `-I` HEAD only · `-X` method · `-H` header · `-d`/`--data-binary` body.
 
+## As a SUID file-writer
+
+When `/usr/bin/curl` carries mode `4755`, it reads and writes *as root* — `file://` is the read, `-o` is the write:
+
+```sh
+curl file:///tmp/passwd -o /etc/passwd    # arbitrary root file write
+```
+
+That's the entire privesc on [[chmod-4755]] ([[writable-etc-passwd]], [[suid-enumeration]]) — the box name was the hint.
+
 ## Seen in
 
-[[autoescuela]] (Node inspector `/json` + React2Shell exploit), [[los-3-hackers]], [[psycho]], [[balufood]], [[balulero]], [[hannah-coffee]], [[wargames]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]] (SSTI payloads via `-d name=`/`-d ref=` POST), [[trailpack]] (crafted `user_info` cookie against `/api/me` + `/accounting`), [[bruteshock]] (Shellshock `User-Agent` payload), [[littlepivoting]] (LFI `/etc/passwd` read via `?archivo=`), [[internal]] (303 `Location:` header leaked the `internal.dl` vhost), [[analyst]] (fetched the incident artifacts `threat_intel_feed.json` + `incidente_pinguino.pcap` from `/descargas/`)
+[[autoescuela]] (Node inspector `/json` + React2Shell exploit), [[los-3-hackers]], [[psycho]], [[balufood]], [[balulero]], [[hannah-coffee]], [[wargames]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]] (SSTI payloads via `-d name=`/`-d ref=` POST), [[trailpack]] (crafted `user_info` cookie against `/api/me` + `/accounting`), [[bruteshock]] (Shellshock `User-Agent` payload), [[littlepivoting]] (LFI `/etc/passwd` read via `?archivo=`), [[internal]] (303 `Location:` header leaked the `internal.dl` vhost), [[analyst]] (fetched the incident artifacts `threat_intel_feed.json` + `incidente_pinguino.pcap` from `/descargas/`), [[chmod-4755]] (SUID `file://` overwrite of `/etc/passwd`)

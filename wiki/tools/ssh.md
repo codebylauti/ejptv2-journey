@@ -27,7 +27,7 @@ Connect **before** you have credentials — with any username — and read every
 ssh random_user@TARGET
 ```
 
-Pre-auth MOTD/banner text sometimes contains working credentials ([[hardcoded-credentials]], [[acme]]). Same idea applies to telnet/FTP banners.
+Pre-auth MOTD/banner text sometimes contains working credentials ([[hardcoded-credentials]], [[acme]]) — or, when it's signed *by someone* (`by fuckit`), a **username** to feed into the next spray ([[chmod-4755]]). Same idea applies to telnet/FTP banners.
 
 ## scp (push files through a foothold)
 
@@ -39,4 +39,4 @@ No route-back needed — the SSH pipe is two-way.
 
 ## Seen in
 
-[[littlepivoting]] (SSH login to `inclusion`/`trust`; `-D`/`-L`/`-R` discussion; manual re-run logged into `trust` with `proxychains ssh`), [[acme]] (pre-auth banner credential disclosure → foothold), [[cap]] (stolen `nathan` password replayed from FTP to SSH), [[flynn]] (default creds `flynn:flynn`, no brute-force), [[analyst]] (pcap-captured `pinguinito` password)
+[[littlepivoting]] (SSH login to `inclusion`/`trust`; `-D`/`-L`/`-R` discussion; manual re-run logged into `trust` with `proxychains ssh`), [[acme]] (pre-auth banner credential disclosure → foothold), [[cap]] (stolen `nathan` password replayed from FTP to SSH), [[flynn]] (default creds `flynn:flynn`, no brute-force), [[analyst]] (pcap-captured `pinguinito` password), [[chmod-4755]] (banner username hint → `rabol:share_secret_only` → `rbash`)

@@ -1,9 +1,9 @@
 ---
 type: technique
 tags: [ejpt:assessment, ejpt:auditing, ejpt:host-net-pentest]
-tools: [enum4linux, nxc]
+tools: [enum4linux, nxc, smbmap, smbclient]
 cves: []
-related: [[ssh-bruteforce]], [[web-shell-upload]], [[nxc]]
+related: [[ssh-bruteforce]], [[web-shell-upload]], [[nxc]], [[smbmap]], [[smbclient]]
 ---
 
 # SMB Enumeration
@@ -15,8 +15,9 @@ Enumerating SMB shares, users, and login validity — a rich source of account n
 1. **Users (null session)** — does an unauthenticated session reveal accounts?
    ```sh
    nxc smb TARGET --users          # NetExec; falls back to SAMRPC if the DC path is refused
-   enum4linux -U TARGET            # classic alternative
+   enum4linux -U TARGET            # classic alternative — walks SAM RPC SIDs
    ```
+   **Run both.** On [[chmod-4755]] they disagreed: `nxc --users` reported only `smbuser`, while enum4linux's SID walk also found `rabol` (UID 1001) — the account the entire hint chain pointed at.
 2. **Shares (null session)** — what's readable without credentials?
    ```sh
    smbmap -H TARGET
@@ -36,7 +37,8 @@ Enumerating SMB shares, users, and login validity — a rich source of account n
 ## What to extract
 
 - Valid usernames (e.g. `jan`, `kay` in [[basic-pentesting]]; `james`, `bob` via null session in [[domain]]).
-- Share names **and permission deltas between null vs authenticated sessions** — `html NO ACCESS → READ, WRITE` is the entry point ([[domain]]).
+- Share names **and permission deltas between null vs authenticated sessions** — `html NO ACCESS → READ, WRITE` is the entry point ([[domain]]); `share_secret_only NO ACCESS → READ ONLY` unlocked the hint on [[chmod-4755]].
+- Share **names as hints** — `share_secret_only` was literally the next account's password. Read names, comments, and filenames as content, not labels ([[chmod-4755]]).
 - Files inside readable shares — including **hidden dotfiles** (`.notes.txt`) that hold hints for later steps ([[madeyes-castle]]).
 - The NSE `smb2-security-mode` line: *signing enabled but not required* = SMB-relay precondition — flag it even when the box never demands a relay ([[information-gathering]]).
 
@@ -49,4 +51,4 @@ Enumerating SMB shares, users, and login validity — a rich source of account n
 
 ## Seen in
 
-[[basic-pentesting]], [[madeyes-castle]] (anon `sambashare` → `spellnames.txt` + `.notes.txt`), [[domain]] (null-session users → hydra false positives → `nxc` spray → writable `html` share → SUID `nano`)
+[[basic-pentesting]], [[madeyes-castle]] (anon `sambashare` → `spellnames.txt` + `.notes.txt`), [[domain]] (null-session users → hydra false positives → `nxc` spray → writable `html` share → SUID `nano`), [[chmod-4755]] (tool divergence: `nxc --users` under-reported, `enum4linux` SID walk found `rabol`; authenticated `smbmap` delta → `smbclient` note.txt → share-name password → SSH)

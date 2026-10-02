@@ -9,8 +9,8 @@ Current state of the cybersecurity learning vault.
 
 ## Progress snapshot
 
-- **38 boxes** completed across three platforms: [[dockerlabs]] (32), [[tryhackme]] (5), and [[hack-the-box]] (1).
-- Difficulty spread is bottom-heavy: mostly **super-easy/easy**, with five intermediate ([[adopting]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[littlepivoting]]) and one hard ([[baluhome]]).
+- **39 boxes** completed across three platforms: [[dockerlabs]] (33), [[tryhackme]] (5), and [[hack-the-box]] (1).
+- Difficulty spread is bottom-heavy: mostly **super-easy/easy**, with seven intermediate ([[adopting]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[littlepivoting]], [[domain]], [[chmod-4755]]) and one hard ([[baluhome]]).
 - **1 box in progress** (not counted above): [[injection]] — foothold reached, privesc pending.
 
 ## Technique coverage so far
@@ -18,7 +18,7 @@ Current state of the cybersecurity learning vault.
 | Domain | Techniques exercised |
 |--------|----------------------|
 | Assessment | [[information-gathering]], [[directory-fuzzing]], [[parameter-fuzzing]], [[smb-enumeration]], [[mysql-enumeration]], [[source-code-disclosure]], [[pcap-analysis]], [[acrostic-decoding]], [[ftp-anonymous-login]], [[hardcoded-credentials]] |
-| Host & Network Pentest | [[ssh-bruteforce]], [[sudo-abuse]], [[arithmetic-injection]], [[exim-lpe]], [[python-library-hijacking]], [[suid-enumeration]], [[cron-job-abuse]], [[group-ownership-enumeration]], [[linux-capabilities]], [[writable-etc-passwd]], [[reverse-shells]], [[node-inspector-rce]], [[vsftpd-backdoor]], [[ssh-key-cracking]], [[zip-cracking]], [[hash-cracking]], [[hardcoded-credentials]], [[ftp-anonymous-login]], [[ci-cd-pipeline-abuse]], [[pivoting]], [[port-forwarding]], [[metasploit-pivoting]], [[su-brute-force]], [[path-hijacking]] |
+| Host & Network Pentest | [[ssh-bruteforce]], [[sudo-abuse]], [[arithmetic-injection]], [[exim-lpe]], [[python-library-hijacking]], [[suid-enumeration]], [[cron-job-abuse]], [[group-ownership-enumeration]], [[linux-capabilities]], [[writable-etc-passwd]], [[reverse-shells]], [[restricted-shell-escape]], [[node-inspector-rce]], [[vsftpd-backdoor]], [[ssh-key-cracking]], [[zip-cracking]], [[hash-cracking]], [[hardcoded-credentials]], [[ftp-anonymous-login]], [[ci-cd-pipeline-abuse]], [[pivoting]], [[port-forwarding]], [[metasploit-pivoting]], [[su-brute-force]], [[path-hijacking]] |
 | Web Pentest | [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[broken-access-control]], [[local-file-inclusion]], [[log-poisoning]], [[parameter-fuzzing]], [[value-brute-force]], [[mfa-bruteforce]], [[directory-fuzzing]], [[source-code-disclosure]], [[acrostic-decoding]], [[prototype-pollution]], [[prompt-injection]], [[wordpress-enumeration]], [[web-shell-upload]], [[server-side-template-injection]], [[command-injection]], [[waf-bypass]], [[shellshock]], [[http-login-bruteforce]], [[virtual-hosting]] |
 
 ## Notable gaps (see [[roadmap]])
