@@ -23,6 +23,18 @@ Recovering the plaintext behind a raw password hash (MD5, SHA-1, SHA-256, …).
 printf '%s' "candidate" | sha256sum   # compare against the target hash
 ```
 
+## Encoding ≠ hashing (check before you crack)
+
+A file called `hash` may hold no hash at all. Length + alphabet tells you: a short string full of `= padding` in a 32-letter alphabet is **base32**; 4-char groups of `A–Za–z0–9+/=` are **base64**. Stacked encodings are common:
+
+```sh
+base32 -d hash | base64 -d    # dance-samba's /home/secret/hash → supersecurepassword
+```
+
+- One `base32 -d | base64 -d` beat what would have been a pointless john run ([[dance-samba]]).
+- Rule: **decode first, crack second** — run `file`/length inspection before launching a wordlist.
+
+
 ## Mangling rules (best64)
 
 When the plaintext isn't a raw dictionary word, apply John's built-in `best64` rule — ~64 common mutations (capitalize, append `123`/`!`, etc.):
@@ -55,4 +67,4 @@ yescrypt is memory-hard → wordlist (+ rules), not brute force.
 
 ## Seen in
 
-[[wargames]], [[bruteshock]], [[madeyes-castle]] (SHA-512 + `--rules=best64`)
+[[wargames]], [[bruteshock]], [[madeyes-castle]] (SHA-512 + `--rules=best64`), [[dance-samba]] (counter-example: a "hash" that was base32+base64 *encoding* — decoded, never cracked)

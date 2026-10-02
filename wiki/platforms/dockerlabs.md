@@ -51,6 +51,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[littlepivoting]] — 3-host pivoting chain (LFI → SSH brute-force → su → sudo ×3 → Metasploit routing), re-run manual with chisel/socat/proxychains
 - [[domain]] — SMB null-session users → hydra false positives → nxc spray → writable share → SUID nano (reclassified from easy)
 - [[chmod-4755]] — SMB hints → rbash escape → SUID curl overwrites /etc/passwd
+- [[dance-samba]] — FTP note hint → nxc spray → writable home share → SSH key drop → sudo `file -f` leak
 
 ### hard
 

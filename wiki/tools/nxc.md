@@ -26,3 +26,4 @@ nxc smb TARGET -u users.txt -p /usr/share/wordlists/rockyou.txt --ignore-pw-deco
 
 - [[domain]] — null-session user enum (`james`, `bob`) and the rockyou spray that found `bob:star` after hydra's false positives.
 - [[chmod-4755]] — sprayed `smbuser:fuckit`, then `fuckit:123456`; the second hit was **guest-mapped over SMB** (no SSH access) and `--users` *under-reported* the local users vs [[enum4linux]] — valid ≠ useful, and one enum tool is never enough.
+- [[dance-samba]] — `--users` confirmed the FTP note's username (`macarena`); a single-user rockyou spray returned `macarena:donald`, then `--shares` flipped the home share to READ,WRITE.

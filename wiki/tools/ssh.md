@@ -37,6 +37,19 @@ scp tool user@TARGET:/tmp/
 
 No route-back needed — the SSH pipe is two-way.
 
+## authorized_keys (key persistence without the password)
+
+You don't need a user's password if you can write their home directory — e.g. via a **READ,WRITE SMB share**:
+
+```sh
+ssh-keygen -t ed25519 -C "user"        # 1. generate a keypair
+# 2. write the .pub line into .ssh/authorized_keys locally
+# 3. upload .ssh/ over the writable share (smbclient: mput .ssh)
+ssh -i ~/.ssh/id_ed25519 user@TARGET   # 4. log in, password never involved
+```
+
+Works the same way with any write primitive onto a home dir (FTP `put`, webshell, cron job) — and it survives even when you never learn the account's real password ([[dance-samba]], see [[smbclient]]).
+
 ## Seen in
 
-[[littlepivoting]] (SSH login to `inclusion`/`trust`; `-D`/`-L`/`-R` discussion; manual re-run logged into `trust` with `proxychains ssh`), [[acme]] (pre-auth banner credential disclosure → foothold), [[cap]] (stolen `nathan` password replayed from FTP to SSH), [[flynn]] (default creds `flynn:flynn`, no brute-force), [[analyst]] (pcap-captured `pinguinito` password), [[chmod-4755]] (banner username hint → `rabol:share_secret_only` → `rbash`)
+[[littlepivoting]] (SSH login to `inclusion`/`trust`; `-D`/`-L`/`-R` discussion; manual re-run logged into `trust` with `proxychains ssh`), [[acme]] (pre-auth banner credential disclosure → foothold), [[cap]] (stolen `nathan` password replayed from FTP to SSH), [[flynn]] (default creds `flynn:flynn`, no brute-force), [[analyst]] (pcap-captured `pinguinito` password), [[chmod-4755]] (banner username hint → `rabol:share_secret_only` → `rbash`), [[dance-samba]] (`authorized_keys` uploaded over a writable SMB home → `ssh -i` with no password)

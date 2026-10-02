@@ -40,6 +40,7 @@ Enumerating SMB shares, users, and login validity — a rich source of account n
 - Share names **and permission deltas between null vs authenticated sessions** — `html NO ACCESS → READ, WRITE` is the entry point ([[domain]]); `share_secret_only NO ACCESS → READ ONLY` unlocked the hint on [[chmod-4755]].
 - Share **names as hints** — `share_secret_only` was literally the next account's password. Read names, comments, and filenames as content, not labels ([[chmod-4755]]).
 - Files inside readable shares — including **hidden dotfiles** (`.notes.txt`) that hold hints for later steps ([[madeyes-castle]]).
+- **READ,WRITE shares that map a user's home directory** — pull the home (`recurse on` + `mget *` → `user.txt`) *and* drop `.ssh/authorized_keys` for password-less SSH ([[dance-samba]]); if the share maps a webroot instead, upload a shell ([[web-shell-upload]], [[domain]]).
 - The NSE `smb2-security-mode` line: *signing enabled but not required* = SMB-relay precondition — flag it even when the box never demands a relay ([[information-gathering]]).
 
 ## Hydra `smb2://` false positives
@@ -51,4 +52,4 @@ Enumerating SMB shares, users, and login validity — a rich source of account n
 
 ## Seen in
 
-[[basic-pentesting]], [[madeyes-castle]] (anon `sambashare` → `spellnames.txt` + `.notes.txt`), [[domain]] (null-session users → hydra false positives → `nxc` spray → writable `html` share → SUID `nano`), [[chmod-4755]] (tool divergence: `nxc --users` under-reported, `enum4linux` SID walk found `rabol`; authenticated `smbmap` delta → `smbclient` note.txt → share-name password → SSH)
+[[basic-pentesting]], [[madeyes-castle]] (anon `sambashare` → `spellnames.txt` + `.notes.txt`), [[domain]] (null-session users → hydra false positives → `nxc` spray → writable `html` share → SUID `nano`), [[chmod-4755]] (tool divergence: `nxc --users` under-reported, `enum4linux` SID walk found `rabol`; authenticated `smbmap` delta → `smbclient` note.txt → share-name password → SSH), [[dance-samba]] (FTP note → `nxc` spray `macarena:donald` → READ,WRITE home share → `user.txt` + `authorized_keys` drop)

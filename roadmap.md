@@ -4,7 +4,7 @@ eJPTv2 learning path. Track your progress here — update checkboxes as you comp
 
 ## Current state
 
-See [[overview]] for the detailed snapshot. Bottom line: **39 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered ([[littlepivoting]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), pcap traffic analysis now a documented technique ([[pcap-analysis]], via [[analyst]]), SMB workflow hardened twice by real incidents ([[smb-enumeration]] via [[domain]] and [[chmod-4755]]), still light on Active Directory and deep web pentesting.
+See [[overview]] for the detailed snapshot. Bottom line: **40 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered ([[littlepivoting]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), pcap traffic analysis now a documented technique ([[pcap-analysis]], via [[analyst]]), SMB workflow hardened three times by real incidents ([[smb-enumeration]] via [[domain]], [[chmod-4755]], and [[dance-samba]]), still light on Active Directory and deep web pentesting.
 
 ---
 
@@ -51,6 +51,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **39 boxes done** acros
 - [x] [[littlepivoting]] — 3-host pivoting chain (LFI → SSH brute-force → su → sudo ×3 → Metasploit routing), re-run manual (chisel/socat/proxychains)
 - [x] [[domain]] — SMB enum → nxc spray → writable share → SUID nano (reclassified from easy)
 - [x] [[chmod-4755]] — SMB hints → rbash escape → SUID curl overwrites /etc/passwd
+- [x] [[dance-samba]] — FTP note hint → SMB spray → writable home share → SSH key → sudo `file` leak
 
 ### DockerLabs — hard
 

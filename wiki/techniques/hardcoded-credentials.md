@@ -27,6 +27,7 @@ Finding credentials that were left hardcoded or reused across accounts — in so
 - **Password file left on disk** — a dedicated wordlist of 20 candidate passwords (`/opt/.vault_pass.txt`) ready to feed `hydra -P`. Found wordlists beat rockyou: the box curated them for you ([[internal]]).
 - **Default / weak service credentials** — the username doubling as the password (`flynn:flynn`), no brute-force required. Try the box name, the username, and trivial variants **before** reaching for rockyou ([[flynn]]).
 - **Cleartext protocol capture (pcap)** — a downloadable network capture containing FTP/HTTP-auth traffic in plain text: `strings <pcap> | grep -E 'USER|PASS'` → `USER nathan` / `PASS Buck3tH4TF0RM3!`. Credentials also hide in *operational messages* inside the capture — a password-reset line leaked `pinguinito:Tr0pic4l-Pingu_99!` ([[analyst]], see [[pcap-analysis]]). Any file the app lets you download may be someone's session ([[cap]]).
+- **Narrative hint files** — a loose note written as gossip (*"Macarena, she's obsessed with donald"*) is `macarena:donald` in prose: the subject is the username, the fixation is the password. Anything a box bothers to drop in an anonymous FTP root or a share is there for you to read ([[dance-samba]], cf. [[chmod-4755]]'s "read better").
 
 ## Commands
 
@@ -38,4 +39,4 @@ grep -RniE 'pass(word)?|secret|token|key|pwd' /home /opt /var/www 2>/dev/null
 
 ## Seen in
 
-[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]], [[flynn]], [[analyst]], [[chmod-4755]]
+[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]], [[flynn]], [[analyst]], [[chmod-4755]], [[dance-samba]]

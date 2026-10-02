@@ -23,4 +23,4 @@ ls / get file / put file / bye
 
 ## Seen in
 
-[[obsession]], [[tproot]], [[hannah-coffee]], [[nodeclimb]], [[anonymous-pingu]]
+[[obsession]], [[tproot]], [[hannah-coffee]], [[nodeclimb]], [[anonymous-pingu]], [[dance-samba]]

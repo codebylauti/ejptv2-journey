@@ -55,6 +55,7 @@ Content catalog. Read this first on any query.
 - [[littlepivoting]] — 3-host pivoting chain, done twice (Metasploit routing + manual chisel/socat/proxychains)
 - [[domain]] — SMB enum → nxc spray → writable share → SUID nano (reclassified from easy)
 - [[chmod-4755]] — SMB hints → rbash escape → SUID curl overwrites /etc/passwd
+- [[dance-samba]] — FTP note hint → SMB spray → writable home share → SSH key → sudo `file` read
 
 ### DockerLabs — hard
 
