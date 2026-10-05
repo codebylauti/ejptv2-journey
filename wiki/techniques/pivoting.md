@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: [metasploit, nmap, ssh, chisel, proxychains, socat]
 cves: []
-related: [[port-forwarding]], [[metasploit-pivoting]], [[information-gathering]]
+related: ["[[port-forwarding]]", "[[metasploit-pivoting]]", "[[information-gathering]]"]
 ---
 
 # Pivoting
@@ -48,7 +48,7 @@ On the compromised host, **read the network before you scan it**:
 
 ## Two gotchas
 
-- **Getting tools in** — the pivot host may have no route to your HTTP server *and* no `curl`/`nc` helper; serve binaries yourself (`python3 -m http.server`) and `wget` them, or copy them hop to hop from the previous machine.
+- **Getting tools in** — the pivot host may have no route to your HTTP server *and* no `curl`/`nc` helper; serve binaries yourself (`python3 -m http.server`) and pull them with [[wget]], or copy them hop to hop from the previous machine.
 - **Stacking hops** — each chisel client can register its own SOCKS port (`R:1080:socks`, `R:1081:socks`); list both in `proxychains4.conf` so one config reaches either subnet.
 
 ## Seen in

@@ -7,7 +7,7 @@ cves: [CVE-2021-47980, CVE-2018-16763]
 tools: [nmap, gobuster, netcat]
 techniques: [sql-injection, reverse-shells, suid-enumeration, directory-fuzzing, source-code-disclosure]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[simple-ctf]], [[los-3-hackers]]
+related: ["[[simple-ctf]]", "[[los-3-hackers]]"]
 ---
 
 # Ignite

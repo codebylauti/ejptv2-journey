@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest]
 tools: [burp-suite]
 cves: []
-related: [[parameter-fuzzing]]
+related: ["[[parameter-fuzzing]]"]
 ---
 
 # Value Brute Force

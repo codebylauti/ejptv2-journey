@@ -1,7 +1,7 @@
 ---
 type: tool
 category: tunneling
-related: [[pivoting]], [[port-forwarding]], [[proxychains]]
+related: ["[[pivoting]]", "[[port-forwarding]]", "[[proxychains]]"]
 ---
 
 # Chisel

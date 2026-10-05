@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest, ejpt:assessment]
 tools: [curl]
 cves: []
-related: [[source-code-disclosure]]
+related: ["[[source-code-disclosure]]"]
 ---
 
 # Acrostic Decoding

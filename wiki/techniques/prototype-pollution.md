@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest]
 tools: [curl]
 cves: [CVE-2025-55182]
-related: [[cve-2025-55182]]
+related: ["[[cve-2025-55182]]"]
 ---
 
 # Prototype Pollution (React Server Components)

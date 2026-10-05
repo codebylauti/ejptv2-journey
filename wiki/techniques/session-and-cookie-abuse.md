@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest]
 tools: [curl]
 cves: []
-related: [[xss-and-cookie-theft]], [[sql-injection]]
+related: ["[[xss-and-cookie-theft]]", "[[sql-injection]]"]
 ---
 
 # Session and Cookie Abuse

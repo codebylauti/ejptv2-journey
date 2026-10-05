@@ -1,7 +1,7 @@
 ---
 type: tool
 category: scanner
-related: [[wordpress-enumeration]]
+related: ["[[wordpress-enumeration]]"]
 ---
 
 # wpscan

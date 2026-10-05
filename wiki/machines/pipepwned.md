@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, dirb, ffuf, curl]
 techniques: [directory-fuzzing, server-side-template-injection, source-code-disclosure, hardcoded-credentials, ci-cd-pipeline-abuse]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[adopting]]
+related: ["[[adopting]]"]
 ---
 
 # PipePwned

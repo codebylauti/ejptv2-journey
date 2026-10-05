@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: []
 cves: []
-related: [[suid-enumeration]], [[sudo-abuse]]
+related: ["[[suid-enumeration]]", "[[sudo-abuse]]"]
 ---
 
 # PATH Hijacking

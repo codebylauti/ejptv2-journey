@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, burp-suite, curl, netcat, gtfobins]
 techniques: [directory-fuzzing, mfa-bruteforce, broken-access-control, session-and-cookie-abuse, command-injection, source-code-disclosure, hardcoded-credentials, reverse-shells, suid-enumeration]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[pipepwned]]
+related: ["[[pipepwned]]"]
 ---
 
 # TrailPack

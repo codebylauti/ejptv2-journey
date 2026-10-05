@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: [metasploit]
 cves: []
-related: [[pivoting]], [[port-forwarding]], [[reverse-shells]]
+related: ["[[pivoting]]", "[[port-forwarding]]", "[[reverse-shells]]"]
 ---
 
 # Metasploit Pivoting

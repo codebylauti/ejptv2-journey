@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest]
 tools: [netcat]
 cves: []
-related: [[command-injection]], [[reverse-shells]]
+related: ["[[command-injection]]", "[[reverse-shells]]"]
 ---
 
 # WAF / Blacklist Bypass

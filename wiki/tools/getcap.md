@@ -1,7 +1,7 @@
 ---
 type: tool
 category: scanner
-related: [[linux-capabilities]], [[suid-enumeration]]
+related: ["[[linux-capabilities]]", "[[suid-enumeration]]"]
 ---
 
 # Getcap

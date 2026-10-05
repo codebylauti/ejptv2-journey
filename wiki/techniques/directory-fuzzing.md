@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest, ejpt:assessment]
 tools: [gobuster]
 cves: []
-related: [[information-gathering]]
+related: ["[[information-gathering]]"]
 ---
 
 # Directory Fuzzing

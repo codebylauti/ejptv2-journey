@@ -1,7 +1,7 @@
 ---
 type: tool
 category: bruteforcer
-related: [[smb-enumeration]], [[hydra]]
+related: ["[[smb-enumeration]]", "[[hydra]]"]
 ---
 
 # nxc (NetExec)

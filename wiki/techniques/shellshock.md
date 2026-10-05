@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest, ejpt:host-net-pentest]
 tools: [curl]
 cves: [CVE-2014-6271]
-related: [[command-injection]]
+related: ["[[command-injection]]"]
 ---
 
 # Shellshock (CVE-2014-6271)

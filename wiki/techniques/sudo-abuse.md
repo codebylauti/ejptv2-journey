@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: [gtfobins]
 cves: []
-related: [[suid-enumeration]], [[ssh-bruteforce]]
+related: ["[[suid-enumeration]]", "[[ssh-bruteforce]]"]
 ---
 
 # Sudo Abuse

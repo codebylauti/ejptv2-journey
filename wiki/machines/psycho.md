@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, dirb, ffuf, curl]
 techniques: [parameter-fuzzing, local-file-inclusion, sudo-abuse, python-library-hijacking]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[hannah-coffee]], [[nodeclimb]]
+related: ["[[hannah-coffee]]", "[[nodeclimb]]"]
 ---
 
 # Psycho

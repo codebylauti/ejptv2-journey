@@ -1,7 +1,7 @@
 ---
 type: platform
 difficulties: [easy, medium]
-related: [[dockerlabs]]
+related: ["[[dockerlabs]]"]
 ---
 
 # TryHackMe

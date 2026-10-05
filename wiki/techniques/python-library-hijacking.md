@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: []
 cves: []
-related: [[sudo-abuse]]
+related: ["[[sudo-abuse]]"]
 ---
 
 # Python Library Hijacking

@@ -7,7 +7,7 @@ cves: [CVE-2014-6271]
 tools: [nmap, gobuster, hydra, curl, john-the-ripper, netcat, gtfobins]
 techniques: [directory-fuzzing, http-login-bruteforce, shellshock, reverse-shells, hash-cracking, hardcoded-credentials, sudo-abuse, arithmetic-injection, exim-lpe, writable-etc-passwd]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[trailpack]], [[pipepwned]]
+related: ["[[trailpack]]", "[[pipepwned]]"]
 ---
 
 # BruteShock

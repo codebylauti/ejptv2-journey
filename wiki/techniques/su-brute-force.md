@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: []
 cves: []
-related: [[ssh-bruteforce]]
+related: ["[[ssh-bruteforce]]"]
 ---
 
 # su Brute Force

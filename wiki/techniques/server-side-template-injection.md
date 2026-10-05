@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest]
 tools: [curl]
 cves: []
-related: [[sql-injection]], [[prompt-injection]], [[reverse-shells]], [[source-code-disclosure]]
+related: ["[[sql-injection]]", "[[prompt-injection]]", "[[reverse-shells]]", "[[source-code-disclosure]]"]
 ---
 
 # Server-Side Template Injection (SSTI)

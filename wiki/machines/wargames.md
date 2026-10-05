@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, curl, netcat]
 techniques: [prompt-injection, hash-cracking, suid-enumeration]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[nodeclimb]], [[ignite]]
+related: ["[[nodeclimb]]", "[[ignite]]"]
 ---
 
 # Wargames

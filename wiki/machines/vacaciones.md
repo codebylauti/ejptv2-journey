@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, hydra]
 techniques: [directory-fuzzing, ssh-bruteforce, sudo-abuse, source-code-disclosure]
 tags: [ejpt:assessment, ejpt:host-net-pentest, ejpt:web-pentest]
-related: [[obsession]], [[hedgehog]]
+related: ["[[obsession]]", "[[hedgehog]]"]
 ---
 
 # Vacaciones

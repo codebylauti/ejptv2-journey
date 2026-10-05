@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, john-the-ripper]
 techniques: [ftp-anonymous-login, zip-cracking, sudo-abuse]
 tags: [ejpt:assessment, ejpt:host-net-pentest]
-related: [[balulero]], [[obsession]]
+related: ["[[balulero]]", "[[obsession]]"]
 ---
 
 # Nodeclimb

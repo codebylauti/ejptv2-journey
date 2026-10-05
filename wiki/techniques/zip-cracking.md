@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: [john-the-ripper]
 cves: []
-related: [[ftp-anonymous-login]], [[ssh-key-cracking]]
+related: ["[[ftp-anonymous-login]]", "[[ssh-key-cracking]]"]
 ---
 
 # Zip Cracking

@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest, ejpt:assessment]
 tools: [ffuf]
 cves: []
-related: [[directory-fuzzing]], [[local-file-inclusion]]
+related: ["[[directory-fuzzing]]", "[[local-file-inclusion]]"]
 ---
 
 # Parameter Fuzzing

@@ -1,7 +1,7 @@
 ---
 type: tool
 category: cracker
-related: [[ssh-key-cracking]]
+related: ["[[ssh-key-cracking]]"]
 ---
 
 # John the Ripper

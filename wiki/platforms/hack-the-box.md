@@ -1,7 +1,7 @@
 ---
 type: platform
 difficulties: [easy]
-related: [[dockerlabs]], [[tryhackme]]
+related: ["[[dockerlabs]]", "[[tryhackme]]"]
 ---
 
 # Hack The Box

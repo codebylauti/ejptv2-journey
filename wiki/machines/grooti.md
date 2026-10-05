@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, curl, mysql, hydra, netcat]
 techniques: [directory-fuzzing, source-code-disclosure, hardcoded-credentials, mysql-enumeration, value-brute-force, ssh-bruteforce, cron-job-abuse, reverse-shells]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[balulero]], [[nodeclimb]]
+related: ["[[balulero]]", "[[nodeclimb]]"]
 ---
 
 # Grooti

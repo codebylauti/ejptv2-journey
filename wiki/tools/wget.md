@@ -1,7 +1,7 @@
 ---
 type: tool
 category: http-client
-related: [[curl]]
+related: ["[[curl]]"]
 ---
 
 # Wget

@@ -1,7 +1,7 @@
 ---
 type: tool
 category: framework
-related: [[port-forwarding]], [[pivoting]]
+related: ["[[port-forwarding]]", "[[pivoting]]"]
 ---
 
 # SSH

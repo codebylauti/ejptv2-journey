@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, burp-suite, netcat]
 techniques: [xss-and-cookie-theft, reverse-shells, cron-job-abuse, directory-fuzzing]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[adopting]], [[los-3-hackers]]
+related: ["[[adopting]]", "[[los-3-hackers]]"]
 ---
 
 # BaluHome

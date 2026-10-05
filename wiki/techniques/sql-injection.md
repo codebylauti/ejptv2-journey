@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest]
 tools: [curl, searchsploit, sqlmap]
 cves: [CVE-2019-9053, CVE-2021-47980]
-related: [[cve-2019-9053]], [[cve-2021-47980]], [[source-code-disclosure]]
+related: ["[[cve-2019-9053]]", "[[cve-2021-47980]]", "[[source-code-disclosure]]"]
 ---
 
 # SQL Injection

@@ -1,7 +1,7 @@
 ---
 type: tool
 category: scanner
-related: [[information-gathering]], [[directory-fuzzing]]
+related: ["[[information-gathering]]", "[[directory-fuzzing]]"]
 ---
 
 # Whatweb

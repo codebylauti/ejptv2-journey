@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: []
 cves: []
-related: [[cron-job-abuse]], [[reverse-shells]], [[server-side-template-injection]]
+related: ["[[cron-job-abuse]]", "[[reverse-shells]]", "[[server-side-template-injection]]"]
 ---
 
 # CI/CD Pipeline & Runner Abuse

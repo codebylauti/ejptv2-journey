@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, hydra]
 techniques: [ssh-bruteforce]
 tags: [ejpt:assessment, ejpt:host-net-pentest]
-related: [[hedgehog]], [[trust]]
+related: ["[[hedgehog]]", "[[trust]]"]
 ---
 
 # BreakMySSH

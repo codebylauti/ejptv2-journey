@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest, ejpt:assessment]
 tools: []
 cves: []
-related: [[ssh-bruteforce]]
+related: ["[[ssh-bruteforce]]"]
 ---
 
 # FTP Anonymous Login

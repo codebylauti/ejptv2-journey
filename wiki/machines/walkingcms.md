@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, ffuf, gobuster, wpscan, netcat, gtfobins]
 techniques: [directory-fuzzing, wordpress-enumeration, reverse-shells, suid-enumeration]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[duque]], [[simple-ctf]]
+related: ["[[duque]]", "[[simple-ctf]]"]
 ---
 
 # WalkingCMS

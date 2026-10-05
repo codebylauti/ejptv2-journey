@@ -7,7 +7,7 @@ cves: [CVE-2025-55182]
 tools: [nmap, curl, netcat]
 techniques: [node-inspector-rce, reverse-shells, prototype-pollution]
 tags: [ejpt:assessment, ejpt:host-net-pentest, ejpt:web-pentest]
-related: [[nodeclimb]], [[baluhome]]
+related: ["[[nodeclimb]]", "[[baluhome]]"]
 ---
 
 # Autoescuela

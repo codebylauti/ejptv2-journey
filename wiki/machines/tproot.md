@@ -7,7 +7,7 @@ cves: [CVE-2011-2523]
 tools: [nmap, gobuster, netcat]
 techniques: [vsftpd-backdoor, directory-fuzzing]
 tags: [ejpt:assessment, ejpt:host-net-pentest]
-related: [[first-hacking]]
+related: ["[[first-hacking]]"]
 ---
 
 # Tproot

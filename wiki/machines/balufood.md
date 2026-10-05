@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, dirb, curl]
 techniques: [directory-fuzzing, source-code-disclosure, hardcoded-credentials]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[hannah-coffee]], [[los-3-hackers]]
+related: ["[[hannah-coffee]]", "[[los-3-hackers]]"]
 ---
 
 # Balufood

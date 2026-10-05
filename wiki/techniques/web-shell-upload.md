@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest]
 tools: []
 cves: []
-related: [[reverse-shells]], [[ftp-anonymous-login]], [[directory-fuzzing]]
+related: ["[[reverse-shells]]", "[[ftp-anonymous-login]]", "[[directory-fuzzing]]"]
 ---
 
 # Web Shell Upload

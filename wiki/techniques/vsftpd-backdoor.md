@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: [netcat, telnet]
 cves: [CVE-2011-2523]
-related: [[cve-2011-2523]]
+related: ["[[cve-2011-2523]]"]
 ---
 
 # vsftpd Backdoor

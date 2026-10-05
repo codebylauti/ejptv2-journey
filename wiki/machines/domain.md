@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, nxc, netcat]
 techniques: [information-gathering, smb-enumeration, web-shell-upload, suid-enumeration, writable-etc-passwd]
 tags: [ejpt:assessment, ejpt:host-net-pentest]
-related: [[basic-pentesting]], [[madeyes-castle]]
+related: ["[[basic-pentesting]]", "[[madeyes-castle]]"]
 ---
 
 # Domain

@@ -1,7 +1,7 @@
 ---
 type: tool
 category: client
-related: [[ftp-anonymous-login]], [[hardcoded-credentials]]
+related: ["[[ftp-anonymous-login]]", "[[hardcoded-credentials]]"]
 ---
 
 # FTP (client)

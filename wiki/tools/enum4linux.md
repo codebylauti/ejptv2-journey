@@ -1,7 +1,7 @@
 ---
 type: tool
 category: scanner
-related: [[smb-enumeration]]
+related: ["[[smb-enumeration]]"]
 ---
 
 # Enum4linux

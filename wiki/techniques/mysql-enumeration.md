@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:assessment]
 tools: [mysql]
 cves: []
-related: [[sql-injection]], [[hardcoded-credentials]]
+related: ["[[sql-injection]]", "[[hardcoded-credentials]]"]
 ---
 
 # MySQL Enumeration

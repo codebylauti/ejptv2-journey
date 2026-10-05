@@ -1,9 +1,9 @@
 ---
 type: technique
 tags: [ejpt:host-net-pentest]
-tools: []
+tools: [getcap]
 cves: []
-related: [[cron-job-abuse]], [[suid-enumeration]]
+related: ["[[cron-job-abuse]]", "[[suid-enumeration]]"]
 ---
 
 # Linux Capabilities
@@ -15,6 +15,8 @@ Exploiting binaries with dangerous capabilities (e.g. `cap_setuid`) to escalate 
 ```sh
 getcap -r / 2>/dev/null
 ```
+
+[[getcap]]'s recursive sweep is the capability equivalent of `find -perm -4000` ([[suid-enumeration]]): run it as the low-priv user you already have, because capabilities are read from the filesystem, not from a privileged service.
 
 ## Exploit
 

@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest, ejpt:assessment]
 tools: [tshark]
 cves: []
-related: [[source-code-disclosure]], [[pcap-analysis]]
+related: ["[[source-code-disclosure]]", "[[pcap-analysis]]"]
 ---
 
 # Hardcoded Credentials

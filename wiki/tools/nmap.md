@@ -1,7 +1,7 @@
 ---
 type: tool
 category: scanner
-related: [[information-gathering]]
+related: ["[[information-gathering]]"]
 ---
 
 # Nmap

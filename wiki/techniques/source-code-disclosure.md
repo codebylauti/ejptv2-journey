@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest, ejpt:assessment]
 tools: [curl]
 cves: []
-related: [[directory-fuzzing]]
+related: ["[[directory-fuzzing]]"]
 ---
 
 # Source Code Disclosure

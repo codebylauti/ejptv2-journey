@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest, ejpt:host-net-pentest]
 tools: [curl]
 cves: []
-related: [[local-file-inclusion]]
+related: ["[[local-file-inclusion]]"]
 ---
 
 # Log Poisoning

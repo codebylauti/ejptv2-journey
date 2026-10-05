@@ -1,7 +1,7 @@
 ---
 type: tool
 category: tunneling
-related: [[pivoting]], [[port-forwarding]], [[chisel]]
+related: ["[[pivoting]]", "[[port-forwarding]]", "[[chisel]]"]
 ---
 
 # Socat

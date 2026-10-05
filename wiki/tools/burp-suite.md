@@ -1,7 +1,7 @@
 ---
 type: tool
 category: proxy
-related: [[web-cache-deception]], [[xss-and-cookie-theft]]
+related: ["[[web-cache-deception]]", "[[xss-and-cookie-theft]]"]
 ---
 
 # Burp Suite

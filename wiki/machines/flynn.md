@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, ssh]
 techniques: [information-gathering, hardcoded-credentials, sudo-abuse]
 tags: [ejpt:assessment, ejpt:host-net-pentest]
-related: [[acme]], [[littlepivoting]]
+related: ["[[acme]]", "[[littlepivoting]]"]
 ---
 
 # Flynn

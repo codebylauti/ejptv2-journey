@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest]
 tools: [burp-suite]
 cves: []
-related: [[xss-and-cookie-theft]]
+related: ["[[xss-and-cookie-theft]]"]
 ---
 
 # Web Cache Deception

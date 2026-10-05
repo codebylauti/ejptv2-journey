@@ -1,7 +1,7 @@
 ---
 type: tool
 category: networking
-related: [[reverse-shells]], [[vsftpd-backdoor]]
+related: ["[[reverse-shells]]", "[[vsftpd-backdoor]]"]
 ---
 
 # Netcat

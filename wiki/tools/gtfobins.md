@@ -1,7 +1,7 @@
 ---
 type: tool
 category: reference
-related: [[sudo-abuse]], [[suid-enumeration]]
+related: ["[[sudo-abuse]]", "[[suid-enumeration]]"]
 ---
 
 # GTFOBins

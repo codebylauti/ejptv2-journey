@@ -1,7 +1,7 @@
 ---
 type: tool
 category: framework
-related: [[sql-injection]]
+related: ["[[sql-injection]]"]
 ---
 
 # sqlmap

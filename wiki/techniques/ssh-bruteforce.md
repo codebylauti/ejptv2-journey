@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: [hydra]
 cves: []
-related: [[sudo-abuse]]
+related: ["[[sudo-abuse]]"]
 ---
 
 # SSH Brute Force

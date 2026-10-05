@@ -1,7 +1,7 @@
 ---
 type: tool
 category: scanner
-related: [[directory-fuzzing]]
+related: ["[[directory-fuzzing]]"]
 ---
 
 # Dirb

@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, curl, tshark, ssh]
 techniques: [information-gathering, pcap-analysis, hardcoded-credentials, sudo-abuse]
 tags: [ejpt:assessment, ejpt:host-net-pentest]
-related: [[cap]], [[internal]]
+related: ["[[cap]]", "[[internal]]"]
 ---
 
 # Analyst

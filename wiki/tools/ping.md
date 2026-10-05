@@ -1,7 +1,7 @@
 ---
 type: tool
 category: networking
-related: [[information-gathering]]
+related: ["[[information-gathering]]"]
 ---
 
 # Ping

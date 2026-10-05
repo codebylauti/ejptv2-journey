@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, curl]
 techniques: [sql-injection, session-and-cookie-abuse, cron-job-abuse, linux-capabilities, reverse-shells, directory-fuzzing, source-code-disclosure]
 tags: [ejpt:assessment, ejpt:host-net-pentest, ejpt:web-pentest]
-related: [[baluhome]], [[ignite]]
+related: ["[[baluhome]]", "[[ignite]]"]
 ---
 
 # Los 3 Hackers

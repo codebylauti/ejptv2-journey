@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, ssh]
 techniques: [information-gathering, hardcoded-credentials, suid-enumeration]
 tags: [ejpt:assessment, ejpt:host-net-pentest]
-related: [[breakmyssh]], [[wargames]]
+related: ["[[breakmyssh]]", "[[wargames]]"]
 ---
 
 # ACME

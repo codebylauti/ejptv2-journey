@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest, ejpt:assessment]
 tools: [wpscan, gobuster, ffuf]
 cves: []
-related: [[directory-fuzzing]], [[reverse-shells]]
+related: ["[[directory-fuzzing]]", "[[reverse-shells]]"]
 ---
 
 # WordPress Enumeration & Exploitation

@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, curl, sqlmap, hydra, john-the-ripper, gtfobins, ssh]
 techniques: [information-gathering, directory-fuzzing, virtual-hosting, sql-injection, hash-cracking, smb-enumeration, sudo-abuse, suid-enumeration, path-hijacking]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[basic-pentesting]], [[wargames]]
+related: ["[[basic-pentesting]]", "[[wargames]]"]
 ---
 
 # Madeye's Castle

@@ -1,7 +1,7 @@
 ---
 type: tool
 category: framework
-related: [[guided-pentest]], [[reverse-shells]], [[metasploit-pivoting]]
+related: ["[[guided-pentest]]", "[[reverse-shells]]", "[[metasploit-pivoting]]"]
 ---
 
 # Metasploit

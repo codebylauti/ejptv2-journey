@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, dirb, ffuf, curl, netcat]
 techniques: [directory-fuzzing, parameter-fuzzing, local-file-inclusion, log-poisoning, reverse-shells, sudo-abuse, linux-capabilities]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[los-3-hackers]], [[adopting]]
+related: ["[[los-3-hackers]]", "[[adopting]]"]
 ---
 
 # Hannah Coffee

@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, curl, sqlmap, gtfobins]
 techniques: [directory-fuzzing, sql-injection, source-code-disclosure, hardcoded-credentials, suid-enumeration]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[los-3-hackers]], [[grooti]]
+related: ["[[los-3-hackers]]", "[[grooti]]"]
 ---
 
 # Duque

@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: [curl]
 cves: []
-related: [[sudo-abuse]], [[suid-enumeration]]
+related: ["[[sudo-abuse]]", "[[suid-enumeration]]"]
 ---
 
 # Writable /etc/passwd

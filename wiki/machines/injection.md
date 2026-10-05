@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, curl, sqlmap]
 techniques: [directory-fuzzing, sql-injection, source-code-disclosure, hardcoded-credentials]
 tags: [ejpt:assessment, ejpt:web-pentest]
-related: [[duque]], [[grooti]]
+related: ["[[duque]]", "[[grooti]]"]
 ---
 
 # Injection

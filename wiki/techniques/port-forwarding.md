@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: [metasploit, ssh, chisel, socat]
 cves: []
-related: [[pivoting]], [[metasploit-pivoting]]
+related: ["[[pivoting]]", "[[metasploit-pivoting]]"]
 ---
 
 # Port Forwarding / Tunneling

@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, curl, hydra]
 techniques: [information-gathering, directory-fuzzing, source-code-disclosure, ssh-bruteforce, acrostic-decoding, hardcoded-credentials]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[balufood]], [[hedgehog]]
+related: ["[[balufood]]", "[[hedgehog]]"]
 ---
 
 # Winfake

@@ -1,7 +1,7 @@
 ---
 type: tool
 category: scanner
-related: [[smb-enumeration]], [[smbclient]]
+related: ["[[smb-enumeration]]", "[[smbclient]]"]
 ---
 
 # Smbmap

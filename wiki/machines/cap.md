@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, ffuf, ssh]
 techniques: [information-gathering, directory-fuzzing, broken-access-control, hardcoded-credentials, pcap-analysis, linux-capabilities]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[broken-access-control]], [[linux-capabilities]], [[pcap-analysis]], [[hack-the-box]]
+related: ["[[broken-access-control]]", "[[linux-capabilities]]", "[[pcap-analysis]]", "[[hack-the-box]]"]
 ---
 
 # Cap

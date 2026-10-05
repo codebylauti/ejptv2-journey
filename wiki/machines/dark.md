@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, hydra, curl, metasploit, netcat, gtfobins]
 techniques: [information-gathering, directory-fuzzing, source-code-disclosure, local-file-inclusion, server-side-request-forgery, ssh-bruteforce, reverse-shells, command-injection, pivoting, metasploit-pivoting, port-forwarding, suid-enumeration, writable-etc-passwd]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[chmod-4755]], [[littlepivoting]], [[server-side-request-forgery]], [[metasploit-pivoting]]
+related: ["[[chmod-4755]]", "[[littlepivoting]]", "[[server-side-request-forgery]]", "[[metasploit-pivoting]]"]
 ---
 
 # Dark

@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest, ejpt:host-net-pentest]
 tools: [netcat]
 cves: []
-related: [[reverse-shells]], [[server-side-template-injection]], [[waf-bypass]]
+related: ["[[reverse-shells]]", "[[server-side-template-injection]]", "[[waf-bypass]]"]
 ---
 
 # Command Injection

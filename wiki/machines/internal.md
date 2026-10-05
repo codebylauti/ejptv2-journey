@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, curl, gobuster, hydra, netcat]
 techniques: [information-gathering, virtual-hosting, waf-bypass, command-injection, reverse-shells, ssh-bruteforce, hardcoded-credentials, suid-enumeration]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[waf-bypass]], [[virtual-hosting]], [[command-injection]]
+related: ["[[waf-bypass]]", "[[virtual-hosting]]", "[[command-injection]]"]
 ---
 
 # Internal

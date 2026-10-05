@@ -1,6 +1,6 @@
 ---
 type: overview
-related: [[dockerlabs]], [[tryhackme]], [[roadmap]]
+related: ["[[dockerlabs]]", "[[tryhackme]]", "[[roadmap]]"]
 ---
 
 # Overview

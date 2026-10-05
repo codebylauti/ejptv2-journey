@@ -7,7 +7,7 @@ cves: [CVE-2011-2523]
 tools: [nmap, telnet, netcat]
 techniques: [vsftpd-backdoor]
 tags: [ejpt:assessment, ejpt:host-net-pentest]
-related: [[tproot]]
+related: ["[[tproot]]"]
 ---
 
 # First Hacking

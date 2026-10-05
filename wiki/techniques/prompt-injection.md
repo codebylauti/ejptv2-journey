@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest]
 tools: [netcat]
 cves: []
-related: [[hardcoded-credentials]]
+related: ["[[hardcoded-credentials]]"]
 ---
 
 # Prompt Injection

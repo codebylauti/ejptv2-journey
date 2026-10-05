@@ -7,7 +7,7 @@ cves: [CVE-2019-9053]
 tools: [hydra, gobuster]
 techniques: [sql-injection, ssh-bruteforce, sudo-abuse, directory-fuzzing, source-code-disclosure]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[basic-pentesting]], [[ignite]]
+related: ["[[basic-pentesting]]", "[[ignite]]"]
 ---
 
 # Simple CTF

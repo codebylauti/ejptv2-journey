@@ -1,7 +1,7 @@
 ---
 type: tool
 category: fuzzer
-related: [[parameter-fuzzing]]
+related: ["[[parameter-fuzzing]]"]
 ---
 
 # ffuf

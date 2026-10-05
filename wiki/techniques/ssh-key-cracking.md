@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: [john-the-ripper]
 cves: []
-related: [[ssh-bruteforce]]
+related: ["[[ssh-bruteforce]]"]
 ---
 
 # SSH Key Cracking

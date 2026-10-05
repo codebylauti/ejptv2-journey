@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, ping, ftp, nxc, smbmap, smbclient, ssh]
 techniques: [information-gathering, ftp-anonymous-login, smb-enumeration, hardcoded-credentials, hash-cracking, sudo-abuse]
 tags: [ejpt:assessment, ejpt:auditing, ejpt:host-net-pentest]
-related: [[domain]], [[chmod-4755]]
+related: ["[[domain]]", "[[chmod-4755]]"]
 ---
 
 # dance-samba

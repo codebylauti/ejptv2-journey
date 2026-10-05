@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: []
 cves: []
-related: [[cron-job-abuse]], [[suid-enumeration]]
+related: ["[[cron-job-abuse]]", "[[suid-enumeration]]"]
 ---
 
 # Group Ownership Enumeration

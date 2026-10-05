@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: []
 cves: []
-related: [[reverse-shells]], [[suid-enumeration]]
+related: ["[[reverse-shells]]", "[[suid-enumeration]]"]
 ---
 
 # Restricted Shell Escape

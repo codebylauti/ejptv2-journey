@@ -1,7 +1,7 @@
 ---
 type: tool
 category: bruteforcer
-related: [[ssh-bruteforce]]
+related: ["[[ssh-bruteforce]]"]
 ---
 
 # Hydra

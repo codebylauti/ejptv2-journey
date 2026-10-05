@@ -1,7 +1,7 @@
 ---
 type: tool
 category: scanner
-related: [[information-gathering]], [[pivoting]]
+related: ["[[information-gathering]]", "[[pivoting]]"]
 ---
 
 # Arp-scan

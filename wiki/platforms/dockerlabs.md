@@ -1,7 +1,7 @@
 ---
 type: platform
 difficulties: [super-easy, easy, intermediate, hard]
-related: [[tryhackme]]
+related: ["[[tryhackme]]"]
 ---
 
 # DockerLabs

@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:assessment, ejpt:auditing, ejpt:host-net-pentest]
 tools: [enum4linux, nxc, smbmap, smbclient]
 cves: []
-related: [[ssh-bruteforce]], [[web-shell-upload]], [[nxc]], [[smbmap]], [[smbclient]]
+related: ["[[ssh-bruteforce]]", "[[web-shell-upload]]", "[[nxc]]", "[[smbmap]]", "[[smbclient]]"]
 ---
 
 # SMB Enumeration

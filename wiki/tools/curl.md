@@ -1,7 +1,7 @@
 ---
 type: tool
 category: http-client
-related: [[information-gathering]], [[node-inspector-rce]], [[prototype-pollution]]
+related: ["[[information-gathering]]", "[[node-inspector-rce]]", "[[prototype-pollution]]"]
 ---
 
 # Curl

@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, dirb, curl, netcat]
 techniques: [source-code-disclosure, sudo-abuse, group-ownership-enumeration, cron-job-abuse, reverse-shells]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[balufood]], [[hannah-coffee]]
+related: ["[[balufood]]", "[[hannah-coffee]]"]
 ---
 
 # Balulero

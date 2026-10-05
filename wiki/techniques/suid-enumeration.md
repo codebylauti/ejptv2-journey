@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: [gtfobins]
 cves: []
-related: [[sudo-abuse]], [[linux-capabilities]]
+related: ["[[sudo-abuse]]", "[[linux-capabilities]]"]
 ---
 
 # SUID Enumeration & Abuse

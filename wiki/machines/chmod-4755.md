@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, nxc, smbmap, smbclient, enum4linux, ssh, curl]
 techniques: [information-gathering, smb-enumeration, hardcoded-credentials, restricted-shell-escape, suid-enumeration, writable-etc-passwd]
 tags: [ejpt:assessment, ejpt:auditing, ejpt:host-net-pentest]
-related: [[domain]], [[basic-pentesting]]
+related: ["[[domain]]", "[[basic-pentesting]]"]
 ---
 
 # chmod-4755

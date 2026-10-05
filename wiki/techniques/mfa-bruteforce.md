@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest]
 tools: [burp-suite]
 cves: []
-related: [[value-brute-force]], [[session-and-cookie-abuse]]
+related: ["[[value-brute-force]]", "[[session-and-cookie-abuse]]"]
 ---
 
 # MFA / OTP Brute Force

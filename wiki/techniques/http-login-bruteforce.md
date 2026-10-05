@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest]
 tools: [hydra]
 cves: []
-related: [[ssh-bruteforce]], [[directory-fuzzing]]
+related: ["[[ssh-bruteforce]]", "[[directory-fuzzing]]"]
 ---
 
 # HTTP Login Brute Force

@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, netcat, gtfobins]
 techniques: [ftp-anonymous-login, directory-fuzzing, web-shell-upload, reverse-shells, sudo-abuse, writable-etc-passwd]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[nodeclimb]], [[adopting]]
+related: ["[[nodeclimb]]", "[[adopting]]"]
 ---
 
 # Anonymous Pingu

@@ -1,7 +1,7 @@
 ---
 type: tool
 category: networking
-related: [[netcat]], [[vsftpd-backdoor]]
+related: ["[[netcat]]", "[[vsftpd-backdoor]]"]
 ---
 
 # Telnet

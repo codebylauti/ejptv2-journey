@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest]
 tools: [curl]
 cves: []
-related: [[log-poisoning]], [[parameter-fuzzing]]
+related: ["[[log-poisoning]]", "[[parameter-fuzzing]]"]
 ---
 
 # Local File Inclusion (LFI)

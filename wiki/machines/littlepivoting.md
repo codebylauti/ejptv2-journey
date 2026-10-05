@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, arp-scan, gobuster, ffuf, hydra, curl, metasploit, gtfobins, chisel, proxychains]
 techniques: [information-gathering, directory-fuzzing, local-file-inclusion, ssh-bruteforce, su-brute-force, sudo-abuse, reverse-shells, web-shell-upload, pivoting, port-forwarding, metasploit-pivoting]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[metasploit-pivoting]], [[port-forwarding]], [[chisel]], [[proxychains]], [[guided-pentest]]
+related: ["[[metasploit-pivoting]]", "[[port-forwarding]]", "[[chisel]]", "[[proxychains]]", "[[guided-pentest]]"]
 ---
 
 # LittlePivoting

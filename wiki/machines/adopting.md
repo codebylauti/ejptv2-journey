@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, burp-suite]
 techniques: [web-cache-deception, writable-etc-passwd, directory-fuzzing]
 tags: [ejpt:assessment, ejpt:web-pentest, ejpt:host-net-pentest]
-related: [[baluhome]]
+related: ["[[baluhome]]"]
 ---
 
 # Adopting

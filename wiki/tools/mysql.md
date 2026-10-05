@@ -1,7 +1,7 @@
 ---
 type: tool
 category: client
-related: [[mysql-enumeration]]
+related: ["[[mysql-enumeration]]"]
 ---
 
 # MySQL Client

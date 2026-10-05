@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: [netcat]
 cves: []
-related: [[cron-job-abuse]]
+related: ["[[cron-job-abuse]]"]
 ---
 
 # Reverse Shells

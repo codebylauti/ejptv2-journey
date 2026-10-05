@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: []
 cves: []
-related: [[command-injection]], [[sudo-abuse]]
+related: ["[[command-injection]]", "[[sudo-abuse]]"]
 ---
 
 # Arithmetic Injection (bash `-eq`)

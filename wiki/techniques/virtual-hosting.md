@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:assessment, ejpt:web-pentest]
 tools: [curl]
 cves: []
-related: [[directory-fuzzing]], [[information-gathering]]
+related: ["[[directory-fuzzing]]", "[[information-gathering]]"]
 ---
 
 # Virtual Hosting (vhost) Discovery

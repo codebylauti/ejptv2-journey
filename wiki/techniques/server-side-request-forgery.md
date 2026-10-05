@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest]
 tools: [curl]
 cves: []
-related: [[local-file-inclusion]], [[pivoting]], [[information-gathering]]
+related: ["[[local-file-inclusion]]", "[[pivoting]]", "[[information-gathering]]"]
 ---
 
 # Server-Side Request Forgery (SSRF)

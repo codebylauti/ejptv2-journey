@@ -1,7 +1,7 @@
 ---
 type: tool
 category: reference
-related: [[metasploit]], [[sql-injection]]
+related: ["[[metasploit]]", "[[sql-injection]]"]
 ---
 
 # SearchSploit

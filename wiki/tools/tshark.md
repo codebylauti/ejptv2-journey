@@ -1,7 +1,7 @@
 ---
 type: tool
 category: analyzer
-related: [[pcap-analysis]]
+related: ["[[pcap-analysis]]"]
 ---
 
 # tshark

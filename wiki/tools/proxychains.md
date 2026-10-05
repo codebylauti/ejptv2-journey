@@ -1,7 +1,7 @@
 ---
 type: tool
 category: proxy
-related: [[pivoting]], [[chisel]], [[port-forwarding]], [[socat]]
+related: ["[[pivoting]]", "[[chisel]]", "[[port-forwarding]]", "[[socat]]"]
 ---
 
 # Proxychains

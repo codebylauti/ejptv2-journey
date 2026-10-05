@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: [curl]
 cves: []
-related: [[reverse-shells]]
+related: ["[[reverse-shells]]"]
 ---
 
 # Node.js Inspector RCE

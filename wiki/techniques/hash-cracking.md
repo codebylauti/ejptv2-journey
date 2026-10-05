@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:host-net-pentest]
 tools: [john-the-ripper]
 cves: []
-related: [[ssh-key-cracking]], [[zip-cracking]]
+related: ["[[ssh-key-cracking]]", "[[zip-cracking]]"]
 ---
 
 # Hash Cracking

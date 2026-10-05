@@ -7,7 +7,7 @@ cves: []
 tools: [nmap, gobuster, hydra]
 techniques: [directory-fuzzing, ssh-bruteforce, sudo-abuse, suid-enumeration]
 tags: [ejpt:assessment, ejpt:host-net-pentest, ejpt:web-pentest]
-related: [[obsession]], [[simple-ctf]]
+related: ["[[obsession]]", "[[simple-ctf]]"]
 ---
 
 # Trust

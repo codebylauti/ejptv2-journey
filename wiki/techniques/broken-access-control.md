@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest]
 tools: [burp-suite, curl]
 cves: []
-related: [[session-and-cookie-abuse]]
+related: ["[[session-and-cookie-abuse]]"]
 ---
 
 # Broken Access Control

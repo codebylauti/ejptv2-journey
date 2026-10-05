@@ -81,6 +81,16 @@ related: []
 ---
 ```
 
+**`related:` must be valid YAML.** Always write it as a single quoted list:
+
+```yaml
+related: ["[[page-a]]", "[[page-b]]"]   # ok
+related: [[page-a]], [[page-b]]         # PARSE ERROR — a flow sequence may not be followed by ", …"
+related: [[page-a]]                     # parses, but yields a nested list — don't rely on it
+```
+
+A parser that fails on the block drops **every** property on that page, so one bad line silently breaks the whole frontmatter.
+
 ### eJPT domain tags
 
 Every concept maps to one or more eJPTv2 domains. Use exactly these tags:
@@ -114,6 +124,7 @@ A single source often touches 10–15 wiki pages.
 ### Lint
 
 Periodically, on request:
+- Parse every frontmatter block with a **strict** YAML parser and verify `tools:`/`techniques:`/`related:`/`cves:`/`platform:` resolve to real pages (line-wise extraction hides parse errors).
 - Find contradictions between pages and stale claims superseded by newer sources.
 - Find orphan pages (no inbound links) and missing cross-references.
 - Find important concepts mentioned but lacking their own page.
