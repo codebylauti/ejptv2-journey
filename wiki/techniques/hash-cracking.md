@@ -65,6 +65,8 @@ yescrypt is memory-hard → wordlist (+ rules), not brute force.
 
 [[wargames]]: SHA-256 `60a3f3cb…` → `1983@1983` via hashes.com (not in rockyou). [[bruteshock]]: yescrypt `$y$` shadow hash → `salvador1` via `john --format=crypt`.
 
+Two bare hashes on [[file]] show the length rule paying off twice: `53dd9c60…` (32 hex = MD5) from an FTP file → `john --format=raw-MD5` → `justin`, and `cbfdac60…` (40 hex = SHA-1) out of a steghide carrier → `john --format=raw-sha1 --wordlist=rockyou.txt` → `password123`. **Neither file called itself a hash** — one was named `anon.txt`, the other `pass.txt` — so identification had to come from the bytes.
+
 ## Seen in
 
-[[wargames]], [[bruteshock]], [[madeyes-castle]] (SHA-512 + `--rules=best64`), [[dance-samba]] (counter-example: a "hash" that was base32+base64 *encoding* — decoded, never cracked)
+[[wargames]], [[bruteshock]], [[madeyes-castle]] (SHA-512 + `--rules=best64`), [[dance-samba]] (counter-example: a "hash" that was base32+base64 *encoding* — decoded, never cracked), [[file]] (raw-MD5 + raw-SHA1, both identified by length)

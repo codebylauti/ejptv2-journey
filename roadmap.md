@@ -4,7 +4,7 @@ eJPTv2 learning path. Track your progress here — update checkboxes as you comp
 
 ## Current state
 
-See [[overview]] for the detailed snapshot. Bottom line: **42 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered three times ([[littlepivoting]] ×2, [[dark]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), pcap traffic analysis now a documented technique ([[pcap-analysis]], via [[analyst]]), SMB workflow hardened three times by real incidents ([[smb-enumeration]] via [[domain]], [[chmod-4755]], and [[dance-samba]]), SSRF got its first sighting ([[server-side-request-forgery]], via [[dark]]) and RFI its own ([[remote-file-inclusion]], via [[rutas]]), still light on Active Directory and deep web pentesting.
+See [[overview]] for the detailed snapshot. Bottom line: **43 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered three times ([[littlepivoting]] ×2, [[dark]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), pcap traffic analysis now a documented technique ([[pcap-analysis]], via [[analyst]]), SMB workflow hardened three times by real incidents ([[smb-enumeration]] via [[domain]], [[chmod-4755]], and [[dance-samba]]), SSRF got its first sighting ([[server-side-request-forgery]], via [[dark]]) and RFI its own ([[remote-file-inclusion]], via [[rutas]]), **upload-filter fuzzing** documented with a rejection-size baseline ([[web-shell-upload]], via [[file]]), still light on Active Directory and deep web pentesting.
 
 ---
 
@@ -41,6 +41,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **42 boxes done** acros
 - [x] [[internal]] — 303 vhost leak → WAF blacklist bypass → reverse shell → leaked wordlist → vaultctl
 - [x] [[flynn]] — default SSH creds → sudo `env`
 - [x] [[analyst]] — pcap triage → captured SSH creds → sudo ALL
+- [x] [[file]] — anon FTP hash → upload extension fuzz (`.phar`) → reverse shell → su spray → steghide → 3-hop sudo chain
 
 ### DockerLabs — intermediate
 

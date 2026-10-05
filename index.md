@@ -45,6 +45,7 @@ Content catalog. Read this first on any query.
 - [[internal]] — 303 vhost leak → WAF blacklist bypass → reverse shell → leaked wordlist → vaultctl
 - [[flynn]] — default SSH creds → sudo `env`
 - [[analyst]] — pcap triage (tshark) → captured SSH creds → sudo ALL
+- [[file]] — anon FTP hash → upload extension fuzz (`.phar`) → reverse shell → su spray → steghide → 3-hop sudo chain
 
 ### DockerLabs — intermediate
 
@@ -160,6 +161,7 @@ Content catalog. Read this first on any query.
 - [[socat]] — bidirectional TCP relay (listener/`reverse-shell` chains through hops)
 - [[proxychains]] — route arbitrary tools through a SOCKS proxy
 - [[steghide]] — extract/embed data hidden in JPEG/BMP/WAV carriers
+- [[stegseek]] — brute-force a steghide passphrase from a wordlist
 - [[ssh]] — remote login + port forwarding (`-L`/`-R`/`-D`)
 - [[ping]] — ICMP reachability + TTL/OS hint
 - [[smbmap]] — SMB share enum (null vs authenticated permission delta)

