@@ -37,4 +37,4 @@ The `smb2` module can report **false positives** — on [[domain]] it flagged 4+
 
 ## Seen in
 
-[[breakmyssh]], [[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[basic-pentesting]], [[simple-ctf]], [[grooti]], [[winfake]], [[bruteshock]], [[littlepivoting]] (SSH `manchi`/`mario`, second host via `portfwd`'d `127.0.0.1:2200`; manual re-run via `proxychains`), [[madeyes-castle]] (`smb2` brute-force → `avadakedavra:123456`), [[internal]] (`vault` via a leaked on-box password file), [[domain]] (`smb2` → **false positives**, switched to [[nxc]] → `bob:star`)
+[[breakmyssh]], [[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[basic-pentesting]], [[simple-ctf]], [[grooti]], [[winfake]], [[bruteshock]], [[littlepivoting]] (SSH `manchi`/`mario`, second host via `portfwd`'d `127.0.0.1:2200`; manual re-run via `proxychains`), [[madeyes-castle]] (`smb2` brute-force → `avadakedavra:123456`), [[internal]] (`vault` via a leaked on-box password file), [[domain]] (`smb2` → **false positives**, switched to [[nxc]] → `bob:star`), [[dark]] (`ssh` → `toni:banana` with `-t 64 -F`)

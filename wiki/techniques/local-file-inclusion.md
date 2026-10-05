@@ -23,6 +23,10 @@ curl -s "http://TARGET/index.php?param=../../../etc/passwd"
 
 - Read SSH keys for a foothold: `?param=../../home/user/.ssh/id_rsa` ([[psycho]]).
 
+## Same parameter, two bugs
+
+Some sinks are a plain `file_get_contents($input)` — the *input itself* picks the behaviour: a bare word or `../` path reads a local file (this page), while `http://…` makes the server fetch a remote/internal URL ([[server-side-request-forgery]]). Test both schemes before you classify the parameter ([[dark]]).
+
 ## Chain to RCE
 
 - Pair with [[log-poisoning]] to execute injected code.
@@ -30,4 +34,4 @@ curl -s "http://TARGET/index.php?param=../../../etc/passwd"
 
 ## Seen in
 
-[[hannah-coffee]] (`?studio=../../../etc/passwd`), [[psycho]] (`?secret=` → `/etc/passwd` and `id_rsa`), [[littlepivoting]] (`?archivo=` → `/etc/passwd`, fuzzed with [[ffuf]] `LFI-Jhaddix.txt`)
+[[hannah-coffee]] (`?studio=../../../etc/passwd`), [[psycho]] (`?secret=` → `/etc/passwd` and `id_rsa`), [[littlepivoting]] (`?archivo=` → `/etc/passwd`, fuzzed with [[ffuf]] `LFI-Jhaddix.txt`), [[dark]] (POST `url=///////../../../etc/passwd` — same field also does SSRF)

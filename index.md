@@ -56,6 +56,7 @@ Content catalog. Read this first on any query.
 - [[domain]] — SMB enum → nxc spray → writable share → SUID nano (reclassified from easy)
 - [[chmod-4755]] — SMB hints → rbash escape → SUID curl overwrites /etc/passwd
 - [[dance-samba]] — FTP note hint → SMB spray → writable home share → SSH key → sudo `file` read
+- [[dark]] — one `url` param = SSRF + LFI → SSH brute-force → Metasploit pivot → `cmd` RCE → SUID curl
 
 ### DockerLabs — hard
 
@@ -81,6 +82,7 @@ Content catalog. Read this first on any query.
 - [[value-brute-force]] — brute-force a param value, spot the odd response by length
 - [[mfa-bruteforce]] — brute-force an OTP/MFA code, bypass the rate limiter via X-Forwarded-For
 - [[local-file-inclusion]] — LFI path traversal
+- [[server-side-request-forgery]] — the server fetches a URL you choose (internal hosts, metadata)
 - [[log-poisoning]] — inject code into logs → RCE via LFI
 - [[ssh-bruteforce]] — hydra dictionary attack on SSH
 - [[http-login-bruteforce]] — hydra http-post-form on a web login form

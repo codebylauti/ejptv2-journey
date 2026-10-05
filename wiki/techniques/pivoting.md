@@ -53,4 +53,4 @@ On the compromised host, **read the network before you scan it**:
 
 ## Seen in
 
-[[littlepivoting]] — twice: Metasploit `route`/`portfwd`, then a fully manual chisel + [[socat]] + [[proxychains]] re-run.
+[[littlepivoting]] — twice: Metasploit `route`/`portfwd`, then a fully manual chisel + [[socat]] + [[proxychains]] re-run. [[dark]] — one hop, Metasploit only (`ping_sweep` → `portscan/tcp` → `portfwd`).

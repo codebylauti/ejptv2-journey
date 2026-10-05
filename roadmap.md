@@ -4,7 +4,7 @@ eJPTv2 learning path. Track your progress here — update checkboxes as you comp
 
 ## Current state
 
-See [[overview]] for the detailed snapshot. Bottom line: **40 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered ([[littlepivoting]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), pcap traffic analysis now a documented technique ([[pcap-analysis]], via [[analyst]]), SMB workflow hardened three times by real incidents ([[smb-enumeration]] via [[domain]], [[chmod-4755]], and [[dance-samba]]), still light on Active Directory and deep web pentesting.
+See [[overview]] for the detailed snapshot. Bottom line: **41 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered three times ([[littlepivoting]] ×2, [[dark]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), pcap traffic analysis now a documented technique ([[pcap-analysis]], via [[analyst]]), SMB workflow hardened three times by real incidents ([[smb-enumeration]] via [[domain]], [[chmod-4755]], and [[dance-samba]]), SSRF got its first sighting ([[server-side-request-forgery]], via [[dark]]), still light on Active Directory and deep web pentesting.
 
 ---
 
@@ -52,6 +52,7 @@ See [[overview]] for the detailed snapshot. Bottom line: **40 boxes done** acros
 - [x] [[domain]] — SMB enum → nxc spray → writable share → SUID nano (reclassified from easy)
 - [x] [[chmod-4755]] — SMB hints → rbash escape → SUID curl overwrites /etc/passwd
 - [x] [[dance-samba]] — FTP note hint → SMB spray → writable home share → SSH key → sudo `file` leak
+- [x] [[dark]] — SSRF/LFI on one `url` param → SSH brute-force → Metasploit pivot → `cmd` RCE → SUID curl
 
 ### DockerLabs — hard
 
@@ -97,17 +98,17 @@ See [[overview]] for the detailed snapshot. Bottom line: **40 boxes done** acros
 **Gaps & next steps**
 - [ ] **Metasploit** — depth growing: [[littlepivoting]] exercised `route`/`portfwd`/`shell_to_meterpreter` ([[metasploit-pivoting]]). Still do THM "Metasploit" module.
 - [ ] **Password cracking** — raw-hash cracking covered via [[hash-cracking]] ([[wargames]], [[madeyes-castle]] with `--rules=best64`); `NTLM`/`/etc/shadow` OS hashes still untried.
-- [ ] **Pivoting & lateral movement** — Metasploit routing covered ([[littlepivoting]]), and the manual re-run now exercises [[chisel]] + [[proxychains]] + [[socat]] end-to-end ([[pivoting]], [[port-forwarding]]). **Next: SSH tunneling** (`-D`/`-L`/`-R` — documented, not yet exercised on a box).
+- [ ] **Pivoting & lateral movement** — Metasploit routing covered twice ([[littlepivoting]], [[dark]]: `ping_sweep` → `portscan/tcp` → `portfwd`), and the manual re-run now exercises [[chisel]] + [[proxychains]] + [[socat]] end-to-end ([[pivoting]], [[port-forwarding]]). **Next: SSH tunneling** (`-D`/`-L`/`-R` — documented, not yet exercised on a box).
 - [ ] **Active Directory** — SMB relays, Kerberoasting, LLMNR poisoning.
 - [ ] Complete more DockerLabs **intermediate/hard** boxes.
 
 ### 4. Web Application Penetration Testing (`ejpt:web-pentest`)
 
-**Covered:** [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[broken-access-control]], [[local-file-inclusion]], [[log-poisoning]], [[parameter-fuzzing]], [[value-brute-force]], [[mfa-bruteforce]], [[directory-fuzzing]], [[source-code-disclosure]], [[acrostic-decoding]], [[prototype-pollution]], [[prompt-injection]], [[wordpress-enumeration]], [[web-shell-upload]], [[server-side-template-injection]], [[command-injection]], [[shellshock]], [[http-login-bruteforce]], [[virtual-hosting]].
+**Covered:** [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[broken-access-control]], [[local-file-inclusion]], [[server-side-request-forgery]], [[log-poisoning]], [[parameter-fuzzing]], [[value-brute-force]], [[mfa-bruteforce]], [[directory-fuzzing]], [[source-code-disclosure]], [[acrostic-decoding]], [[prototype-pollution]], [[prompt-injection]], [[wordpress-enumeration]], [[web-shell-upload]], [[server-side-template-injection]], [[command-injection]], [[shellshock]], [[http-login-bruteforce]], [[virtual-hosting]].
 
 **Gaps & next steps**
 - [ ] **LFI/RFI** beyond the basics ([[local-file-inclusion]] done; extend to RFI and `/proc` tricks). SSTI covered via [[server-side-template-injection]]; command injection covered via [[command-injection]].
-- [ ] **SSRF**, **CSRF** — not yet seen. (IDOR/broken access control now covered via [[broken-access-control]].)
+- [ ] **SSRF** — first sighting on [[dark]] (`process.php` `url=` fetched the internal `20.20.20.3` page and echoed it back), but only the "fetch an internal URL and reflect it" shape: still no `127.0.0.1`/service-on-localhost target, no cloud metadata (`169.254.169.254`), no protocol smuggling. **CSRF** — not yet seen. (IDOR/broken access control now covered via [[broken-access-control]].)
 - [ ] THM "Web Fundamentals" + "OWASP Top 10" paths.
 - [ ] More DockerLabs web-focused boxes.
 

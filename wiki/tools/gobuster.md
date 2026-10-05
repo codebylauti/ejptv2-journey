@@ -29,4 +29,4 @@ gobuster vhost -u http://TARGET/ -w /usr/share/seclists/Discovery/DNS/subdomains
 
 ## Seen in
 
-[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[los-3-hackers]], [[adopting]], [[baluhome]], [[simple-ctf]], [[ignite]], [[tproot]], [[wargames]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[walkingcms]], [[anonymous-pingu]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[internal]] (`vhost` mode → `backup.internal.dl`), [[cap]] (`capture` 302 → `/data/1` object-ID leak)
+[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[los-3-hackers]], [[adopting]], [[baluhome]], [[simple-ctf]], [[ignite]], [[tproot]], [[wargames]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[walkingcms]], [[anonymous-pingu]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[internal]] (`vhost` mode → `backup.internal.dl`), [[cap]] (`capture` 302 → `/data/1` object-ID leak), [[dark]] (`info` + `process.php` + `server-status`)

@@ -47,4 +47,4 @@ Reverse SOCKS/port forwarding over HTTP/WebSocket — see [[chisel]].
 
 ## Seen in
 
-[[littlepivoting]] — Metasploit `portfwd` in the first run; chisel reverse SOCKS + [[socat]] relays in the manual re-run. SSH `-D`/`-L`/`-R` discussed but not yet used on a box.
+[[littlepivoting]] — Metasploit `portfwd` in the first run; chisel reverse SOCKS + [[socat]] relays in the manual re-run. [[dark]] — two `portfwd` relays from one pivot (`8080→80`, `2002→22`), one per service. SSH `-D`/`-L`/`-R` discussed but not yet used on a box.

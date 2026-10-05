@@ -78,7 +78,7 @@ curl file:///tmp/passwd -o /etc/passwd     # writes as root
 su -
 ```
 
-The `file://` handler is the read, `-o` is the write — check both against [[gtfobins]] whenever a *known* binary shows up SUID. This is the [[chmod-4755]] route — the box name *was* the hint ([[suid-enumeration]]).
+The `file://` handler is the read, `-o` is the write — check both against [[gtfobins]] whenever a *known* binary shows up SUID. This is the [[chmod-4755]] route — the box name *was* the hint ([[suid-enumeration]]) — and it worked verbatim again on [[dark]], where `find / -perm -4000` returned the same binary on the same platform.
 
 ## Notes
 
@@ -87,4 +87,4 @@ The `file://` handler is the read, `-o` is the write — check both against [[gt
 
 ## Seen in
 
-[[adopting]], [[anonymous-pingu]], [[bruteshock]], [[domain]], [[chmod-4755]]
+[[adopting]], [[anonymous-pingu]], [[bruteshock]], [[domain]], [[chmod-4755]], [[dark]]

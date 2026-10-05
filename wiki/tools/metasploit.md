@@ -31,4 +31,4 @@ portfwd add -l <local> -p <remote> -r <rhost> # forward a service
 
 ## Seen in
 
-[[guided-pentest]] (UnrealIRCd backdoor module), [[littlepivoting]] (full pivoting: `route`/`autoroute` + `portfwd` + `shell_to_meterpreter`)
+[[guided-pentest]] (UnrealIRCd backdoor module), [[littlepivoting]] (full pivoting: `route`/`autoroute` + `portfwd` + `shell_to_meterpreter`), [[dark]] (single-hop pivot: `multi/handler` → `ping_sweep` → `portscan/tcp` → two `portfwd` relays)

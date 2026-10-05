@@ -27,4 +27,4 @@ hydra -l <user> -P /usr/share/wordlists/rockyou.txt ssh://TARGET -t 4
 
 ## Seen in
 
-[[breakmyssh]], [[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[basic-pentesting]], [[simple-ctf]], [[grooti]], [[winfake]], [[littlepivoting]] (`manchi:lovely`, `mario:chocolate`), [[internal]] (`vault:Yk8$pZ5@cN4!` via a leaked password file)
+[[breakmyssh]], [[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[basic-pentesting]], [[simple-ctf]], [[grooti]], [[winfake]], [[littlepivoting]] (`manchi:lovely`, `mario:chocolate`), [[internal]] (`vault:Yk8$pZ5@cN4!` via a leaked password file), [[dark]] (`toni:banana` — username straight out of LFI'd `/etc/passwd`)

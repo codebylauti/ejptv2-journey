@@ -21,8 +21,9 @@ Extracting secrets (usernames, passwords, hints) from exposed source files.
 - **Hidden-in-plain-sight attributes/CSS** — a username as a CSS property value (`top: pipe;`) and an `hidden="acrostico inicial"` clue ([[winfake]]).
 - **Source leak via SQLi file-read** — `sqlmap --file-read` (or `LOAD_FILE`) pulls a PHP file's source through a blind SQLi, exposing hardcoded arrays/comments that hint at secrets ([[duque]]).
 - **SSTI file-read** — RCE via [[server-side-template-injection]] lets you `cat` the runner's `.env` to extract SSH creds ([[pipepwned]]).
+- **Plain hint files served as-is** — a no-extension `/info` text file naming the next host (`20.20.20.3`) and the narrative reason to visit it ([[dark]]).
 - **Post-exploit source read** — `cat main.py` after a [[command-injection]] foothold exposes the in-memory `USERS` dict and `MFA_PINS` ([[trailpack]]).
 
 ## Seen in
 
-[[hedgehog]], [[obsession]], [[vacaciones]], [[borazuwara]], [[los-3-hackers]], [[ignite]], [[simple-ctf]], [[balufood]], [[balulero]], [[guided-pentest]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]]
+[[hedgehog]], [[obsession]], [[vacaciones]], [[borazuwara]], [[los-3-hackers]], [[ignite]], [[simple-ctf]], [[balufood]], [[balulero]], [[guided-pentest]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[dark]]

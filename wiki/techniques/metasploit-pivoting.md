@@ -32,4 +32,4 @@ No manual per-hop port forwards needed — just one `route add` per newly-compro
 
 ## Seen in
 
-[[littlepivoting]]
+[[littlepivoting]] (multi-hop: `shell_to_meterpreter` → `route add` → chained scans), [[dark]] (single hop: `post/multi/gather/ping_sweep` on `20.20.20.0/24` → `auxiliary/scanner/portscan/tcp` → two `portfwd` relays)

@@ -52,6 +52,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[domain]] — SMB null-session users → hydra false positives → nxc spray → writable share → SUID nano (reclassified from easy)
 - [[chmod-4755]] — SMB hints → rbash escape → SUID curl overwrites /etc/passwd
 - [[dance-samba]] — FTP note hint → nxc spray → writable home share → SSH key drop → sudo `file -f` leak
+- [[dark]] — SSRF/LFI on one `url` param → SSH brute-force → Metasploit pivot → `cmd` RCE → SUID curl
 
 ### hard
 

