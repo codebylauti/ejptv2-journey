@@ -20,7 +20,8 @@ ls / get file / put file / bye
 - The login prompt doubles as recon: the **banner is served before authentication** — read it fully, it occasionally leaks working credentials ([[hardcoded-credentials]]).
 - Anonymous servers accept `anonymous`/`anonymous` (or `anonymous`/any email) — the first thing to try on any FTP port ([[ftp-anonymous-login]]).
 - `put` from an anonymous session onto a web-readable directory is the classic upload-to-RCE chain ([[anonymous-pingu]]).
+- **`prompt off` + `mget *`** pulls a whole directory in one go — do it before you start reading files one at a time.
 
 ## Seen in
 
-[[obsession]], [[tproot]], [[hannah-coffee]], [[nodeclimb]], [[anonymous-pingu]], [[dance-samba]]
+[[obsession]], [[tproot]], [[hannah-coffee]], [[nodeclimb]], [[anonymous-pingu]], [[dance-samba]], [[rutas]] (`hola_disfruta` + `respeta.zip` from an anonymous root)

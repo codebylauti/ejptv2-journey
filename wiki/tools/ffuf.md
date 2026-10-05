@@ -19,6 +19,8 @@ ffuf -u "http://TARGET/FUZZ" -w /usr/share/seclists/Discovery/Web-Content/direct
 
 - `-fw` filters responses by word count (calibrate against a known 404 first).
 
+**Calibrate against a boundary, not just a 404.** Fuzzing the *same* URL before and after you send a credential shows the size delta (`901` vs `1116`), which is both proof the credential is real and the value you then filter with `-fs` ([[rutas]]).
+
 ## Seen in
 
-[[hannah-coffee]] (hidden `studio` parameter discovery), [[psycho]] (hidden `secret` parameter), [[walkingcms]] (root directory fuzz → `wordpress/`), [[pipepwned]] (numeric job-ID fuzz `/api/jobs/FUZZ/trace` + endpoint fuzz `/api/FUZZ`), [[littlepivoting]] ([[local-file-inclusion]] fuzz with `LFI-Jhaddix.txt`, filtered by `-fs`/`-fw`), [[cap]] (IDOR ID-space sweep `/data/FUZZ` with `3-digits-000-999.txt`, `-fc 302`)
+[[hannah-coffee]] (hidden `studio` parameter discovery), [[psycho]] (hidden `secret` parameter), [[walkingcms]] (root directory fuzz → `wordpress/`), [[pipepwned]] (numeric job-ID fuzz `/api/jobs/FUZZ/trace` + endpoint fuzz `/api/FUZZ`), [[littlepivoting]] ([[local-file-inclusion]] fuzz with `LFI-Jhaddix.txt`, filtered by `-fs`/`-fw`), [[cap]] (IDOR ID-space sweep `/data/FUZZ` with `3-digits-000-999.txt`, `-fc 302`), [[rutas]] (parameter-name fuzz → `love`, `-fs 901`; then an LFI wordlist that found nothing because the sink wanted a URL)

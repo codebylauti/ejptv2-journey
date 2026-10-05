@@ -12,7 +12,7 @@ Reconstructing an attack — and often harvesting credentials — from a packet 
 
 ## Workflow
 
-1. Get the capture (`curl`/`wget` from the target, or export from a proxy/dashboard) and open it with `tshark -r file.pcap`.
+1. Get the capture (`curl`/`wget` from the target, or export from a proxy/dashboard) and open it with `tshark -r file.pcap` ([[tshark]]).
 2. **Orient** — which hosts talk to each other, which protocols matter. Start broad: `-Y 'http.request'`, `-Y 'tcp.flags.syn==1 && tcp.flags.ack==0'` for connection attempts.
 3. **Attribute** — filter on the suspect IP and extract unique values with `-T fields -e <field> | sort -u` (User-Agent, URI, method).
 4. **Read conversations** — map `tcp.stream` indexes (`uniq`), then dump the interesting one: `-q -z follow,tcp,ascii,<stream>`.

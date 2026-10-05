@@ -21,9 +21,10 @@ Password: (blank)
 ## What to look for
 
 - Text files containing usernames, passwords, or hints (e.g. `chat-gonza.txt`, `pendientes.txt` in [[obsession]]). Read them as *data*: `nota.txt` — *"Macarena, she's obsessed with donald"* — was literally `macarena:donald`, user and password in one sentence ([[dance-samba]]).
+- **File *names* too** — a 0-byte file still says something (`hola_disfruta` = "enjoy", `respeta.zip` = "respect"), and the pair often reads as an instruction ([[rutas]]).
 - Password-protected archives (e.g. `secretitopicaron.zip` in [[nodeclimb]]) → crack with [[zip-cracking]].
 - **Write access** — if the anonymous user can `put` files, upload a web shell into the webroot and trigger it over HTTP ([[anonymous-pingu]], see [[web-shell-upload]]).
 
 ## Seen in
 
-[[obsession]], [[nodeclimb]], [[anonymous-pingu]], [[dance-samba]]
+[[obsession]], [[nodeclimb]], [[anonymous-pingu]], [[dance-samba]], [[rutas]]

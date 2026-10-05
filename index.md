@@ -57,6 +57,7 @@ Content catalog. Read this first on any query.
 - [[chmod-4755]] — SMB hints → rbash escape → SUID curl overwrites /etc/passwd
 - [[dance-samba]] — FTP note hint → SMB spray → writable home share → SSH key → sudo `file` read
 - [[dark]] — one `url` param = SSRF + LFI → SSH brute-force → Metasploit pivot → `cmd` RCE → SUID curl
+- [[rutas]] — anon FTP → zip crack → steghide → Basic-auth vhost → `love` param → RFI → PATH hijack → writable MOTD
 
 ### DockerLabs — hard
 
@@ -82,7 +83,9 @@ Content catalog. Read this first on any query.
 - [[value-brute-force]] — brute-force a param value, spot the odd response by length
 - [[mfa-bruteforce]] — brute-force an OTP/MFA code, bypass the rate limiter via X-Forwarded-For
 - [[local-file-inclusion]] — LFI path traversal
+- [[remote-file-inclusion]] — the app *executes* a file at a URL you supply → RCE
 - [[server-side-request-forgery]] — the server fetches a URL you choose (internal hosts, metadata)
+- [[steganography]] — secrets hidden inside carriers (steghide), other alphabets, metadata
 - [[log-poisoning]] — inject code into logs → RCE via LFI
 - [[ssh-bruteforce]] — hydra dictionary attack on SSH
 - [[http-login-bruteforce]] — hydra http-post-form on a web login form
@@ -105,6 +108,7 @@ Content catalog. Read this first on any query.
 - [[group-ownership-enumeration]] — find group-writable files (find -group)
 - [[linux-capabilities]] — getcap + cap_setuid abuse
 - [[writable-etc-passwd]] — password-less root entry
+- [[writable-motd]] — `/etc/update-motd.d/*` runs as root on every SSH login
 - [[reverse-shells]] — bash/Node reverse shells
 - [[web-shell-upload]] — write a shell to the webroot → RCE
 - [[node-inspector-rce]] — RCE via Node.js Inspector (CDP, port 9229)
@@ -155,6 +159,7 @@ Content catalog. Read this first on any query.
 - [[chisel]] — TCP/UDP tunnel over HTTP (pivoting without SSH)
 - [[socat]] — bidirectional TCP relay (listener/`reverse-shell` chains through hops)
 - [[proxychains]] — route arbitrary tools through a SOCKS proxy
+- [[steghide]] — extract/embed data hidden in JPEG/BMP/WAV carriers
 - [[ssh]] — remote login + port forwarding (`-L`/`-R`/`-D`)
 - [[ping]] — ICMP reachability + TTL/OS hint
 - [[smbmap]] — SMB share enum (null vs authenticated permission delta)

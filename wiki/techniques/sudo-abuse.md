@@ -39,7 +39,8 @@ Exploiting misconfigured `sudo` permissions to escalate privileges.
 - `(hermonine) /usr/bin/pico` → `sudo -u hermonine pico`, then `^R` `^X` → `reset; sh 1>&0 2>&0` → shell as `hermonine` ([[madeyes-castle]]).
 - `(ALL) NOPASSWD: ALL` → `sudo -u root /bin/bash -p` — unrestricted sudo still deserves a `sudo -l` check; there is nothing to abuse, just run the payload directly ([[analyst]]).
 - `(ALL : ALL) /usr/bin/file` → **arbitrary root file read**, not a shell: `sudo -u root /usr/bin/file -f /opt/password.txt` treats each line of the file as a filename and echoes it back in the error output (``root:rooteable2: cannot open …``) → root's password → `su root` ([[dance-samba]], [[gtfobins]]). GTFOBins has a *file-read* section too — check it even when the binary can't spawn a shell.
+- `(norberto) NOPASSWD: /usr/bin/baner` → a **custom** binary (not in GTFOBins) that runs `head` by *name*: absolute path first, then relative — so the payload is a [[path-hijacking]] (`PATH=/tmp:$PATH` + `/tmp/head`), not a GTFOBins one-liner. When the binary's own output says it's calling something relatively, it's telling you the vulnerability ([[rutas]]).
 
 ## Seen in
 
-[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[simple-ctf]], [[hannah-coffee]], [[balulero]], [[nodeclimb]], [[psycho]], [[anonymous-pingu]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[analyst]], [[dance-samba]]
+[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[simple-ctf]], [[hannah-coffee]], [[balulero]], [[nodeclimb]], [[psycho]], [[anonymous-pingu]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[analyst]], [[dance-samba]], [[rutas]]

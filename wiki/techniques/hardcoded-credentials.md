@@ -28,6 +28,8 @@ Finding credentials that were left hardcoded or reused across accounts — in so
 - **Default / weak service credentials** — the username doubling as the password (`flynn:flynn`), no brute-force required. Try the box name, the username, and trivial variants **before** reaching for rockyou ([[flynn]]).
 - **Cleartext protocol capture (pcap)** — a downloadable network capture containing FTP/HTTP-auth traffic in plain text: `strings <pcap> | grep -E 'USER|PASS'` → `USER nathan` / `PASS Buck3tH4TF0RM3!`. Credentials also hide in *operational messages* inside the capture — a password-reset line leaked `pinguinito:Tr0pic4l-Pingu_99!` ([[analyst]], see [[pcap-analysis]]). Any file the app lets you download may be someone's session ([[cap]]).
 - **Narrative hint files** — a loose note written as gossip (*"Macarena, she's obsessed with donald"*) is `macarena:donald` in prose: the subject is the username, the fixation is the password. Anything a box bothers to drop in an anonymous FTP root or a share is there for you to read ([[dance-samba]], cf. [[chmod-4755]]'s "read better").
+- **Credential files in odd paths** — dot-directories hide them (`~/.-/.miscredenciales`), and the file tells you what it's *for* ("Usa mis pass para escalar"). The password may not even be Latin script: this one was Braille → [[steganography]]. A second file next door (`/home/maria/.mipass` written as `maria:asientiendesmejor`) is a credential pair handed over in `user:pass` form ([[rutas]]).
+- **Steganographic credential** — a password that arrives from *inside* an image rather than from text: `steghide` → `passwd.zip` → `hackeada:denuevo`, then replayed as an `Authorization: Basic` header. Whatever you pull out of a carrier is a credential until proven otherwise ([[rutas]], [[steganography]]).
 
 ## Commands
 
@@ -39,4 +41,4 @@ grep -RniE 'pass(word)?|secret|token|key|pwd' /home /opt /var/www 2>/dev/null
 
 ## Seen in
 
-[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]], [[flynn]], [[analyst]], [[chmod-4755]], [[dance-samba]]
+[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]], [[flynn]], [[analyst]], [[chmod-4755]], [[dance-samba]], [[rutas]]

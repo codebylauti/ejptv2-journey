@@ -29,6 +29,8 @@ ssh random_user@TARGET
 
 Pre-auth MOTD/banner text sometimes contains working credentials ([[hardcoded-credentials]], [[acme]]) — or, when it's signed *by someone* (`by fuckit`), a **username** to feed into the next spray ([[chmod-4755]]). Same idea applies to telnet/FTP banners.
 
+Flip it around too: the MOTD machinery that *prints* on login also **runs scripts as root** — if one is writable, every login of yours is a privesc trigger ([[writable-motd]]).
+
 ## scp (push files through a foothold)
 
 ```sh
@@ -52,4 +54,4 @@ Works the same way with any write primitive onto a home dir (FTP `put`, webshell
 
 ## Seen in
 
-[[littlepivoting]] (SSH login to `inclusion`/`trust`; `-D`/`-L`/`-R` discussion; manual re-run logged into `trust` with `proxychains ssh`), [[acme]] (pre-auth banner credential disclosure → foothold), [[cap]] (stolen `nathan` password replayed from FTP to SSH), [[flynn]] (default creds `flynn:flynn`, no brute-force), [[analyst]] (pcap-captured `pinguinito` password), [[chmod-4755]] (banner username hint → `rabol:share_secret_only` → `rbash`), [[dance-samba]] (`authorized_keys` uploaded over a writable SMB home → `ssh -i` with no password)
+[[littlepivoting]] (SSH login to `inclusion`/`trust`; `-D`/`-L`/`-R` discussion; manual re-run logged into `trust` with `proxychains ssh`), [[acme]] (pre-auth banner credential disclosure → foothold), [[cap]] (stolen `nathan` password replayed from FTP to SSH), [[flynn]] (default creds `flynn:flynn`, no brute-force), [[analyst]] (pcap-captured `pinguinito` password), [[chmod-4755]] (banner username hint → `rabol:share_secret_only` → `rbash`), [[dance-samba]] (`authorized_keys` uploaded over a writable SMB home → `ssh -i` with no password), [[rutas]] (logged in with a password recovered from Braille + a `user:pass` file — a hijack shell from [[path-hijacking]] is a *tool*, use it to read credentials and then open a real session)

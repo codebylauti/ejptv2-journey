@@ -23,7 +23,7 @@ Recovering a hidden message (often a password) where the **first letter of each 
 
 ## Why it works
 
-- The plaintext message is visible but **not obvious** — a mild form of steganography; anyone who reads only *content* misses it, while reading *structure* reveals it.
+- The plaintext message is visible but **not obvious** — a mild form of steganography; anyone who reads only *content* misses it, while reading *structure* reveals it ([[steganography]] covers the stronger versions: data hidden *inside* a file, or written in another alphabet).
 - It's a natural fit for "riddle"-style boxes where a [[source-code-disclosure]] clue points at the encoding instead of a raw secret.
 
 ## Seen in

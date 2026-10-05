@@ -12,7 +12,7 @@ Extracting secrets (usernames, passwords, hints) from exposed source files.
 
 ## Vectors
 
-- **HTML comments** — `<!-- De : Juan Para: Camilo ... -->` ([[vacaciones]]); "same username for all services" ([[obsession]]); `<!-- Backup de acceso: sysadmin:backup123 -->` ([[balufood]]).
+- **HTML comments** — `<!-- De : Juan Para: Camilo ... -->` ([[vacaciones]]); "same username for all services" ([[obsession]]); `<!-- Backup de acceso: sysadmin:backup123 -->` ([[balufood]]); *"nos han vuelto a romper"* + *"lo hace todo muy obvio"* — plus an `<aside>` of three candidate vhostnames ([[rutas]]).
 - **Backup/text files** — `backup.txt` leaking a username ([[obsession]]); `permission.txt` inside `wow.zip` ([[los-3-hackers]]); `instrucciones.txt` + `README.txt` leaking `rocket`/`password1` ([[grooti]]).
 - **Image metadata/source** — username hidden in `imagen.jpeg` ([[borazuwara]]).
 - **Config files** — `database.php` leaking a DB password ([[ignite]]); `app.py` Flask `secret_key` reused as an OS password ([[balufood]]); `config.php` returning `200` size 0 but `cat`-able once on-box, leaking MySQL `root`/`paso` ([[injection]]).
@@ -26,4 +26,4 @@ Extracting secrets (usernames, passwords, hints) from exposed source files.
 
 ## Seen in
 
-[[hedgehog]], [[obsession]], [[vacaciones]], [[borazuwara]], [[los-3-hackers]], [[ignite]], [[simple-ctf]], [[balufood]], [[balulero]], [[guided-pentest]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[dark]]
+[[hedgehog]], [[obsession]], [[vacaciones]], [[borazuwara]], [[los-3-hackers]], [[ignite]], [[simple-ctf]], [[balufood]], [[balulero]], [[guided-pentest]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[dark]], [[rutas]]

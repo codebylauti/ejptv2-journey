@@ -53,6 +53,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[chmod-4755]] — SMB hints → rbash escape → SUID curl overwrites /etc/passwd
 - [[dance-samba]] — FTP note hint → nxc spray → writable home share → SSH key drop → sudo `file -f` leak
 - [[dark]] — SSRF/LFI on one `url` param → SSH brute-force → Metasploit pivot → `cmd` RCE → SUID curl
+- [[rutas]] — anon FTP → zip crack → steghide → Basic-auth vhost → param fuzz → RFI → PATH hijack → writable MOTD
 
 ### hard
 

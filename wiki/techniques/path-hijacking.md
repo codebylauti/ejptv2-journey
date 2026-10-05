@@ -14,6 +14,7 @@ Exploiting a privileged process that invokes a command by **name** (not absolute
 
 - A **SUID binary** calls `system("uname -p")` (relative) instead of `/usr/bin/uname`.
 - A **sudo'd script** or **cron job** runs a bare command name.
+- A **custom sudo'd binary** that prints both forms of the call — `baner` on [[rutas]] announced `Ejecutando 'head' con ruta absoluta` and then `Ejecutando 'head' con ruta relativa`. The second line *is* the vulnerability: read a binary's own output before you disassemble it ([[sudo-abuse]]).
 
 `system()` runs `/bin/sh -c "<cmd>"`, which looks up `<cmd>` in `PATH`. If you control `PATH`, you control what runs — and it runs **with the caller's privileges** (root, in the SUID case).
 
@@ -50,4 +51,4 @@ Some SUID challenges gate the command behind a *"guess the number"* game seeded 
 
 ## Seen in
 
-[[madeyes-castle]] (SUID `swagger` → `system("uname -p")` + `srand(time(NULL))` guess-the-number)
+[[madeyes-castle]] (SUID `swagger` → `system("uname -p")` + `srand(time(NULL))` guess-the-number), [[rutas]] (sudo'd custom `baner` → bare `head` → `PATH=/tmp:$PATH` + `/tmp/head` = `/bin/bash` → www-data to norberto)

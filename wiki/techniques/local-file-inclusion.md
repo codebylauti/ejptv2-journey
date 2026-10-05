@@ -27,6 +27,8 @@ curl -s "http://TARGET/index.php?param=../../../etc/passwd"
 
 Some sinks are a plain `file_get_contents($input)` — the *input itself* picks the behaviour: a bare word or `../` path reads a local file (this page), while `http://…` makes the server fetch a remote/internal URL ([[server-side-request-forgery]]). Test both schemes before you classify the parameter ([[dark]]).
 
+If the fetched remote content is **executed** rather than echoed, you've crossed from SSRF into [[remote-file-inclusion]] — decide by what you can make it do, not by the URL shape ([[rutas]]).
+
 ## Chain to RCE
 
 - Pair with [[log-poisoning]] to execute injected code.
@@ -34,4 +36,4 @@ Some sinks are a plain `file_get_contents($input)` — the *input itself* picks 
 
 ## Seen in
 
-[[hannah-coffee]] (`?studio=../../../etc/passwd`), [[psycho]] (`?secret=` → `/etc/passwd` and `id_rsa`), [[littlepivoting]] (`?archivo=` → `/etc/passwd`, fuzzed with [[ffuf]] `LFI-Jhaddix.txt`), [[dark]] (POST `url=///////../../../etc/passwd` — same field also does SSRF)
+[[hannah-coffee]] (`?studio=../../../etc/passwd`), [[psycho]] (`?secret=` → `/etc/passwd` and `id_rsa`), [[littlepivoting]] (`?archivo=` → `/etc/passwd`, fuzzed with [[ffuf]] `LFI-Jhaddix.txt`), [[dark]] (POST `url=///////../../../etc/passwd` — same field also does SSRF), [[rutas]] (negative result: `LFI-Jhaddix.txt` through `?love=` came back empty because the sink wanted a URL — see [[remote-file-inclusion]])

@@ -29,4 +29,4 @@ john --format=raw-sha512 --wordlist=rockyou.txt --rules=best64 hash.txt
 
 ## Seen in
 
-[[basic-pentesting]], [[nodeclimb]], [[bruteshock]] (yescrypt shadow hash, `--format=crypt`), [[madeyes-castle]] (SHA-512 + `--rules=best64` → `wingardiumleviosa123`)
+[[basic-pentesting]], [[nodeclimb]], [[bruteshock]] (yescrypt shadow hash, `--format=crypt`), [[madeyes-castle]] (SHA-512 + `--rules=best64` → `wingardiumleviosa123`), [[rutas]] (`zip2john` on `respeta.zip` → `greenday`)

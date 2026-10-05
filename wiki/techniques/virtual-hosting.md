@@ -14,6 +14,7 @@ Finding a website served under a specific `Host` header/hostname, hidden behind 
 
 - The IP serves a **default page** (e.g. Apache "It works") — but source comments, hints, or DNS give away another hostname.
 - Clues like *"virtual hosting is good"*, *"register for <domain>"* in HTML comments.
+- **Candidate hostnames handed over as links** — an `<aside>` listing `vulndb.com`, `trackedvuln.dl/`, `dockerlabs.es` is a menu of vhosts; map the one the rest of the chain points at and re-fuzz *with* the credential you already hold ([[rutas]]).
 - The server **actively redirects** to a hostname: a `303 See Other` with `Location: http://internal.dl/` names the vhost outright (`curl -s http://IP/` to see it) ([[internal]]).
 
 ## Exploit
@@ -47,4 +48,4 @@ gobuster vhost -u http://target.thm/ -w <subdomains-wordlist> --append-domain --
 
 ## Seen in
 
-[[madeyes-castle]] (`hogwartz-castle.thm` behind the default Apache page), [[internal]] (303 → `internal.dl` → `gobuster vhost` → `backup.internal.dl`)
+[[madeyes-castle]] (`hogwartz-castle.thm` behind the default Apache page), [[internal]] (303 → `internal.dl` → `gobuster vhost` → `backup.internal.dl`), [[rutas]] (`trackedvuln.dl` from an `<aside>` link → `/etc/hosts` → re-fuzz with `Authorization: Basic`)
