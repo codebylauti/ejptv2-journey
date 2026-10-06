@@ -29,7 +29,7 @@ Easy three-port box where the credentials for the service on **8080** are plante
    ```
 
    → **`jenkelmejor`** → `su jenkhack` → `cat user.txt` ([[encoded-credentials]]).
-6. **Root — pinned wrapper, writable callee** — `sudo -l` → `(ALL : ALL) NOPASSWD: /usr/local/bin/bash`, a custom wrapper printing *"Welcome to the bash application!"*. It executes **`/opt/bash.sh`**; `/opt` is writable on this box (confirmed by the user — the writeup never shows it) → `mv /opt/bash.sh /opt/bash.sh.bak`, replace with `chmod 4755 /bin/bash` → run the wrapper → `/bin/bash -p` → `whoami` = `root` ([[sudo-abuse]]).
+6. **Root — pinned wrapper, writable callee** — `sudo -l` → `(ALL : ALL) NOPASSWD: /usr/local/bin/bash`, a custom wrapper printing *"Welcome to the bash application!"*. It executes **`/opt/bash.sh`**, which jenkhack can overwrite — the writeup states it plainly: *"Since jenkhack has perm on /opt i can remove the script /usr/local/bin/bash is calling and replace it"* → `mv /opt/bash.sh /opt/bash.sh.bak`, replace with `chmod 4755 /bin/bash` → run the wrapper → `/bin/bash -p` → `whoami` = `root` ([[sudo-abuse]]).
 
 ## Credentials / secrets
 
@@ -49,8 +49,7 @@ Easy three-port box where the credentials for the service on **8080** are plante
 
 ## Gaps in the writeup
 
-- **`# IP` header is empty** — `172.17.0.2` is only recoverable from the ping output.
 - **Port 443 was scanned and abandoned.** Its `robots.txt` (one disallowed entry, same as 8080's) was never fetched, and the 443-vs-8080 Jetty relationship never explored.
 - **The vhost step is unused.** `jenkhack.hl` was added to `/etc/hosts`, but every subsequent request shown is by raw `IP:8080` — vhost-dependent access is never demonstrated.
-- **`/opt` permissions are never shown** — the actual flaw behind step 6. Post-run, the user confirmed they had write perms on `/opt`.
+- **`/opt` permissions are asserted, not shown.** The writeup now explains *why* the overwrite works (*"Since jenkhack has perm on /opt"* — added post-run), but no `ls -ld /opt` output exists — the directory mode that is the actual flaw behind step 6 is never on record.
 - **Wrapper argument handling is opaque.** `bash -p` on the first invocation is swallowed by the wrapper (*"This is the bash script running."*) — how (or whether) it forwards args is never revealed.
