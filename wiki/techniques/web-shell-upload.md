@@ -26,15 +26,16 @@ The form tells you *where* to upload, never *what* will be allowed. Fuzz the fil
 
 - Build the body by hand: `-H "Content-Type: multipart/form-data; boundary=…"` plus `-d $'…filename="probe.FUZZ"…'`. A plain urlencoded `-d "archivo=probe.php"` lands in `$_POST` and never touches `$_FILES`, so *every* response looks identical and you conclude "nothing works" when you simply never reached the upload check.
 - **Calibrate on the rejection, not on a 404.** Upload one thing the filter refuses, measure it, and `-fs` that number. When every answer is `200`, length is the only signal left — the single entry that *disagrees* with the baseline is your answer.
+- **A refusal *message* is an oracle too.** When the filter answers with a fixed sentence ("*No se permite la subida de archivos que no sean .zip*"), fuzz until that exact sentence *disappears* — same calibration as `-fs`, phrased in words instead of bytes. [[dockerlabs-box]] did it with a hand-rolled bash loop over `web-extensions.txt` + `grep -q`; ffuf would express it as a negative filter.
 - Watch for the **two endpoints**: the page that renders the `<form>` and the `action=` that accepts the file are different paths. Fuzz the action.
 
 ## Notes
 
 - The FTP (or SMB) share and the webroot may be the *same* directory — that shared path is the whole trick in [[anonymous-pingu]] and [[domain]].
 - Mind the extension: the extension must *execute*, not download. A `.php.txt` or server misconfig silently breaks the payload.
-- **Ask what the server runs, not what the filter allows.** An allow-list that excludes `.php` may still permit `.phar`, `.phtml`, or `.php5` — all of which PHP executes by default. On [[file]] the fuzz never surfaced `.php`; the winner was **`phar`**, and requesting `/uploads/revshell.phar` gave `www-data`.
+- **Ask what the server runs, not what the filter allows.** An allow-list that excludes `.php` may still permit `.phar`, `.phtml`, or `.php5` — all of which PHP executes by default. On [[file]] the fuzz never surfaced `.php`; the winner was **`phar`**, and requesting `/uploads/revshell.phar` gave `www-data`. **Two boxes, same ending** — [[dockerlabs-box]] (a `.zip`-only rule, same one-word answer) repeated it, which makes `phar` the *first* extension to test on any PHP upload filter.
 - Chain straight into [[reverse-shells]] for an interactive foothold.
 
 ## Seen in
 
-[[anonymous-pingu]], [[littlepivoting]] (PHP reverse shell uploaded to `/uploads/payload.php` on `upload`), [[domain]] (`payload.php` via SMB write to the `html` share → `www-data`), [[file]] (multipart extension fuzz → `phar` → `/uploads/revshell.phar` → `www-data`)
+[[anonymous-pingu]], [[littlepivoting]] (PHP reverse shell uploaded to `/uploads/payload.php` on `upload`), [[domain]] (`payload.php` via SMB write to the `html` share → `www-data`), [[file]] (multipart extension fuzz → `phar` → `/uploads/revshell.phar` → `www-data`), [[dockerlabs-box]] (refusal-phrase fuzz → `phar` again → `/uploads/revshell.phar` → `www-data`)

@@ -47,6 +47,8 @@ Content catalog. Read this first on any query.
 - [[analyst]] — pcap triage (tshark) → captured SSH creds → sudo ALL
 - [[file]] — anon FTP hash → upload extension fuzz (`.phar`) → reverse shell → su spray → steghide → 3-hop sudo chain
 - [[extraviado]] — base64 default-page creds → SSH → `find` password files → riddle root
+- [[dockerlabs-box]] — upload refusal fuzz (`.phar`) → reverse shell → sudo `grep` file read → root
+- [[jenkhack]] — hidden-span creds → Jenkins script console → ASCII85 → sudo wrapper overwrite
 
 ### DockerLabs — intermediate
 
@@ -136,6 +138,7 @@ Content catalog. Read this first on any query.
 - [[path-hijacking]] — hijack a relative command via `PATH` (SUID/sudo/cron)
 - [[restricted-shell-escape]] — break out of `rbash` (python3 `pty.spawn` + PATH rebuild)
 - [[encoded-credentials]] — base64/encoded secrets in source and files → decode → replay
+- [[jenkins-script-console-rce]] — Groovy RCE via Jenkins admin Script Console (feature, not CVE)
 
 ## Tools
 

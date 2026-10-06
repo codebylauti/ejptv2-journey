@@ -13,6 +13,7 @@ Secrets that are **visible but transformed** — base64 (and its cousins) sittin
 ## Spotting it
 
 - **base64** — alphabet `A–Za–z0–9+/`, length a multiple of 4, `=` padding. A string that reads as printable nonsense but has those two traits is a candidate, not a hash.
+- **ASCII85 (base85)** — the high-bit-safe cousin: alphabet runs `!`–`u` with **no padding**, so punctuation-heavy runs are the tell (``C1V9uBl8!'Ci*`uDfP``). Decode with `base64.a85decode` — **not** `b85decode`: a85 (Adobe/ASCII85) and b85 (RFC 4648) are different alphabets, and the wrong one yields mojibake ([[jenkhack]]).
 - **Pairs** — once decoded, credentials often arrive as `user : pass` or `user:pass`. Decode *both* halves of a pair; either side can be the username ([[extraviado]]).
 - **A file that claims to hold a secret** may hold an *encoding* instead — check before feeding it to john ([[hash-cracking]]'s "Encoding ≠ hashing": a `hash` file that survived `base32 -d | base64 -d` on [[dance-samba]]).
 
@@ -24,6 +25,7 @@ Secrets that are **visible but transformed** — base64 (and its cousins) sittin
    ```sh
    echo 'ZGFuaWVsYQ==' | base64 -d     # → daniela
    echo 'JBSWY3DPEB3W64TMMQ=======' | base32 -d
+   python3 -c "import base64; print(base64.a85decode(b'...').decode())"   # ASCII85
    ```
 
 3. **Replay** — the decoded pair is a credential until proven otherwise: `ssh user@TARGET` directly. A password you *decoded* needs no brute-force ([[hardcoded-credentials]]).
@@ -36,4 +38,4 @@ Secrets that are **visible but transformed** — base64 (and its cousins) sittin
 
 ## Seen in
 
-[[extraviado]] (base64 `user : pass` in the default page body + base64 password files), [[dance-samba]] (on-disk "hash" was stacked base32+base64 — decoded, never cracked)
+[[extraviado]] (base64 `user : pass` in the default page body + base64 password files), [[dance-samba]] (on-disk "hash" was stacked base32+base64 — decoded, never cracked), [[jenkhack]] (ASCII85 password in `note.txt`)

