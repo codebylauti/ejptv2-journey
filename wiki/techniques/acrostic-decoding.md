@@ -3,7 +3,7 @@ type: technique
 tags: [ejpt:web-pentest, ejpt:assessment]
 tools: [curl]
 cves: []
-related: ["[[source-code-disclosure]]"]
+related: ["[[source-code-disclosure]]", "[[encoded-credentials]]"]
 ---
 
 # Acrostic Decoding
@@ -24,7 +24,7 @@ Recovering a hidden message (often a password) where the **first letter of each 
 ## Why it works
 
 - The plaintext message is visible but **not obvious** — a mild form of steganography; anyone who reads only *content* misses it, while reading *structure* reveals it ([[steganography]] covers the stronger versions: data hidden *inside* a file, or written in another alphabet).
-- It's a natural fit for "riddle"-style boxes where a [[source-code-disclosure]] clue points at the encoding instead of a raw secret.
+- It's a natural fit for "riddle"-style boxes where a [[source-code-disclosure]] clue points at the encoding instead of a raw secret. The sibling pattern — a poem whose *answer* is the password (`osopolar` from the polar-bear riddle on [[extraviado]]) — hands you the derivation function and asks you to supply the value.
 
 ## Seen in
 

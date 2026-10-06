@@ -46,6 +46,7 @@ Content catalog. Read this first on any query.
 - [[flynn]] — default SSH creds → sudo `env`
 - [[analyst]] — pcap triage (tshark) → captured SSH creds → sudo ALL
 - [[file]] — anon FTP hash → upload extension fuzz (`.phar`) → reverse shell → su spray → steghide → 3-hop sudo chain
+- [[extraviado]] — base64 default-page creds → SSH → `find` password files → riddle root
 
 ### DockerLabs — intermediate
 
@@ -134,6 +135,7 @@ Content catalog. Read this first on any query.
 - [[virtual-hosting]] — vhost discovery behind a default page
 - [[path-hijacking]] — hijack a relative command via `PATH` (SUID/sudo/cron)
 - [[restricted-shell-escape]] — break out of `rbash` (python3 `pty.spawn` + PATH rebuild)
+- [[encoded-credentials]] — base64/encoded secrets in source and files → decode → replay
 
 ## Tools
 

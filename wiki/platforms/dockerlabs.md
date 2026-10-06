@@ -42,6 +42,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[flynn]] — default SSH creds (`flynn:flynn`) → sudo `env`
 - [[analyst]] — pcap triage (tshark) → captured SSH password → sudo ALL
 - [[file]] — anon FTP hash → upload extension fuzz (`.phar`) → reverse shell → su spray → steghide → 3-hop sudo chain
+- [[extraviado]] — base64 default-page creds → SSH → `find` password files → riddle root
 
 ### intermediate
 

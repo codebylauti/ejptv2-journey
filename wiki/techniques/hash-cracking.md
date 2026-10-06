@@ -31,7 +31,7 @@ A file called `hash` may hold no hash at all. Length + alphabet tells you: a sho
 base32 -d hash | base64 -d    # dance-samba's /home/secret/hash → supersecurepassword
 ```
 
-- One `base32 -d | base64 -d` beat what would have been a pointless john run ([[dance-samba]]).
+- One `base32 -d | base64 -d` beat what would have been a pointless john run ([[dance-samba]]); a base64 `user : pass` in a page body likewise skipped rockyou entirely ([[encoded-credentials]] via [[extraviado]]).
 - Rule: **decode first, crack second** — run `file`/length inspection before launching a wordlist.
 
 

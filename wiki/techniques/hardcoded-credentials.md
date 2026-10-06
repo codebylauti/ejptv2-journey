@@ -16,7 +16,8 @@ Finding credentials that were left hardcoded or reused across accounts — in so
 - **Shell config & aliases** — `.bashrc`/`.bash_profile` aliases or exports that embed a password (`alias ser-root='echo chocolate2 | su - root'`) ([[balufood]]).
 - **Reused secrets** — a web app `secret_key` doubling as an OS user's password ([[balufood]]); a single `password1` reused across MySQL and a downloaded ZIP ([[grooti]]).
 - **Hardcoded app creds** — `admin`/`admin` in `app.py` ([[balufood]]).
-- **Weak/derived root password** — `su root` succeeds with a guessable password derived from a clue (`WinServerRootFakeNews` from an [[acrostic-decoding|acrostic]]) ([[winfake]]).
+- **Weak/derived root password** — `su root` succeeds with a guessable password derived from a clue (`WinServerRootFakeNews` from an [[acrostic-decoding|acrostic]]) ([[winfake]]); or from a *riddle* whose answer you supply (`osopolar` = the polar bear in the poem) ([[extraviado]]).
+- **Encoded password files found by `find`** — names are the signal (`*diego*`, `.*pass.*`), contents are base64: `~/.secreto/passdiego` → `ballenanegra` ([[extraviado]], [[encoded-credentials]]). **Decode before you trust**: `.passroot/.pass` decodes to `acatampocoesta` — *"aca tampoco esta"*, the box joking that it's not there either. A filename promising the secret is not the secret ([[dance-samba]]'s counter-example).
 - **Source-embedded credentials** — a PHP `$database` array hardcoded with IDs, one commented `// ID vulnerable`, that a `panel.php?id=` lookup turns into working SSH creds ([[duque]]); plaintext creds dumped from a DB (`register.users`) that don't escalate ([[duque]]).
 - **DB config credentials** — `config.php` holding MySQL `root`/`paso` ([[injection]]).
 - **CI trace / env-file leak** — a debug `env` dump in a pipeline trace leaks `CI_RUNNER_TOKEN=glrt-…`, and a runner `environment_file` (`/opt/ci/.env`) leaks an SSH password for `devops` ([[pipepwned]]).
@@ -41,4 +42,4 @@ grep -RniE 'pass(word)?|secret|token|key|pwd' /home /opt /var/www 2>/dev/null
 
 ## Seen in
 
-[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]], [[flynn]], [[analyst]], [[chmod-4755]], [[dance-samba]], [[rutas]]
+[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]], [[flynn]], [[analyst]], [[chmod-4755]], [[dance-samba]], [[rutas]], [[extraviado]]
