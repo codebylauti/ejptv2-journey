@@ -32,6 +32,7 @@ Finding credentials that were left hardcoded or reused across accounts — in so
 - **Narrative hint files** — a loose note written as gossip (*"Macarena, she's obsessed with donald"*) is `macarena:donald` in prose: the subject is the username, the fixation is the password. Anything a box bothers to drop in an anonymous FTP root or a share is there for you to read ([[dance-samba]], cf. [[chmod-4755]]'s "read better"). A hint can also be a *pointer* instead of the secret itself — *"la clave está en `/root/clave.txt`, menos mal que nadie tiene permisos"* leads to a sudo'd `grep` that reads it anyway ([[dockerlabs-box]]).
 - **Credential files in odd paths** — dot-directories hide them (`~/.-/.miscredenciales`), and the file tells you what it's *for* ("Usa mis pass para escalar"). The password may not even be Latin script: this one was Braille → [[steganography]]. A second file next door (`/home/maria/.mipass` written as `maria:asientiendesmejor`) is a credential pair handed over in `user:pass` form ([[rutas]]).
 - **Steganographic credential** — a password that arrives from *inside* an image rather than from text: `steghide` → `passwd.zip` → `hackeada:denuevo`, then replayed as an `Authorization: Basic` header. Whatever you pull out of a carrier is a credential until proven otherwise ([[rutas]], [[steganography]]).
+- **Lone token with no username** — a random 14-char string served as a whole page (`<h1>JIFGHDS87GYDFIGD</h1>` in `index.php`, hidden behind the default `index.html`): no `user:` label, no context, just a secret shaped like a password. It's half a credential pair — hand the *password* to hydra and fuzz the username axis instead ([[library]], [[ssh-bruteforce]]).
 
 ## Commands
 
@@ -43,4 +44,4 @@ grep -RniE 'pass(word)?|secret|token|key|pwd' /home /opt /var/www 2>/dev/null
 
 ## Seen in
 
-[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]], [[flynn]], [[analyst]], [[chmod-4755]], [[dance-samba]], [[rutas]], [[extraviado]], [[jenkhack]], [[dockerlabs-box]]
+[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]], [[flynn]], [[analyst]], [[chmod-4755]], [[dance-samba]], [[rutas]], [[extraviado]], [[jenkhack]], [[dockerlabs-box]], [[library]]

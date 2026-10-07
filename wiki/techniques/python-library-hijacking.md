@@ -14,6 +14,7 @@ Abusing a `sudo python3 /path/script.py` entry when you can't write the script b
 
 - Python searches the script's own directory (`sys.path[0]`) **before** the standard library.
 - Drop a module named after one the script imports, and Python imports **yours** — executing it as root.
+- The script's file mode is a red herring: `-r-xr--r--` changes nothing, because the payload never opens the script for writing. The check that matters is `ls -la` on the **parent directory** — ownership and mode both ([[library]]).
 
 ## Critical caveat
 
@@ -29,4 +30,4 @@ Abusing a `sudo python3 /path/script.py` entry when you can't write the script b
 
 ## Seen in
 
-[[psycho]] (shadow `subprocess`, not `os`)
+[[psycho]] (shadow `subprocess`, not `os`), [[library]] (shadow `shutil` — script `-r-xr--r--`, but `/opt` is carlos-owned)

@@ -45,6 +45,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[extraviado]] — base64 default-page creds → SSH → `find` password files → riddle root
 - [[dockerlabs-box]] — upload refusal fuzz (`.phar`) → reverse shell → sudo `grep` file read → root
 - [[jenkhack]] — hidden-span creds → Jenkins script console → ASCII85 → sudo wrapper overwrite
+- [[library]] — default-page camouflage → inverted SSH brute (fuzz usernames) → sudo python import shadow
 
 ### intermediate
 

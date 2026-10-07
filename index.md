@@ -49,6 +49,7 @@ Content catalog. Read this first on any query.
 - [[extraviado]] — base64 default-page creds → SSH → `find` password files → riddle root
 - [[dockerlabs-box]] — upload refusal fuzz (`.phar`) → reverse shell → sudo `grep` file read → root
 - [[jenkhack]] — hidden-span creds → Jenkins script console → ASCII85 → sudo wrapper overwrite
+- [[library]] — default-page camouflage → 26-byte token → inverted SSH brute → Python import hijack
 
 ### DockerLabs — intermediate
 
