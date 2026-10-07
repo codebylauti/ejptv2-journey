@@ -4,7 +4,7 @@ eJPTv2 learning path. Track your progress here — update checkboxes as you comp
 
 ## Current state
 
-See [[overview]] for the detailed snapshot. Bottom line: **49 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered three times ([[littlepivoting]] ×2, [[dark]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), pcap traffic analysis now a documented technique ([[pcap-analysis]], via [[analyst]]), SMB workflow hardened three times by real incidents ([[smb-enumeration]] via [[domain]], [[chmod-4755]], and [[dance-samba]]), SSRF got its first sighting ([[server-side-request-forgery]], via [[dark]]) and RFI its own ([[remote-file-inclusion]], via [[rutas]]), **upload-filter fuzzing** documented with a rejection-size baseline ([[web-shell-upload]], via [[file]]), **encoded-credential decoding** its own technique ([[encoded-credentials]], via [[extraviado]] — extended to ASCII85 by [[jenkhack]]), **Jenkins Script Console RCE** now documented ([[jenkins-script-console-rce]], via [[jenkhack]]) with its pre-auth cousin **CVE-2024-23897 file read** exploited ([[cve-2024-23897]], via [[secretjenkins]]), still light on Active Directory and deep web pentesting.
+See [[overview]] for the detailed snapshot. Bottom line: **53 boxes done** across three platforms ([[dockerlabs]], [[tryhackme]], [[hack-the-box]]), solid fundamentals in enumeration, brute-force, and privilege escalation; pivoting now covered three times ([[littlepivoting]] ×2, [[dark]]), SQLi/SUID/vhost depth growing, WAF blacklist bypass now documented ([[waf-bypass]]), IDOR actually documented on [[broken-access-control]] (via [[cap]]), pcap traffic analysis now a documented technique ([[pcap-analysis]], via [[analyst]]), SMB workflow hardened three times by real incidents ([[smb-enumeration]] via [[domain]], [[chmod-4755]], and [[dance-samba]]), SSRF got its first sighting ([[server-side-request-forgery]], via [[dark]]) and RFI its own ([[remote-file-inclusion]], via [[rutas]]), **upload-filter fuzzing** documented with a rejection-size baseline ([[web-shell-upload]], via [[file]]), **encoded-credential decoding** its own technique ([[encoded-credentials]], via [[extraviado]] — extended to ASCII85 by [[jenkhack]]), **Jenkins Script Console RCE** now documented ([[jenkins-script-console-rce]], via [[jenkhack]]) with its pre-auth cousin **CVE-2024-23897 file read** exploited ([[cve-2024-23897]], via [[secretjenkins]]), **pip3 sudo-wildcard abuse** first seen ([[sudo-abuse]], via [[pkgpoison]]), and the vault's **longest sudo chain — six hops, six GTFOBins categories** ([[sudo-abuse]], via [[elevator]]), still light on Active Directory and deep web pentesting.
 
 ---
 
@@ -48,6 +48,10 @@ See [[overview]] for the detailed snapshot. Bottom line: **49 boxes done** acros
 - [x] [[library]] — default-page camouflage → inverted SSH brute → sudo python library hijack
 - [x] [[secretjenkins]] — Jenkins 2.441 file-read CVE (CVE-2024-23897) → user enum → SSH brute → chained sudo
 - [x] [[amor]] — news-feed usernames → SSH brute → steghide + base64 → sudo ruby
+- [x] [[pkgpoison]] — stale planted creds → hydra → `.pyc` strings leak → sudo pip3 wildcard
+- [x] [[elevator]] — `.jpg` filename-lie upload → RCE → 6-hop sudo chain (env → ash → ruby → lua → gcc → sudo)
+- [x] [[pequeñas-mentirosas]] — page hint → hydra → `find` username hash → sudo python3
+- [x] [[vulnvault]] — report-form injection as a file reader → stolen SSH key → world-writable `echo.sh` PID 1 loop
 
 ### DockerLabs — intermediate
 

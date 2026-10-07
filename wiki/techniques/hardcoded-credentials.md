@@ -18,6 +18,7 @@ Finding credentials that were left hardcoded or reused across accounts — in so
 - **Hardcoded app creds** — `admin`/`admin` in `app.py` ([[balufood]]).
 - **Weak/derived root password** — `su root` succeeds with a guessable password derived from a clue (`WinServerRootFakeNews` from an [[acrostic-decoding|acrostic]]) ([[winfake]]); or from a *riddle* whose answer you supply (`osopolar` = the polar bear in the poem) ([[extraviado]]).
 - **Encoded password files found by `find`** — names are the signal (`*diego*`, `.*pass.*`), contents are base64: `~/.secreto/passdiego` → `ballenanegra` ([[extraviado]], [[encoded-credentials]]). **Decode before you trust**: `.passroot/.pass` decodes to `acatampocoesta` — *"aca tampoco esta"*, the box joking that it's not there either. A filename promising the secret is not the secret ([[dance-samba]]'s counter-example).
+- **Hash file named for its target user** — the same `find / -name *<username>*` sweep, one format over: `/srv/ftp/hash_spencer.txt` holds a raw MD5, and the filename already answers *whose* it is — crack it and go straight to `su spencer` with no guessing about the account ([[pequeñas-mentirosas]], [[hash-cracking]]).
 - **Source-embedded credentials** — a PHP `$database` array hardcoded with IDs, one commented `// ID vulnerable`, that a `panel.php?id=` lookup turns into working SSH creds ([[duque]]); plaintext creds dumped from a DB (`register.users`) that don't escalate ([[duque]]).
 - **DB config credentials** — `config.php` holding MySQL `root`/`paso` ([[injection]]).
 - **CI trace / env-file leak** — a debug `env` dump in a pipeline trace leaks `CI_RUNNER_TOKEN=glrt-…`, and a runner `environment_file` (`/opt/ci/.env`) leaks an SSH password for `devops` ([[pipepwned]]).
@@ -33,6 +34,7 @@ Finding credentials that were left hardcoded or reused across accounts — in so
 - **Credential files in odd paths** — dot-directories hide them (`~/.-/.miscredenciales`), and the file tells you what it's *for* ("Usa mis pass para escalar"). The password may not even be Latin script: this one was Braille → [[steganography]]. A second file next door (`/home/maria/.mipass` written as `maria:asientiendesmejor`) is a credential pair handed over in `user:pass` form ([[rutas]]).
 - **Steganographic credential** — a password that arrives from *inside* an image rather than from text: `steghide` → `passwd.zip` → `hackeada:denuevo`, then replayed as an `Authorization: Basic` header. Whatever you pull out of a carrier is a credential until proven otherwise ([[rutas]], [[steganography]]).
 - **Lone token with no username** — a random 14-char string served as a whole page (`<h1>JIFGHDS87GYDFIGD</h1>` in `index.php`, hidden behind the default `index.html`): no `user:` label, no context, just a secret shaped like a password. It's half a credential pair — hand the *password* to hydra and fuzz the username axis instead ([[library]], [[ssh-bruteforce]]).
+- **Stale planted pair** — a note hands you `dev:developer123` *while literally asking for it to be changed*; the replay fails, but failure splits the pair: the password is dead, the **username is certified** (the box wrote it down itself — it's real). Feed the surviving half to rockyou instead of discarding the find ([[pkgpoison]], [[ssh-bruteforce]]).
 
 ## Commands
 
@@ -44,4 +46,4 @@ grep -RniE 'pass(word)?|secret|token|key|pwd' /home /opt /var/www 2>/dev/null
 
 ## Seen in
 
-[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]], [[flynn]], [[analyst]], [[chmod-4755]], [[dance-samba]], [[rutas]], [[extraviado]], [[jenkhack]], [[dockerlabs-box]], [[library]]
+[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]], [[flynn]], [[analyst]], [[chmod-4755]], [[dance-samba]], [[rutas]], [[extraviado]], [[jenkhack]], [[dockerlabs-box]], [[library]], [[pkgpoison]], [[pequeñas-mentirosas]]

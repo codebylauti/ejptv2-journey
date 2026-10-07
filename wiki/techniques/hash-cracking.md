@@ -12,7 +12,7 @@ Recovering the plaintext behind a raw password hash (MD5, SHA-1, SHA-256, …).
 
 ## Workflow
 
-1. **Identify the type** — length + alphabet (`hashid`). 32 hex = MD5, 40 = SHA-1, 64 = SHA-256.
+1. **Identify the type** — length + alphabet (`hashid`). 32 hex = MD5, 40 = SHA-1, 64 = SHA-256. When the file arrives via `find`, the **filename** often identifies it first: `hash_spencer.txt` announces both the content (a hash) and its *owner* (spencer) before you open it ([[pequeñas-mentirosas]]).
 2. **Local wordlist** — `john --format=raw-sha256 --wordlist=rockyou.txt hash.txt`, or `hashcat -m 1400 -a 0 hash.txt rockyou.txt`.
 3. **Online lookup** — if wordlists miss, submit to a pre-computed database (hashes.com, crackstation.net); breach dumps often contain what `rockyou` does not.
 4. **Brute force / masks** — last resort for short or pattern-based passwords.
@@ -65,8 +65,8 @@ yescrypt is memory-hard → wordlist (+ rules), not brute force.
 
 [[wargames]]: SHA-256 `60a3f3cb…` → `1983@1983` via hashes.com (not in rockyou). [[bruteshock]]: yescrypt `$y$` shadow hash → `salvador1` via `john --format=crypt`.
 
-Two bare hashes on [[file]] show the length rule paying off twice: `53dd9c60…` (32 hex = MD5) from an FTP file → `john --format=raw-MD5` → `justin`, and `cbfdac60…` (40 hex = SHA-1) out of a steghide carrier → `john --format=raw-sha1 --wordlist=rockyou.txt` → `password123`. **Neither file called itself a hash** — one was named `anon.txt`, the other `pass.txt` — so identification had to come from the bytes.
+Two bare hashes on [[file]] show the length rule paying off twice: `53dd9c60…` (32 hex = MD5) from an FTP file → `john --format=raw-MD5` → `justin`, and `cbfdac60…` (40 hex = SHA-1) out of a steghide carrier → `john --format=raw-sha1 --wordlist=rockyou.txt` → `password123`. **Neither file called itself a hash** — one was named `anon.txt`, the other `pass.txt` — so identification had to come from the bytes. [[pequeñas-mentirosas]] is the flip side: `/srv/ftp/hash_spencer.txt` *does* call itself a hash and names its target user too — `7c6a180b…` → `raw-MD5` → `password1` → `su spencer`, the crack feeding the next `su` directly.
 
 ## Seen in
 
-[[wargames]], [[bruteshock]], [[madeyes-castle]] (SHA-512 + `--rules=best64`), [[dance-samba]] (counter-example: a "hash" that was base32+base64 *encoding* — decoded, never cracked), [[file]] (raw-MD5 + raw-SHA1, both identified by length)
+[[wargames]], [[bruteshock]], [[madeyes-castle]] (SHA-512 + `--rules=best64`), [[dance-samba]] (counter-example: a "hash" that was base32+base64 *encoding* — decoded, never cracked), [[file]] (raw-MD5 + raw-SHA1, both identified by length), [[pequeñas-mentirosas]] (raw-MD5 identified by filename, cracked → `su spencer`)

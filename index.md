@@ -52,6 +52,10 @@ Content catalog. Read this first on any query.
 - [[library]] — default-page camouflage → 26-byte token → inverted SSH brute → Python import hijack
 - [[secretjenkins]] — Jenkins 2.441 file-read CVE → user enum → SSH brute → chained sudo (python3)
 - [[amor]] — news-feed usernames → SSH brute → steghide + base64 → sudo ruby
+- [[pkgpoison]] — stale planted creds → hydra → `.pyc` strings leak → sudo pip3 wildcard
+- [[elevator]] — `.jpg` filename-lie upload → RCE → 6-hop sudo chain (env → ash → ruby → lua → gcc → sudo)
+- [[pequeñas-mentirosas]] — page hint → hydra → `find` username hash → sudo python3
+- [[vulnvault]] — report-form injection as a file reader → stolen SSH key → world-writable `echo.sh` PID 1 loop
 
 ### DockerLabs — intermediate
 
@@ -178,6 +182,7 @@ Content catalog. Read this first on any query.
 - [[wget]] — non-interactive file download (staging tools onto a target)
 - [[getcap]] — filesystem capability sweep (`getcap -r /`)
 - [[whatweb]] — one-shot web fingerprinting
+- [[strings]] — printable-run extractor for binaries, pcaps, and compiled bytecode
 
 ## CVEs
 
