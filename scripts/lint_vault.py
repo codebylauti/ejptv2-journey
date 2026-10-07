@@ -164,12 +164,14 @@ for tag, (ov_label, rm_tag) in TAGS.items():
         errors.append(f"PARITY roadmap/{tag}: only-in-covered={sorted(rm_set - expected)} only-in-fm={sorted(expected - rm_set)}")
 
 # --- 9. stale counts (excluding log.md) ---
+# Expected total is derived from the roadmap checklist (block 5), not hardcoded:
+# a literal goes stale on every ingest and starts flagging correct updates.
 for p in link_files:
     if p.name == "log.md": continue
     for n in re.findall(r"(\d+) boxes(?= (?:done|completed)|\*\*)", read(p)):
-        if n != "47":
-            warnings.append(f"STALE COUNT? {p.name}: '{n} boxes'")
-# overview per-platform numbers checked in block 5; check dockerlabs (41) written correctly handled there
+        if n != str(len(checked)):
+            warnings.append(f"STALE COUNT? {p.name}: '{n} boxes' != {len(checked)} checked")
+# overview per-platform numbers are already checked against frontmatter in block 5
 
 # --- 10. assets referenced ---
 assets = {f.name for f in (ROOT / "assets").rglob("*") if f.is_file()}
