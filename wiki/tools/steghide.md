@@ -23,4 +23,4 @@ steghide embed -cf cover.jpg -ef secret.txt -p 'pass'   # the other direction
 
 ## Seen in
 
-[[rutas]] (`crackpass.jpg` → `passwd.zip` → `pass` → `hackeada:denuevo`, the vhost's Basic-auth credential)
+[[rutas]] (`crackpass.jpg` → `passwd.zip` → `pass` → `hackeada:denuevo`, the vhost's Basic-auth credential), [[amor]] (`imagen.jpg` → bare Enter accepted → `secret.txt` → base64 → oscar's password)

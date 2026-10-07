@@ -36,4 +36,4 @@ curl file:///tmp/passwd -o /etc/passwd    # SUID curl: read one file, write anot
 
 ## Seen in
 
-[[trust]], [[obsession]], [[simple-ctf]], [[vacaciones]], [[hedgehog]], [[borazuwara]], [[hannah-coffee]], [[duque]], [[walkingcms]], [[anonymous-pingu]], [[trailpack]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[dance-samba]], [[dark]] (curl `file://` + `-o`), [[file]] (`awk` → julen, `env` → iker, then a pinned `python3 script.py` where the payload goes *inside* the script)
+[[trust]], [[obsession]], [[simple-ctf]], [[vacaciones]], [[hedgehog]], [[borazuwara]], [[hannah-coffee]], [[duque]], [[walkingcms]], [[anonymous-pingu]], [[trailpack]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[dance-samba]], [[dark]] (curl `file://` + `-o`), [[file]] (`awk` → julen, `env` → iker, then a pinned `python3 script.py` where the payload goes *inside* the script), [[amor]] (`ruby -e 'exec "/bin/bash"'` → root), [[secretjenkins]] (python3 `-c` pivot → pinguinito, then the pinned-script overwrite → root)

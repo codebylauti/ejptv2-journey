@@ -19,4 +19,4 @@ whatweb TARGET                 # e.g. whatweb 10.129.148.255:80
 
 ## Seen in
 
-[[cap]] (Gunicorn "Security Dashboard" fingerprint on port 80)
+[[cap]] (Gunicorn "Security Dashboard" fingerprint on port 80), [[secretjenkins]] (`Jenkins[2.441]` via the `x-jenkins` headers — the exact version one patch below the CVE fix, so the fingerprint *was* the attack path: version → advisory → PoC, [[cve-2024-23897]])

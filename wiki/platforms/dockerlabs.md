@@ -46,6 +46,8 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[dockerlabs-box]] — upload refusal fuzz (`.phar`) → reverse shell → sudo `grep` file read → root
 - [[jenkhack]] — hidden-span creds → Jenkins script console → ASCII85 → sudo wrapper overwrite
 - [[library]] — default-page camouflage → inverted SSH brute (fuzz usernames) → sudo python import shadow
+- [[secretjenkins]] — Jenkins 2.441 file-read CVE (CVE-2024-23897) → user enum → SSH brute → chained sudo
+- [[amor]] — news-feed usernames → SSH brute → steghide + base64 → sudo ruby
 
 ### intermediate
 

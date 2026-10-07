@@ -50,6 +50,8 @@ Content catalog. Read this first on any query.
 - [[dockerlabs-box]] — upload refusal fuzz (`.phar`) → reverse shell → sudo `grep` file read → root
 - [[jenkhack]] — hidden-span creds → Jenkins script console → ASCII85 → sudo wrapper overwrite
 - [[library]] — default-page camouflage → 26-byte token → inverted SSH brute → Python import hijack
+- [[secretjenkins]] — Jenkins 2.441 file-read CVE → user enum → SSH brute → chained sudo (python3)
+- [[amor]] — news-feed usernames → SSH brute → steghide + base64 → sudo ruby
 
 ### DockerLabs — intermediate
 
@@ -185,6 +187,7 @@ Content catalog. Read this first on any query.
 - [[cve-2018-16763]] — Fuel CMS RCE
 - [[cve-2021-47980]] — Fuel CMS SQLi
 - [[cve-2025-55182]] — React2Shell: RSC Flight deserialization RCE
+- [[cve-2024-23897]] — Jenkins CLI arbitrary file read (args4j `@file` expansion)
 
 ## Learning
 

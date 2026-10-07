@@ -23,7 +23,7 @@ Hiding a secret *inside* a carrier file (image, audio, archive) so it is invisib
 
 4. **Passphrase you don't have?** Three options, in order of how much you should trust them:
    - **Reuse a value you already own** — the password you cracked one stage ago, a username, a hint string. Try your loot before you guess ([[zip-cracking]]).
-   - **An empty Enter** is a valid guess (some carriers embed with none).
+   - **An empty Enter** is a valid guess (some carriers embed with none — [[amor]]'s `imagen.jpg` accepted a bare Enter, so did [[rutas]]'s `crackpass.jpg`).
    - **Crack it instead of guessing** — hand the carrier to [[stegseek]], which runs rockyou against the steghide passphrase and extracts in one shot. You never had to think of `secret` on [[file]]; you just had to know the cracker existed.
 5. **Read what came out.** The payload is almost never the end — on [[file]] it was a bare 40-hex string (SHA-1) that became the *next* user's password ([[hash-cracking]]). Stego is a link in a chain, not a destination.
 
@@ -32,8 +32,8 @@ Hiding a secret *inside* a carrier file (image, audio, archive) so it is invisib
 - **Concealment by alphabet** — the secret is written in another script (Braille, Morse, base-N) inside an otherwise readable file. You *decode* it, you don't crack it ([[hash-cracking]] on encoding vs hashing).
 - **Metadata** — EXIF in an image can hold usernames or locations ([[borazuwara]]).
 - **Structure over content** — first letters of headings spell the password ([[acrostic-decoding]]): the message is in *how* it's written, not *what* it says.
-- **You don't always need to be *told* where the carrier is.** [[rutas]] handed you the filename in a hint; [[file]] just left `dragon-medieval.jpeg` sitting in a user's home directory after a `su`. Any image or audio file that arrived during enumeration is a candidate — `file`, then [[stegseek]].
+- **You don't always need to be *told* where the carrier is.** [[rutas]] handed you the filename in a hint; [[file]] just left `dragon-medieval.jpeg` sitting in a user's home directory after a `su`; [[amor]] parked `imagen.jpg` in `~/Desktop/fotos/vacaciones/` — any image that arrived during enumeration is a candidate — `find`/`ls` it, then [[stegseek]] or an empty Enter.
 
 ## Seen in
 
-[[rutas]] (`respeta.zip` → `oculto.txt` → `crackpass.jpg` → `steghide` → `passwd.zip` → `pass` → `hackeada:denuevo`, which became the vhost's HTTP Basic-auth credential), [[file]] (`dragon-medieval.jpeg` in fernando's home → `stegseek` brute-forced passphrase `secret` → `pass.txt` → raw-SHA1 → `password123`, mario's password)
+[[rutas]] (`respeta.zip` → `oculto.txt` → `crackpass.jpg` → `steghide` → `passwd.zip` → `pass` → `hackeada:denuevo`, which became the vhost's HTTP Basic-auth credential), [[file]] (`dragon-medieval.jpeg` in fernando's home → `stegseek` brute-forced passphrase `secret` → `pass.txt` → raw-SHA1 → `password123`, mario's password), [[amor]] (`imagen.jpg` in a photo dir → empty passphrase → `secret.txt` → base64 → `eslacasadepinypon`, oscar's password — the whole hop `su`'d into the next user)

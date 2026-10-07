@@ -38,4 +38,4 @@ Secrets that are **visible but transformed** — base64 (and its cousins) sittin
 
 ## Seen in
 
-[[extraviado]] (base64 `user : pass` in the default page body + base64 password files), [[dance-samba]] (on-disk "hash" was stacked base32+base64 — decoded, never cracked), [[jenkhack]] (ASCII85 password in `note.txt`)
+[[extraviado]] (base64 `user : pass` in the default page body + base64 password files), [[dance-samba]] (on-disk "hash" was stacked base32+base64 — decoded, never cracked), [[jenkhack]] (ASCII85 password in `note.txt`), [[amor]] (the *output of a steghide extraction* was base64 — `ZXNsYWNhc2FkZXBpbnlwb24=` → `eslacasadepinypon` → `su oscar`; the blob wore the alphabet, not a hash)

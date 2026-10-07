@@ -24,7 +24,8 @@ Extracting secrets (usernames, passwords, hints) from exposed source files.
 - **Plain hint files served as-is** — a no-extension `/info` text file naming the next host (`20.20.20.3`) and the narrative reason to visit it ([[dark]]).
 - **Encoded pair in the page body** — no comment needed: the default index's *last line* is `user : pass` in base64, invisible until you `tail -1` the raw response ([[extraviado]], [[encoded-credentials]]).
 - **Post-exploit source read** — `cat main.py` after a [[command-injection]] foothold exposes the in-memory `USERS` dict and `MFA_PINS` ([[trailpack]]).
+- **Visible body text — nothing hidden at all** — disclosure can mean simply *reading* the rendered page: a security-news feed narrates an employee's firing for emailing a password and signs another entry from "Carlota, Departamento de ciberseguridad", beside a "weak password detected" notice → two usernames and a brute-force mandate, with no comment, backup, or attribute involved ([[amor]]). If the page tells a story about people, the people are candidate accounts.
 
 ## Seen in
 
-[[hedgehog]], [[obsession]], [[vacaciones]], [[borazuwara]], [[los-3-hackers]], [[ignite]], [[simple-ctf]], [[balufood]], [[balulero]], [[guided-pentest]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[dark]], [[rutas]], [[extraviado]], [[jenkhack]]
+[[hedgehog]], [[obsession]], [[vacaciones]], [[borazuwara]], [[los-3-hackers]], [[ignite]], [[simple-ctf]], [[balufood]], [[balulero]], [[guided-pentest]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[dark]], [[rutas]], [[extraviado]], [[jenkhack]], [[amor]]
