@@ -2,7 +2,7 @@
 type: technique
 tags: [ejpt:web-pentest]
 tools: [ffuf]
-cves: []
+cves: [CVE-2026-38526]
 related: ["[[reverse-shells]]", "[[ftp-anonymous-login]]", "[[directory-fuzzing]]"]
 ---
 
@@ -16,6 +16,7 @@ Gaining RCE by writing a malicious script into a web-accessible directory, then 
    - **Anonymous FTP** with upload permission → `put payload.php` ([[ftp-anonymous-login]]).
    - A web upload form — usually surfaced by [[directory-fuzzing]] as a small `200` page (e.g. `file_upload.php` on [[file]]).
    - A **writable SMB share mapped to the site directory** — no HTTP attack needed: `smbclient //TARGET/html -U bob --password=star` → `put payload.php` ([[domain]]).
+   - An **authenticated feature that stores file attachments** — a mail composer (`POST /admin/mail/create` with `attachments[]`) is an upload form in disguise: when the extension check is missing outright (a CVE-level *unrestricted* upload), the attachment handler is your webroot write and no separate upload page exists ([[nexus]], [[cve-2026-38526]]).
 2. **Work out what the form will accept** (next section) before you pick a payload.
 3. Upload a shell — e.g. the pentestmonkey PHP reverse shell, or a one-liner `<?php system($_GET['cmd']); ?>`.
 4. Request it over HTTP to trigger execution. Locate the directory first with [[directory-fuzzing]] (e.g. an `upload/` path).
@@ -35,8 +36,9 @@ The form tells you *where* to upload, never *what* will be allowed. Fuzz the fil
 - Mind the extension: the extension must *execute*, not download. A `.php.txt` or server misconfig silently breaks the payload.
 - **Ask what the server runs, not what the filter allows.** An allow-list that excludes `.php` may still permit `.phar`, `.phtml`, or `.php5` — all of which PHP executes by default. On [[file]] the fuzz never surfaced `.php`; the winner was **`phar`**, and requesting `/uploads/revshell.phar` gave `www-data`. **Two boxes, same ending** — [[dockerlabs-box]] (a `.zip`-only rule, same one-word answer) repeated it, which makes `phar` the *first* extension to test on any PHP upload filter.
 - **The allow-list reads the name you *send*.** When the refusal is a literal extension rule ("*Solo se permiten archivos con la extensión .jpg*"), the declared filename is client-controlled: `curl -F "file=@shell.php;filename=revshell.jpg"` declares `.jpg` while the body stays PHP. [[elevator]] accepted it, renamed it to a random hash (`6ac67879e7091.jpg` — the response link is your only pointer), and the GET **executed** it — meaning `.jpg` was wired to the PHP handler there. Same sentence, two readings: the filter checks *names*, the server decides *execution*, and neither was checked properly. (The handler config was never read — recorded as a gap on [[elevator]].)
+- **The upload response is a map.** When the API echoes the stored attachment's metadata, its `url` field *is* your trigger path — `storage/emails/1/rev.php` came straight out of the JSON on [[nexus]], so locating the shell (step 4) collapsed to one GET.
 - Chain straight into [[reverse-shells]] for an interactive foothold.
 
 ## Seen in
 
-[[anonymous-pingu]], [[littlepivoting]] (PHP reverse shell uploaded to `/uploads/payload.php` on `upload`), [[domain]] (`payload.php` via SMB write to the `html` share → `www-data`), [[file]] (multipart extension fuzz → `phar` → `/uploads/revshell.phar` → `www-data`), [[dockerlabs-box]] (refusal-phrase fuzz → `phar` again → `/uploads/revshell.phar` → `www-data`), [[elevator]] (`.jpg`-only allow-list → `;filename=` override → hash-renamed `6ac67879e7091.jpg` → executed → `www-data`)
+[[anonymous-pingu]], [[littlepivoting]] (PHP reverse shell uploaded to `/uploads/payload.php` on `upload`), [[domain]] (`payload.php` via SMB write to the `html` share → `www-data`), [[file]] (multipart extension fuzz → `phar` → `/uploads/revshell.phar` → `www-data`), [[dockerlabs-box]] (refusal-phrase fuzz → `phar` again → `/uploads/revshell.phar` → `www-data`), [[elevator]] (`.jpg`-only allow-list → `;filename=` override → hash-renamed `6ac67879e7091.jpg` → executed → `www-data`), [[nexus]] (Krayin CRM mail attachment `rev.php` — CVE-2026-38526 unrestricted upload → `/storage/emails/1/rev.php` → `www-data`)

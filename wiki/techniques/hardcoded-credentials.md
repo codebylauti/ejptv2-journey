@@ -21,6 +21,7 @@ Finding credentials that were left hardcoded or reused across accounts — in so
 - **Hash file named for its target user** — the same `find / -name *<username>*` sweep, one format over: `/srv/ftp/hash_spencer.txt` holds a raw MD5, and the filename already answers *whose* it is — crack it and go straight to `su spencer` with no guessing about the account ([[pequeñas-mentirosas]], [[hash-cracking]]).
 - **Source-embedded credentials** — a PHP `$database` array hardcoded with IDs, one commented `// ID vulnerable`, that a `panel.php?id=` lookup turns into working SSH creds ([[duque]]); plaintext creds dumped from a DB (`register.users`) that don't escalate ([[duque]]).
 - **DB config credentials** — `config.php` holding MySQL `root`/`paso` ([[injection]]).
+- **Git-history password + live `.env` reuse** — a `DB_PASSWORD` recovered from a repo's **commit history** (the tip commit had it blanked) authenticates to the web app, and a *second* `DB_PASSWORD` read post-exploit from the app's live on-disk `.env` (`/var/www/krayin/.env`, located with `find / -name .env`) becomes the local account's `su`/git password — one application, two credential stores, two footholds. Don't assume a secret found in one store covers only one service ([[nexus]], [[source-code-disclosure]]).
 - **CI trace / env-file leak** — a debug `env` dump in a pipeline trace leaks `CI_RUNNER_TOKEN=glrt-…`, and a runner `environment_file` (`/opt/ci/.env`) leaks an SSH password for `devops` ([[pipepwned]]).
 - **In-memory user table** — `main.py` holds a `USERS` dict with plaintext passwords written beside `hash_pw(...)` calls ([[trailpack]]).
 - **Backup files leaking password hashes** — `/var/backups/darksblack/.darksblack.txt` holds a `/etc/shadow`-format yescrypt hash, cracked to a password ([[bruteshock]]).
@@ -46,4 +47,4 @@ grep -RniE 'pass(word)?|secret|token|key|pwd' /home /opt /var/www 2>/dev/null
 
 ## Seen in
 
-[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]], [[flynn]], [[analyst]], [[chmod-4755]], [[dance-samba]], [[rutas]], [[extraviado]], [[jenkhack]], [[dockerlabs-box]], [[library]], [[pkgpoison]], [[pequeñas-mentirosas]]
+[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]], [[flynn]], [[analyst]], [[chmod-4755]], [[dance-samba]], [[rutas]], [[extraviado]], [[jenkhack]], [[dockerlabs-box]], [[library]], [[pkgpoison]], [[pequeñas-mentirosas]], [[nexus]]

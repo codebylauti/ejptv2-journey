@@ -25,4 +25,4 @@ find / -mtime -1 -type f 2>/dev/null       # files touched in the last day
 
 ## Seen in
 
-[[extraviado]] (`*diego*` → `~/.secreto/passdiego`), [[pkgpoison]] (`*secret*` → the leaky `.pyc`), [[pequeñas-mentirosas]] (`*spencer*` → `/srv/ftp/hash_spencer.txt`), plus routine full-filesystem sweeps across the vault's privesc paths ([[dark]], [[domain]], [[rutas]], [[trailpack]], [[walkingcms]] and more)
+[[extraviado]] (`*diego*` → `~/.secreto/passdiego`), [[pkgpoison]] (`*secret*` → the leaky `.pyc`), [[pequeñas-mentirosas]] (`*spencer*` → `/srv/ftp/hash_spencer.txt`), [[nexus]] (`-name .env` → the app's live on-disk credentials at `/var/www/krayin/.env`), plus routine full-filesystem sweeps across the vault's privesc paths ([[dark]], [[domain]], [[rutas]], [[trailpack]], [[walkingcms]] and more)

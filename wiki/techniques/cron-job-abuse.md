@@ -12,7 +12,7 @@ Exploiting cron jobs or automated scripts that run with elevated privileges and 
 
 ## Workflow
 
-1. Inspect `/etc/cron.d/`, `crontab -l`, and `/opt` for scheduled scripts; `ps aux`/`ps -ef` can also reveal a privileged process running a script you can write — **the runner need not be cron at all**: PID 1's `while true; do /bin/bash /usr/local/bin/echo.sh; done` loop runs its target *continuously*, which collapses step 3's "wait" to milliseconds ([[vulnvault]]).
+1. Inspect `/etc/cron.d/`, `crontab -l`, and `/opt` for scheduled scripts; on systemd boxes run **`systemctl list-timers`** too — it prints every pending `.timer` with the `.service` it activates, the systemd twin of `crontab -l`, and it is where root's recurring jobs live on modern distros ([[nexus]]). `ps aux`/`ps -ef` can also reveal a privileged process running a script you can write — **the runner need not be cron at all**: PID 1's `while true; do /bin/bash /usr/local/bin/echo.sh; done` loop runs its target *continuously*, which collapses step 3's "wait" to milliseconds ([[vulnvault]]).
 2. Check ownership/permissions — if your group can write the script, overwrite it. Check the **`o+w` bit** too: `-rwxrw-rw-` is world-writable, no group membership required ([[vulnvault]] — every earlier sighting needed the right group).
 3. Replace the script with a reverse shell or a **privilege-granting command**; wait for the next run (or ~instantly, on a loop). The grant form pairs with a SUID-shell endgame: write `chmod u+s /bin/bash`, then `/bin/bash -p` (preserve euid) ([[acme]], [[suid-enumeration]]).
 
@@ -23,6 +23,7 @@ Exploiting cron jobs or automated scripts that run with elevated privileges and 
 - [[balulero]] — group-owned `/opt/script.php` run as root; discovered via `ps aux`.
 - [[grooti]] — writable `/tmp/malicious.sh` run as root by `/opt/cleanup.sh`.
 - [[vulnvault]] — world-writable `/usr/local/bin/echo.sh` hammered by PID 1's while-loop; found via `ps -ef`, consumed as `/bin/bash -p` (the payload write itself is missing from the writeup).
+- [[nexus]] — `gitea-template-sync.timer` (root, every minute) surfaced by `systemctl list-timers`; the job's script isn't writable, so the abuse goes through the *data* it syncs — repo tree entries with `..` — see [[git-tree-path-traversal]].
 
 ## See also
 

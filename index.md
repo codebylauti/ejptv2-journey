@@ -85,6 +85,7 @@ Content catalog. Read this first on any query.
 ### Hack The Box
 
 - [[cap]] — IDOR → pcap credential leak → FTP/SSH → python `cap_setuid`
+- [[nexus]] — vhost split → git-history DB password → Krayin CVE upload → on-disk `.env` password → git tree `..` traversal to root
 
 ## Techniques
 
@@ -116,6 +117,7 @@ Content catalog. Read this first on any query.
 - [[web-cache-deception]] — cache poisoning for sensitive pages
 - [[cron-job-abuse]] — writable cron scripts
 - [[ci-cd-pipeline-abuse]] — root CI runner / writable builds_dir
+- [[git-tree-path-traversal]] — git tree entries with `..` escape a sync job's workspace → arbitrary file write
 - [[group-ownership-enumeration]] — find group-writable files (find -group)
 - [[linux-capabilities]] — getcap + cap_setuid abuse
 - [[writable-etc-passwd]] — password-less root entry
@@ -193,6 +195,7 @@ Content catalog. Read this first on any query.
 - [[cve-2021-47980]] — Fuel CMS SQLi
 - [[cve-2025-55182]] — React2Shell: RSC Flight deserialization RCE
 - [[cve-2024-23897]] — Jenkins CLI arbitrary file read (args4j `@file` expansion)
+- [[cve-2026-38526]] — Krayin CRM 2.2.0 unrestricted PHP file upload → RCE
 
 ## Learning
 

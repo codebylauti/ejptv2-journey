@@ -18,6 +18,7 @@ Extracting secrets (usernames, passwords, hints) from exposed source files.
 - **Config files** — `database.php` leaking a DB password ([[ignite]]); `app.py` Flask `secret_key` reused as an OS password ([[balufood]]); `config.php` returning `200` size 0 but `cat`-able once on-box, leaking MySQL `root`/`paso` ([[injection]]).
 - **robots.txt** — reveals disallowed paths (`/fuel`, `/simple`) ([[ignite]], [[simple-ctf]]).
 - **Exposed dotfiles/`.env`** — `.env_de_baluchingon` leaking `balu:balubalulerobalulei` ([[balulero]]).
+- **Exposed git repository — secret in history, not HEAD** — an anonymously cloneable remote (`git clone http://git.nexus.htb/admin/krayin-docker-setup`) whose tip commit has `DB_PASSWORD=` **blanked** but whose earlier commits still carry the real value: the scrub was a new commit, not a rewrite. Distinct from a `.env` served over HTTP — the channel is the git protocol and recovery means walking revisions (`git log -p`), not fetching a URL ([[nexus]], [[hardcoded-credentials]]).
 - **Hidden-in-plain-sight attributes/CSS** — a username as a CSS property value (`top: pipe;`) and an `hidden="acrostico inicial"` clue ([[winfake]]); `class="hidden"` spans pairing a **username and password** (`jenkins-admin` / `cassandra`), with the image `alt`s repeating both words — and the words themselves naming the service on a *different* port ([[jenkhack]]).
 - **Source leak via SQLi file-read** — `sqlmap --file-read` (or `LOAD_FILE`) pulls a PHP file's source through a blind SQLi, exposing hardcoded arrays/comments that hint at secrets ([[duque]]).
 - **SSTI file-read** — RCE via [[server-side-template-injection]] lets you `cat` the runner's `.env` to extract SSH creds ([[pipepwned]]).
@@ -29,4 +30,4 @@ Extracting secrets (usernames, passwords, hints) from exposed source files.
 
 ## Seen in
 
-[[hedgehog]], [[obsession]], [[vacaciones]], [[borazuwara]], [[los-3-hackers]], [[ignite]], [[simple-ctf]], [[balufood]], [[balulero]], [[guided-pentest]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[dark]], [[rutas]], [[extraviado]], [[jenkhack]], [[amor]], [[pkgpoison]]
+[[hedgehog]], [[obsession]], [[vacaciones]], [[borazuwara]], [[los-3-hackers]], [[ignite]], [[simple-ctf]], [[balufood]], [[balulero]], [[guided-pentest]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[dark]], [[rutas]], [[extraviado]], [[jenkhack]], [[amor]], [[pkgpoison]], [[nexus]]

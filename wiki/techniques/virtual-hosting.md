@@ -15,7 +15,7 @@ Finding a website served under a specific `Host` header/hostname, hidden behind 
 - The IP serves a **default page** (e.g. Apache "It works") — but source comments, hints, or DNS give away another hostname.
 - Clues like *"virtual hosting is good"*, *"register for <domain>"* in HTML comments.
 - **Candidate hostnames handed over as links** — an `<aside>` listing `vulndb.com`, `trackedvuln.dl/`, `dockerlabs.es` is a menu of vhosts; map the one the rest of the chain points at and re-fuzz *with* the credential you already hold ([[rutas]]).
-- The server **actively redirects** to a hostname: a `303 See Other` with `Location: http://internal.dl/` names the vhost outright (`curl -s http://IP/` to see it) ([[internal]]).
+- The server **actively redirects** to a hostname: a `303 See Other` with `Location: http://internal.dl/` names the vhost outright (`curl -s http://IP/` to see it) ([[internal]]). Even an *unfollowed* redirect counts — nmap's `http-title` note *"Did not follow redirect to http://nexus.htb/"* hands you the base domain before any fuzzing runs ([[nexus]]).
 
 ## Exploit
 
@@ -45,7 +45,8 @@ gobuster vhost -u http://target.thm/ -w <subdomains-wordlist> --append-domain --
 
 - `--append-domain` appends the base domain to every word (`word.target.thm`).
 - `--xs 303` excludes the 303 the default vhost throws, leaving the `200`s.
+- **A redirect in the results is not automatically noise.** [[nexus]]'s default vhost threw a 302, so nothing was excluded — and the hits were a `200` (`git.nexus.htb`) plus a `302 → /admin/login` (`billing.nexus.htb`). A redirect that lands on an *application* is a find; only the default vhost's canned redirect is junk.
 
 ## Seen in
 
-[[madeyes-castle]] (`hogwartz-castle.thm` behind the default Apache page), [[internal]] (303 → `internal.dl` → `gobuster vhost` → `backup.internal.dl`), [[rutas]] (`trackedvuln.dl` from an `<aside>` link → `/etc/hosts` → re-fuzz with `Authorization: Basic`)
+[[madeyes-castle]] (`hogwartz-castle.thm` behind the default Apache page), [[internal]] (303 → `internal.dl` → `gobuster vhost` → `backup.internal.dl`), [[rutas]] (`trackedvuln.dl` from an `<aside>` link → `/etc/hosts` → re-fuzz with `Authorization: Basic`), [[nexus]] (unfollowed 302 named the base domain → `gobuster vhost --append-domain` → `git.nexus.htb` 200 + `billing.nexus.htb` 302 → `/admin/login`)
