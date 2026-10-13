@@ -22,4 +22,4 @@ smbmap -H TARGET -u user -p pass      # authenticated: NO ACCESS → READ ONLY /
 
 ## Seen in
 
-[[domain]] (`html` NO ACCESS → READ, WRITE after the spray), [[chmod-4755]] (`share_secret_only` + `print$` unlock with `smbuser`), [[madeyes-castle]] (anon `sambashare` listing)
+[[domain]] (`html` NO ACCESS → READ, WRITE after the spray), [[chmod-4755]] (`share_secret_only` + `print$` unlock with `smbuser`), [[madeyes-castle]] (anon `sambashare` listing), [[winterfell]] (all shares `NO ACCESS` as null → `shared` READ, WRITE after the spray; authenticated `print$`/`jon` home READ ONLY surfaced too — then `smbclient get` pulled the hint note)

@@ -19,4 +19,4 @@ enum4linux TARGET | grep 'Local User'    # SID-walk output: S-1-22-1-<uid> Unix 
 
 ## Seen in
 
-[[basic-pentesting]] (extracted users `jan`, `kay`), [[chmod-4755]] (SID walk found `rabol` where `nxc --users` only reported `smbuser`)
+[[basic-pentesting]] (extracted users `jan`, `kay`), [[chmod-4755]] (SID walk found `rabol` where `nxc --users` only reported `smbuser`), [[winterfell]] (`grep 'Local User'` → `jon`, `aria`, `daenerys`, `nobody` where `nxc --users` reported only `jon` — the full user list the spray needed)

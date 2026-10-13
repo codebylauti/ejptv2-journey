@@ -56,6 +56,8 @@ Content catalog. Read this first on any query.
 - [[elevator]] — `.jpg` filename-lie upload → RCE → 6-hop sudo chain (env → ash → ruby → lua → gcc → sudo)
 - [[pequeñas-mentirosas]] — page hint → hydra → `find` username hash → sudo python3
 - [[vulnvault]] — report-form injection as a file reader → stolen SSH key → world-writable `echo.sh` PID 1 loop
+- [[los40ladrones]] — riddle text file → port knocking → SSH brute → NOPASSWD `/opt/bash`
+- [[winterfell]] — SMB enum → web-derived wordlist spray → base64 note → 3-hop sudo chain
 
 ### DockerLabs — intermediate
 
@@ -148,6 +150,7 @@ Content catalog. Read this first on any query.
 - [[restricted-shell-escape]] — break out of `rbash` (python3 `pty.spawn` + PATH rebuild)
 - [[encoded-credentials]] — base64/encoded secrets in source and files → decode → replay
 - [[jenkins-script-console-rce]] — Groovy RCE via Jenkins admin Script Console (feature, not CVE)
+- [[port-knocking]] — sequence of hits on closed ports opens a hidden service
 
 ## Tools
 
@@ -185,6 +188,7 @@ Content catalog. Read this first on any query.
 - [[getcap]] — filesystem capability sweep (`getcap -r /`)
 - [[whatweb]] — one-shot web fingerprinting
 - [[strings]] — printable-run extractor for binaries, pcaps, and compiled bytecode
+- [[knock]] — port-knock sequence sender (client half of port knocking)
 
 ## CVEs
 

@@ -52,6 +52,8 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[elevator]] — `.jpg` filename-lie upload → RCE → 6-hop sudo chain (env → ash → ruby → lua → gcc → sudo)
 - [[pequeñas-mentirosas]] — page hint → hydra → `find` username hash → sudo python3
 - [[vulnvault]] — report-form injection as a file reader → stolen SSH key → world-writable `echo.sh` PID 1 loop
+- [[los40ladrones]] — riddle text file → port knocking → SSH brute → NOPASSWD `/opt/bash`
+- [[winterfell]] — SMB enum → web-derived wordlist spray → base64 note → 3-hop sudo chain
 
 ### intermediate
 
