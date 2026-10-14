@@ -22,6 +22,7 @@ nmap -Pn -n -vv -p- TARGET   # no ping, no DNS, verbose, all ports
 - Services bound to `127.0.0.1` (loopback) never show up in *any* external scan — they're only discoverable from a foothold inside the host.
 - `--script` (NSE) isn't only for scanning — a custom `.nse` running `os.execute` can double as a `sudo` escape to drop a shell ([[anonymous-pingu]]).
 - `-sC` includes `http-robots.txt`, which prints disallowed paths from `robots.txt` directly in the scan output — e.g. `/migration_notes.txt` on [[acme]]. Always curl what it reports.
+- `-sC`'s `ftp-anon` script doesn't just say *Anonymous login allowed* — it **logs in and lists the files**: `tomcat.txt` (74 B) showed up in [[pn]]'s scan output before any interactive FTP session existed. Read NSE output as recon data, not as a boolean ([[ftp-anonymous-login]]).
 - **Through a SOCKS tunnel:** `proxychains nmap -sT -Pn -n TARGET` — SYN scans and ICMP don't proxy, so force TCP connect and skip ping ([[proxychains]]).
 
 ## Seen in

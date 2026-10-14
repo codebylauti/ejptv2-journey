@@ -24,4 +24,4 @@ ls / get file / put file / bye
 
 ## Seen in
 
-[[obsession]], [[tproot]], [[hannah-coffee]], [[nodeclimb]], [[anonymous-pingu]], [[dance-samba]], [[rutas]] (`hola_disfruta` + `respeta.zip` from an anonymous root), [[file]] (a single `get anon.txt` — the file was one bare MD5)
+[[obsession]], [[tproot]], [[hannah-coffee]], [[nodeclimb]], [[anonymous-pingu]], [[dance-samba]], [[rutas]] (`hola_disfruta` + `respeta.zip` from an anonymous root), [[file]] (a single `get anon.txt` — the file was one bare MD5), [[pn]] (interactive anon session → `ls` → `get tomcat.txt` — the filename had already appeared in nmap's `ftp-anon` output, so the login existed only to pull it)

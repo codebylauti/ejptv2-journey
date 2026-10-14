@@ -55,6 +55,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[los40ladrones]] — riddle text file → port knocking → SSH brute → NOPASSWD `/opt/bash`
 - [[winterfell]] — SMB enum → web-derived wordlist spray → base64 note → 3-hop sudo chain
 - [[hiddencat]] — Ghostcat AJP file read (CVE-2020-1938) → web.xml username → SSH brute → SUID python3.7 `-p`
+- [[pn]] — anon FTP note → Tomcat manager leak (`tomcat:s3cret`) → WAR deploy RCE → direct root shell (no privesc)
 
 ### intermediate
 

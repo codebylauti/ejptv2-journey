@@ -58,6 +58,8 @@ Content catalog. Read this first on any query.
 - [[vulnvault]] — report-form injection as a file reader → stolen SSH key → world-writable `echo.sh` PID 1 loop
 - [[los40ladrones]] — riddle text file → port knocking → SSH brute → NOPASSWD `/opt/bash`
 - [[winterfell]] — SMB enum → web-derived wordlist spray → base64 note → 3-hop sudo chain
+- [[hiddencat]] — Ghostcat AJP file read (CVE-2020-1938) → web.xml username → SSH brute → SUID python3.7 root
+- [[pn]] — anon FTP note → Tomcat manager leak (`tomcat:s3cret`) → WAR deploy → direct root shell
 
 ### DockerLabs — intermediate
 
@@ -151,6 +153,8 @@ Content catalog. Read this first on any query.
 - [[encoded-credentials]] — base64/encoded secrets in source and files → decode → replay
 - [[jenkins-script-console-rce]] — Groovy RCE via Jenkins admin Script Console (feature, not CVE)
 - [[port-knocking]] — sequence of hits on closed ports opens a hidden service
+- [[ajp-file-read]] — Tomcat AJP port 8009 → CVE-2020-1938 arbitrary file read (WEB-INF)
+- [[tomcat-manager-war-deploy]] — Tomcat manager WAR deployment RCE (intended feature + default/leaked creds, not a CVE)
 
 ## Tools
 
@@ -200,6 +204,7 @@ Content catalog. Read this first on any query.
 - [[cve-2025-55182]] — React2Shell: RSC Flight deserialization RCE
 - [[cve-2024-23897]] — Jenkins CLI arbitrary file read (args4j `@file` expansion)
 - [[cve-2026-38526]] — Krayin CRM 2.2.0 unrestricted PHP file upload → RCE
+- [[cve-2020-1938]] — Ghostcat: Tomcat AJP (8009) arbitrary file read, JSP-inclusion RCE under conditions
 
 ## Learning
 

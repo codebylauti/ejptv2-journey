@@ -36,6 +36,7 @@ Finding credentials that were left hardcoded or reused across accounts — in so
 - **Steganographic credential** — a password that arrives from *inside* an image rather than from text: `steghide` → `passwd.zip` → `hackeada:denuevo`, then replayed as an `Authorization: Basic` header. Whatever you pull out of a carrier is a credential until proven otherwise ([[rutas]], [[steganography]]).
 - **Lone token with no username** — a random 14-char string served as a whole page (`<h1>JIFGHDS87GYDFIGD</h1>` in `index.php`, hidden behind the default `index.html`): no `user:` label, no context, just a secret shaped like a password. It's half a credential pair — hand the *password* to hydra and fuzz the username axis instead ([[library]], [[ssh-bruteforce]]).
 - **Stale planted pair** — a note hands you `dev:developer123` *while literally asking for it to be changed*; the replay fails, but failure splits the pair: the password is dead, the **username is certified** (the box wrote it down itself — it's real). Feed the surviving half to rockyou instead of discarding the find ([[pkgpoison]], [[ssh-bruteforce]]).
+- **Product default pair handed over by a response grep** — the famous defaults (`tomcat:s3cret`) are only useful if something *surfaces* them: `curl -s http://TARGET:8080/manager/html | grep 'username'` returned `&lt;user username="tomcat" password="s3cret" roles="manager-gui"/&gt;` — stock credentials, `manager-gui` included, out of an apparently **unauthenticated** response. The command is easy; the mechanism (why a no-auth request carried the user table) was never explained on [[pn]] — keep both halves on record ([[tomcat-manager-war-deploy]]).
 
 ## Commands
 
@@ -47,4 +48,4 @@ grep -RniE 'pass(word)?|secret|token|key|pwd' /home /opt /var/www 2>/dev/null
 
 ## Seen in
 
-[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]], [[flynn]], [[analyst]], [[chmod-4755]], [[dance-samba]], [[rutas]], [[extraviado]], [[jenkhack]], [[dockerlabs-box]], [[library]], [[pkgpoison]], [[pequeñas-mentirosas]], [[nexus]]
+[[balufood]], [[grooti]], [[winfake]], [[duque]], [[injection]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[acme]], [[internal]], [[cap]], [[flynn]], [[analyst]], [[chmod-4755]], [[dance-samba]], [[rutas]], [[extraviado]], [[jenkhack]], [[dockerlabs-box]], [[library]], [[pkgpoison]], [[pequeñas-mentirosas]], [[nexus]], [[pn]]
