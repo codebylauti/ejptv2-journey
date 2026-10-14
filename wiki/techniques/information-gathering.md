@@ -38,3 +38,4 @@ This is the seed of [[pivoting]]: know your subnet, scan it, compromise a host, 
 ## Seen in
 
 - Every box in this vault starts with this phase (e.g. [[breakmyssh]], [[ignite]]).
+- The scan line itself can be the exploit path: [[hiddencat]]'s `8009/tcp open ajp13 Apache Jserv (Protocol v1.3)` appeared beside `8080 Apache Tomcat 9.0.30` — an unusual protocol next to a named product version means CVE-lookup **both** halves, and that one line *was* the box ([[ajp-file-read]], [[cve-2020-1938]]).

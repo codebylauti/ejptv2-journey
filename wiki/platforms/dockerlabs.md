@@ -54,6 +54,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[vulnvault]] — report-form injection as a file reader → stolen SSH key → world-writable `echo.sh` PID 1 loop
 - [[los40ladrones]] — riddle text file → port knocking → SSH brute → NOPASSWD `/opt/bash`
 - [[winterfell]] — SMB enum → web-derived wordlist spray → base64 note → 3-hop sudo chain
+- [[hiddencat]] — Ghostcat AJP file read (CVE-2020-1938) → web.xml username → SSH brute → SUID python3.7 `-p`
 
 ### intermediate
 

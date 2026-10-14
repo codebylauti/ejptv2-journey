@@ -9,7 +9,7 @@ Current state of the cybersecurity learning vault.
 
 ## Progress snapshot
 
-- **56 boxes** completed across three platforms: [[dockerlabs]] (49), [[tryhackme]] (5), and [[hack-the-box]] (2).
+- **57 boxes** completed across three platforms: [[dockerlabs]] (50), [[tryhackme]] (5), and [[hack-the-box]] (2).
 - Difficulty spread is bottom-heavy: mostly **super-easy/easy**, with ten intermediate ([[adopting]], [[pipepwned]], [[trailpack]], [[bruteshock]], [[littlepivoting]], [[domain]], [[chmod-4755]], [[dance-samba]], [[dark]], [[rutas]]) and one hard ([[baluhome]]).
 - **1 box in progress** (not counted above): [[injection]] — foothold reached, privesc pending.
 
@@ -19,7 +19,7 @@ Current state of the cybersecurity learning vault.
 |--------|----------------------|
 | Assessment | [[information-gathering]], [[directory-fuzzing]], [[parameter-fuzzing]], [[smb-enumeration]], [[mysql-enumeration]], [[source-code-disclosure]], [[pcap-analysis]], [[acrostic-decoding]], [[ftp-anonymous-login]], [[hardcoded-credentials]], [[steganography]], [[encoded-credentials]], [[virtual-hosting]], [[wordpress-enumeration]] |
 | Host & Network Pentest | [[ssh-bruteforce]], [[sudo-abuse]], [[arithmetic-injection]], [[exim-lpe]], [[python-library-hijacking]], [[suid-enumeration]], [[cron-job-abuse]], [[group-ownership-enumeration]], [[linux-capabilities]], [[writable-etc-passwd]], [[writable-motd]], [[reverse-shells]], [[restricted-shell-escape]], [[node-inspector-rce]], [[vsftpd-backdoor]], [[ssh-key-cracking]], [[zip-cracking]], [[hash-cracking]], [[hardcoded-credentials]], [[ftp-anonymous-login]], [[ci-cd-pipeline-abuse]], [[git-tree-path-traversal]], [[pivoting]], [[port-forwarding]], [[metasploit-pivoting]], [[su-brute-force]], [[path-hijacking]], [[smb-enumeration]], [[steganography]], [[pcap-analysis]], [[log-poisoning]], [[shellshock]], [[command-injection]], [[encoded-credentials]], [[jenkins-script-console-rce]], [[port-knocking]] |
-| Web Pentest | [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[broken-access-control]], [[local-file-inclusion]], [[remote-file-inclusion]], [[server-side-request-forgery]], [[log-poisoning]], [[parameter-fuzzing]], [[value-brute-force]], [[mfa-bruteforce]], [[directory-fuzzing]], [[source-code-disclosure]], [[acrostic-decoding]], [[prototype-pollution]], [[prompt-injection]], [[wordpress-enumeration]], [[web-shell-upload]], [[server-side-template-injection]], [[command-injection]], [[waf-bypass]], [[shellshock]], [[http-login-bruteforce]], [[virtual-hosting]], [[encoded-credentials]], [[jenkins-script-console-rce]] |
+| Web Pentest | [[sql-injection]], [[xss-and-cookie-theft]], [[web-cache-deception]], [[session-and-cookie-abuse]], [[broken-access-control]], [[local-file-inclusion]], [[remote-file-inclusion]], [[server-side-request-forgery]], [[log-poisoning]], [[parameter-fuzzing]], [[value-brute-force]], [[mfa-bruteforce]], [[directory-fuzzing]], [[source-code-disclosure]], [[acrostic-decoding]], [[prototype-pollution]], [[prompt-injection]], [[wordpress-enumeration]], [[web-shell-upload]], [[server-side-template-injection]], [[command-injection]], [[waf-bypass]], [[shellshock]], [[http-login-bruteforce]], [[virtual-hosting]], [[encoded-credentials]], [[jenkins-script-console-rce]], [[ajp-file-read]] |
 
 ## Notable gaps (see [[roadmap]])
 
