@@ -73,6 +73,7 @@ Content catalog. Read this first on any query.
 - [[dance-samba]] — FTP note hint → SMB spray → writable home share → SSH key → sudo `file` read
 - [[dark]] — one `url` param = SSRF + LFI → SSH brute-force → Metasploit pivot → `cmd` RCE → SUID curl
 - [[rutas]] — anon FTP → zip crack → steghide → Basic-auth vhost → `love` param → RFI → PATH hijack → writable MOTD
+- [[gitea]] — Gitea `appUrl` vhost oracle → git-diff vuln disclosure → path-traversal wordlist → SSH brute → stolen `gitea.db` (crack failed) → MySQL UDF → SUID bash
 
 ### DockerLabs — hard
 
@@ -99,6 +100,7 @@ Content catalog. Read this first on any query.
 - [[value-brute-force]] — brute-force a param value, spot the odd response by length
 - [[mfa-bruteforce]] — brute-force an OTP/MFA code, bypass the rate limiter via X-Forwarded-For
 - [[local-file-inclusion]] — LFI path traversal
+- [[path-traversal]] — unsanitized path parameter → arbitrary file read (serve, not include)
 - [[remote-file-inclusion]] — the app *executes* a file at a URL you supply → RCE
 - [[server-side-request-forgery]] — the server fetches a URL you choose (internal hosts, metadata)
 - [[steganography]] — secrets hidden inside carriers (steghide), other alphabets, metadata
@@ -131,6 +133,7 @@ Content catalog. Read this first on any query.
 - [[node-inspector-rce]] — RCE via Node.js Inspector (CDP, port 9229)
 - [[smb-enumeration]] — enum4linux user/share discovery
 - [[mysql-enumeration]] — MySQL/MariaDB enumeration (SHOW/DESCRIBE/SELECT)
+- [[mysql-udf-lpe]] — `CREATE FUNCTION … SONAME` loads a writable-dir `.so` → code as the mysql process (config, not CVE)
 - [[ssh-key-cracking]] — john on SSH key passphrases
 - [[zip-cracking]] — zip2john + john on encrypted ZIPs
 - [[hash-cracking]] — raw hash → plaintext (john/hashcat + online lookup)

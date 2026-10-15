@@ -7,3 +7,6 @@
 # Tooling caches & scratch artifacts (not vault content)
 .atl/
 hint.json
+
+# ODD feature task scratch (local progress, not vault content)
+odd/

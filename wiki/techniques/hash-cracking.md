@@ -61,6 +61,13 @@ john --format=crypt --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 
 yescrypt is memory-hard → wordlist (+ rules), not brute force.
 
+## Salted KDF walls — and when to stop
+
+A hash may be cheap to *verify* and ruinous to *guess*: **PBKDF2** multiplies every candidate by its iteration count. Gitea stamps `pbkdf2$50000$50` (PBKDF2-HMAC-SHA256, 50 000 iterations), so rockyou speed collapses by five orders of magnitude — one session loaded the hash, printed `Cost 1 (iteration count) is 50000`, and ended `Session aborted` ([[gitea]], via `gitea2john.py` + `--format=PBKDF2-HMAC-SHA256`).
+
+- An **aborted session is a timeout, not a proof** of uncrackability — record it as "not cracked within the run", nothing stronger.
+- Before sinking hours into a KDF, **go look for the plaintext**: the same box had the working credential sitting in a login input's placeholder while john was still chewing ([[gitea]]; same lesson as [[dance-samba]]'s decode-first rule). The failed crack is *data* — it tells you the hash is the wrong lead.
+
 ## Example
 
 [[wargames]]: SHA-256 `60a3f3cb…` → `1983@1983` via hashes.com (not in rockyou). [[bruteshock]]: yescrypt `$y$` shadow hash → `salvador1` via `john --format=crypt`.
@@ -69,4 +76,4 @@ Two bare hashes on [[file]] show the length rule paying off twice: `53dd9c60…`
 
 ## Seen in
 
-[[wargames]], [[bruteshock]], [[madeyes-castle]] (SHA-512 + `--rules=best64`), [[dance-samba]] (counter-example: a "hash" that was base32+base64 *encoding* — decoded, never cracked), [[file]] (raw-MD5 + raw-SHA1, both identified by length), [[pequeñas-mentirosas]] (raw-MD5 identified by filename, cracked → `su spencer`)
+[[wargames]], [[bruteshock]], [[madeyes-castle]] (SHA-512 + `--rules=best64`), [[dance-samba]] (counter-example: a "hash" that was base32+base64 *encoding* — decoded, never cracked), [[file]] (raw-MD5 + raw-SHA1, both identified by length), [[pequeñas-mentirosas]] (raw-MD5 identified by filename, cracked → `su spencer`), [[gitea]] (negative result: gitea2john + `--format=PBKDF2-HMAC-SHA256` + rockyou, `--fork=4` → `Session aborted` at 50k iterations; pivoted to a placeholder leak)

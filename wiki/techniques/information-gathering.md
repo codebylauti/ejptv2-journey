@@ -39,3 +39,4 @@ This is the seed of [[pivoting]]: know your subnet, scan it, compromise a host, 
 
 - Every box in this vault starts with this phase (e.g. [[breakmyssh]], [[ignite]]).
 - The scan line itself can be the exploit path: [[hiddencat]]'s `8009/tcp open ajp13 Apache Jserv (Protocol v1.3)` appeared beside `8080 Apache Tomcat 9.0.30` — an unusual protocol next to a named product version means CVE-lookup **both** halves, and that one line *was* the box ([[ajp-file-read]], [[cve-2020-1938]]).
+- **The scan can *name* the service before you send a packet.** [[gitea]]'s port 3000 came back `Golang net/http server` — *"1 service unrecognized despite returning data"* — but its `fingerprint-strings` carried `Set-Cookie: i_like_gitea=…` and `<title>Gitea: Git with a cup of tea</title>`. An "unknown" service is still fully identified in `-sC` output: read the strings, not the NSE verdict ([[nmap]]).

@@ -16,6 +16,7 @@ Finding a website served under a specific `Host` header/hostname, hidden behind 
 - Clues like *"virtual hosting is good"*, *"register for <domain>"* in HTML comments.
 - **Candidate hostnames handed over as links** — an `<aside>` listing `vulndb.com`, `trackedvuln.dl/`, `dockerlabs.es` is a menu of vhosts; map the one the rest of the chain points at and re-fuzz *with* the credential you already hold ([[rutas]]).
 - The server **actively redirects** to a hostname: a `303 See Other` with `Location: http://internal.dl/` names the vhost outright (`curl -s http://IP/` to see it) ([[internal]]). Even an *unfollowed* redirect counts — nmap's `http-title` note *"Did not follow redirect to http://nexus.htb/"* hands you the base domain before any fuzzing runs ([[nexus]]).
+- **An application's own base-URL setting is a vhost oracle** — self-hosted apps print their configured URL: `curl -s http://IP:3000 | grep appUrl` returned `appUrl: 'http:\/\/admin.s3cr3tdir.dev.gitea.dl\/'`, and *four* vhosts (the full domain tree) went into `/etc/hosts` from that one grep, with zero vhost fuzzing ([[gitea]]). Grep the homepage for `appUrl`/`base_url`/`SITE_URL` before reaching for `gobuster vhost`.
 
 ## Exploit
 
@@ -49,4 +50,4 @@ gobuster vhost -u http://target.thm/ -w <subdomains-wordlist> --append-domain --
 
 ## Seen in
 
-[[madeyes-castle]] (`hogwartz-castle.thm` behind the default Apache page), [[internal]] (303 → `internal.dl` → `gobuster vhost` → `backup.internal.dl`), [[rutas]] (`trackedvuln.dl` from an `<aside>` link → `/etc/hosts` → re-fuzz with `Authorization: Basic`), [[nexus]] (unfollowed 302 named the base domain → `gobuster vhost --append-domain` → `git.nexus.htb` 200 + `billing.nexus.htb` 302 → `/admin/login`)
+[[madeyes-castle]] (`hogwartz-castle.thm` behind the default Apache page), [[internal]] (303 → `internal.dl` → `gobuster vhost` → `backup.internal.dl`), [[rutas]] (`trackedvuln.dl` from an `<aside>` link → `/etc/hosts` → re-fuzz with `Authorization: Basic`), [[nexus]] (unfollowed 302 named the base domain → `gobuster vhost --append-domain` → `git.nexus.htb` 200 + `billing.nexus.htb` 302 → `/admin/login`), [[gitea]] (`appUrl` grep → four vhosts written to `/etc/hosts` from one string — no fuzzing; each then fuzzed *separately* for directories)
