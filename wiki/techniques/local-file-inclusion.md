@@ -14,6 +14,7 @@ Including arbitrary local files via an unsanitized include/read parameter.
 
 - A URL parameter that controls page content (e.g. `?page=`, `?file=`, `?lang=`) may be injectable.
 - Test with path traversal: `../../../etc/passwd`.
+- Not every file-reading parameter is an *include*: a pure download endpoint (serve, no exec) is [[path-traversal]] — classify by what the sink does with the bytes, not by the parameter name.
 
 ## Read files
 

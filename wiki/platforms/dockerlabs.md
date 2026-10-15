@@ -69,6 +69,7 @@ Free Spanish platform of vulnerable Docker machines, great for building fundamen
 - [[dance-samba]] — FTP note hint → nxc spray → writable home share → SSH key drop → sudo `file -f` leak
 - [[dark]] — SSRF/LFI on one `url` param → SSH brute-force → Metasploit pivot → `cmd` RCE → SUID curl
 - [[rutas]] — anon FTP → zip crack → steghide → Basic-auth vhost → param fuzz → RFI → PATH hijack → writable MOTD
+- [[gitea]] — nmap strings name Gitea → `appUrl` vhost oracle → git-diff vuln disclosure → traversal wordlist → SSH brute → stolen `gitea.db` (PBKDF2 crack failed) → MySQL placeholder creds → UDF → SUID bash
 
 ### hard
 
